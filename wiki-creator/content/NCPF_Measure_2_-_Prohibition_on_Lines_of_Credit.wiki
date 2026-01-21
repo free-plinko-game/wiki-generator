@@ -1,0 +1,46 @@
+<!--
+    Generated: 2026-01-12T11:19:51.858889
+    Page: NCPF Measure 2 - Prohibition on Lines of Credit
+    Category: Federal Legislation
+    Generator: OpenAI GPT-4o
+-->
+The "NCPF Measure 2 - Prohibition on Lines of Credit" is a regulation under the National Consumer Protection Framework that bans wagering operators from extending lines of credit to customers. This measure aims to promote responsible gambling by preventing consumers from accruing debt through gambling activities.
+
+== Prohibition on Credit Facilities ==
+The measure explicitly prohibits wagering operators from offering any form of credit to their customers. This includes any arrangement where a customer can gamble with borrowed funds from the operator.
+
+== Definition of 'Line of Credit' ==
+A 'line of credit' is defined as any arrangement where a customer is allowed to borrow funds up to a certain limit to be used for wagering purposes. This can include credit cards, loans, or any other form of financial credit extended by the operator.
+
+== Exceptions ==
+There are no exceptions to this prohibition. All wagering operators are required to comply with this regulation without exception.
+
+== Relationship to Responsible Lending Laws ==
+The prohibition on lines of credit aligns with responsible lending laws, which are designed to protect consumers from taking on excessive debt. By eliminating credit facilities in gambling, the measure supports broader efforts to ensure that consumers gamble within their means.
+
+== Implementation Date ==
+The prohibition on lines of credit was implemented on 26 November 2018 as part of the broader National Consumer Protection Framework.
+
+{| class="wikitable"
+|+ Key Facts about NCPF Measure 2
+|-
+! Aspect !! Details
+|-
+| Implementation Date || 26 November 2018
+|-
+| Governing Framework || National Consumer Protection Framework
+|-
+| Prohibition || Lines of credit from wagering operators
+|-
+| Exceptions || None
+|}
+
+== See Also ==
+* [[National Consumer Protection Framework]]
+* [[Responsible Gambling Tools]]
+
+== External Links ==
+* [https://www.dss.gov.au/ Department of Social Services - National Consumer Protection Framework]
+* [https://www.acma.gov.au/ Australian Communications and Media Authority - Gambling Regulation]
+
+[[Category:Federal Legislation]]

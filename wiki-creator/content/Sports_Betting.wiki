@@ -1,0 +1,57 @@
+<!--
+    Generated: 2026-01-12T11:32:59.829505
+    Page: Sports Betting
+    Category: Gambling Types
+    Generator: OpenAI GPT-4o
+-->
+Sports betting in Australia refers to the practice of placing wagers on the outcome of sports events. It is a popular form of gambling regulated by both federal and state laws. While pre-match betting is widely permitted, in-play betting is subject to restrictions under the Interactive Gambling Act 2001.
+
+== Legal Status ==
+In Australia, sports betting is legal and regulated, with specific rules governing different types of bets. Pre-match betting is permitted across all states and territories, allowing bettors to place wagers before the commencement of a sporting event. However, in-play betting, which involves placing bets during the event, is restricted to telephone and in-person transactions, prohibiting online in-play betting.
+
+== Licensed Operators ==
+Sports betting operators in Australia must be licensed by the relevant state or territory authority. The Northern Territory is a popular jurisdiction for licensing due to its favorable regulatory environment. Licensed operators are required to adhere to strict guidelines to ensure fair play and consumer protection.
+
+== Types of Bets ==
+Sports betting in Australia offers various types of bets, including:
+* '''Fixed Odds''': A traditional form of betting where the odds are set at the time the bet is placed.
+* '''Multi''': A combination of multiple bets, where all selections must win for the bettor to receive a payout.
+* '''Same Game Multi''': A type of multi bet that allows bettors to combine selections from the same game into a single bet.
+
+== Popular Sports ==
+The most popular sports for betting in Australia include:
+* Australian Rules Football
+* Rugby League
+* Cricket
+* Soccer
+* Horse Racing
+
+== In-Play Restrictions ==
+Under the Interactive Gambling Act 2001, in-play betting is restricted to telephone and in-person methods. Online in-play betting is prohibited to prevent impulsive gambling and to promote responsible gambling practices.
+
+== Responsible Gambling Features ==
+Licensed operators are required to implement responsible gambling features, such as:
+* Self-exclusion programs
+* Deposit limits
+* Reality checks
+* Access to support services
+
+== How to Bet ==
+To place a sports bet in Australia, individuals must:
+# Choose a licensed operator.
+# Create an account and verify their identity.
+# Deposit funds into their account.
+# Select the desired sport and type of bet.
+# Place the bet before the event starts or via permitted in-play methods.
+
+== See Also ==
+* [[Interactive Gambling Act 2001]]
+* [[In-Play Betting Restrictions]]
+* [[Northern Territory Licensing]]
+* [[Sports Betting Operators]]
+
+== External Links ==
+* [https://www.acma.gov.au/ Australian Communications and Media Authority]
+* [https://www.responsiblegambling.vic.gov.au/ Victorian Responsible Gambling Foundation]
+
+[[Category:Gambling Types]]

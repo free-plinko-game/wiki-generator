@@ -1,0 +1,60 @@
+<!--
+    Generated: 2026-01-12T12:11:42.018518
+    Page: Gambling Laws
+    Category: Gambling Laws
+    Generator: OpenAI GPT-4o
+-->
+Gambling laws in Australia are governed by a co-regulatory framework involving both federal and state/territory legislation. This framework ensures that gambling activities are conducted responsibly, with measures in place to protect consumers and prevent illegal activities.
+
+== Co-regulatory Framework ==
+In Australia, the regulation of gambling is shared between the federal government and the individual states and territories. The federal government is primarily responsible for online gambling and national consumer protection measures, while the states and territories regulate land-based gambling activities within their jurisdictions.
+
+== Federal Legislation ==
+The federal government has enacted several key pieces of legislation to regulate gambling activities across Australia:
+
+* '''Interactive Gambling Act 2001''': This act regulates online gambling services, prohibiting certain types of interactive gambling to Australian residents.
+* '''National Consumer Protection Framework''': A set of measures aimed at minimizing harm from online gambling, including mandatory pre-commitment and self-exclusion options.
+* '''Anti-Money Laundering and Counter-Terrorism Financing Act 2006''': This act requires gambling operators to implement measures to detect and prevent money laundering and terrorism financing.
+* '''Broadcasting Services Act 1992''': Regulates the advertising of gambling services, particularly during live sports broadcasts.
+
+== State Legislation ==
+Each state and territory in Australia has its own legislation governing gambling activities. The following table provides an overview of the primary gambling laws in each jurisdiction:
+
+{| class="wikitable"
+|+ State and Territory Gambling Legislation
+! State/Territory !! Legislation
+|-
+| New South Wales (NSW) || Gaming and Liquor Administration Act 2007
+|-
+| Victoria (VIC) || Gambling Regulation Act 2003
+|-
+| Queensland (QLD) || Gaming Machine Act 1991
+|-
+| Western Australia (WA) || Gaming and Wagering Commission Act 1987
+|-
+| South Australia (SA) || Gaming Machines Act 1992
+|-
+| Tasmania (TAS) || Gaming Control Act 1993
+|-
+| Northern Territory (NT) || Racing and Betting Act 1983
+|-
+| Australian Capital Territory (ACT) || Gaming Machine Act 2004
+|}
+
+== Legal vs Prohibited Activities ==
+In general, legal gambling activities in Australia include lotteries, sports betting, and casino games, provided they are conducted by licensed operators. Prohibited activities primarily involve unlicensed online gambling services and certain types of interactive gambling, such as online poker and in-play sports betting.
+
+== Interaction of Federal and State Laws ==
+Federal and state laws work in tandem to regulate gambling in Australia. While the federal government sets overarching rules for online gambling and consumer protection, states and territories manage the licensing and regulation of physical gambling venues and activities. This dual system ensures comprehensive oversight and enforcement across the country.
+
+== See Also ==
+* [[Interactive Gambling Act 2001]]
+* [[National Consumer Protection Framework]]
+* [[Regulatory Bodies]]
+* [[State and Territory Regulators]]
+
+== External Links ==
+* [https://www.legislation.gov.au Federal Register of Legislation]
+* [https://www.acma.gov.au/online-gambling ACMA - Online Gambling]
+
+[[Category:Gambling Laws]]

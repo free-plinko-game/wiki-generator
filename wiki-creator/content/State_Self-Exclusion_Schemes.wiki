@@ -1,0 +1,55 @@
+<!--
+    Generated: 2026-01-12T11:25:21.066590
+    Page: State Self-Exclusion Schemes
+    Category: Consumer Protection
+    Generator: OpenAI GPT-4o
+-->
+State self-exclusion schemes in Australia provide individuals with the ability to voluntarily exclude themselves from land-based gambling venues, such as casinos, clubs, and hotels. These schemes are distinct from BetStop, which is the national self-exclusion register for online gambling. State self-exclusion schemes are designed to help individuals manage their gambling behaviors by preventing access to physical gambling environments.
+
+== Distinction from BetStop ==
+State self-exclusion schemes focus on land-based venues, whereas BetStop is a national initiative that allows individuals to exclude themselves from online gambling services. While BetStop covers online platforms, state schemes address the need for self-exclusion in physical locations such as casinos and clubs.
+
+== State Scheme Comparison ==
+Each Australian state and territory operates its own self-exclusion scheme, with variations in terms of scope and implementation. The following table provides a comparison of key features across different states:
+
+{| class="wikitable"
+|+ State Self-Exclusion Scheme Comparison
+! State/Territory !! Multi-Venue Exclusion !! Casino Exclusion !! Duration Options
+|-
+| New South Wales || Yes || Yes || 6 months to 5 years
+|-
+| Victoria || Yes || Yes || 12 months to 5 years
+|-
+| Queensland || Yes || Yes || 12 months to 5 years
+|-
+| South Australia || Yes || Yes || 3 months to 3 years
+|-
+| Western Australia || Yes || Yes || 12 months to 5 years
+|-
+| Tasmania || Yes || Yes || 6 months to 5 years
+|-
+| Northern Territory || Yes || Yes || 12 months to 5 years
+|-
+| Australian Capital Territory || Yes || Yes || 12 months to 5 years
+|}
+
+== Multi-Venue Self-Exclusion ==
+Multi-venue self-exclusion allows individuals to exclude themselves from multiple gambling venues within a state or territory. This approach is beneficial for individuals who frequent various locations and wish to avoid all potential gambling environments.
+
+== Casino Self-Exclusion ==
+Casino self-exclusion is a specific component of state schemes that enables individuals to exclude themselves from casino premises. This is particularly important for those who primarily gamble in casino settings and seek to limit their exposure to such environments.
+
+== How to Access State Schemes ==
+Individuals interested in self-excluding from land-based venues can access state schemes by contacting the relevant state or territory gambling authority. The process typically involves completing an application form and may require a meeting with a gambling counselor or venue staff to discuss the exclusion.
+
+== See Also ==
+* [[BetStop]]
+* [[NSW Self-Exclusion]]
+* [[Victorian Self-Exclusion]]
+
+== External Links ==
+* [https://www.gamblinghelponline.org.au Gambling Help Online]
+* [https://www.responsiblegambling.vic.gov.au Victorian Responsible Gambling Foundation]
+* [https://www.liquorandgaming.nsw.gov.au New South Wales Liquor & Gaming]
+
+[[Category:Consumer Protection]]

@@ -1,0 +1,37 @@
+<!--
+    Generated: 2026-01-12T11:35:19.061431
+    Page: NSW Poker Machine Regulations
+    Category: Gambling Types
+    Generator: OpenAI GPT-4o
+-->
+Poker machine regulations in New South Wales (NSW) govern the operation and management of poker machines, also known as slot machines, within the state. NSW is the largest poker machine market in Australia, with approximately 90,000 machines. These regulations are designed to ensure responsible gambling practices and include specific rules on machine allocation, return to player percentages, and betting limits.
+
+== Poker Machine Market in NSW ==
+New South Wales hosts the largest number of poker machines in Australia, with around 90,000 machines distributed across various venues. These machines are primarily located in clubs and hotels, with distinct allocation rules for each type of establishment.
+
+== Allocation and Distribution ==
+{| class="wikitable"
+|-
+! Venue Type !! Number of Machines
+|-
+| Clubs || Approximately 70,000
+|-
+| Hotels || Approximately 20,000
+|}
+
+== Regulatory Requirements ==
+Poker machine regulations in NSW include several key requirements aimed at promoting responsible gambling:
+
+* '''Minimum Return to Player (RTP):''' All poker machines must have a minimum RTP of 85%.
+* '''Maximum Bet Limits:''' The maximum bet on poker machines is currently $10, with plans to reduce this to $5 in the future.
+* '''Harm Minimisation Trials:''' NSW is conducting trials to assess the effectiveness of various harm minimisation strategies.
+* '''Cashless Gaming Trials:''' Trials are underway to evaluate the impact of cashless gaming on gambling habits.
+
+== See Also ==
+* [[Poker Machines]]
+* [[Liquor and Gaming NSW]]
+
+== External Links ==
+* [https://www.liquorandgaming.nsw.gov.au/ Liquor & Gaming NSW Official Website]
+
+[[Category:Gambling Types]]

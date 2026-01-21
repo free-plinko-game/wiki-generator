@@ -1,0 +1,84 @@
+<!--
+    Generated: 2026-01-12T11:40:55.596463
+    Page: Glossary E-L
+    Category: Reference
+    Generator: OpenAI GPT-4o
+-->
+The "Glossary E-L" is a comprehensive collection of gambling-related terms that begin with the letters E through L. This glossary serves as a reference for understanding the terminology used within the gambling industry, providing clear definitions and explanations for each term.
+
+== Glossary of Terms E-L ==
+
+=== E ===
+; Edge
+: The advantage that a casino or player has over the other.
+
+; Expected Value
+: The anticipated value for a given investment or bet, calculated as the sum of all possible values each multiplied by the probability of its occurrence.
+
+=== F ===
+; Fixed Odds
+: A betting format where the payout is determined at the time the bet is placed, regardless of any subsequent changes in odds.
+
+; Free Spin
+: A bonus feature in slot machines where the player can spin the reels without wagering additional money.
+
+=== G ===
+; Gambler's Fallacy
+: The mistaken belief that past random events affect the probabilities in future random events.
+
+; Jackpot
+: A large cash prize in a game, typically accumulated until won.
+
+=== H ===
+; High Roller
+: A gambler who wagers large amounts of money.
+
+; House Edge
+: The statistical advantage that the casino has over players, expressed as a percentage of the player's bet.
+
+=== I ===
+; Inside Bet
+: A bet placed on specific numbers within the main area of a roulette table.
+
+; Instant Win Game
+: A game where the outcome is determined immediately after the player completes the game.
+
+=== J ===
+; Jackpot
+: A large prize, usually the top prize in a game.
+
+; Juice
+: A slang term for the commission or fee charged by a bookmaker.
+
+=== K ===
+; Keno
+: A lottery-like gambling game often played at modern casinos.
+
+; Kitty
+: A pool of money collected from players, typically used for communal expenses or prizes.
+
+=== L ===
+; Lay Bet
+: A bet against a particular outcome, typically used in horse racing.
+
+; Lottery
+: A form of gambling that involves drawing numbers at random for a prize.
+
+{| class="wikitable"
+|+ Example Terms and Definitions
+! Term !! Definition
+|-
+| Edge || The advantage that a casino or player has over the other.
+|-
+| Jackpot || A large cash prize in a game, typically accumulated until won.
+|-
+| Keno || A lottery-like gambling game often played at modern casinos.
+|}
+
+== See Also ==
+* [[Glossary of Gambling Terms]]
+
+== External Links ==
+* [https://www.australia.gov.au/information-and-services/money-and-tax/gambling Australian Government - Gambling Information]
+
+[[Category:Reference]]

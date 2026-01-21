@@ -1,0 +1,40 @@
+<!--
+    Generated: 2026-01-12T11:37:08.380509
+    Page: Baccarat
+    Category: Gambling Types
+    Generator: OpenAI GPT-4o
+-->
+Baccarat is a popular card game in Australian casinos, particularly favored by VIP players due to its low house edge and straightforward rules. The game involves betting on the outcome of two hands—the "Banker" and the "Player"—with the option of a "Tie" bet.
+
+== Popularity with VIP Players ==
+Baccarat is especially popular among high-stakes gamblers, often referred to as VIP players, due to its low house edge and the potential for large wins. The game's simplicity and the ability to place large bets make it an attractive choice for those seeking high-risk, high-reward gambling experiences.
+
+== Rules Overview ==
+Baccarat is played between two hands: the "Banker" and the "Player." Each hand is dealt two cards, and the objective is to have a hand value closest to nine. Cards two through nine are worth their face value, tens and face cards are worth zero, and aces are worth one. If the total value of the hand exceeds nine, only the last digit of the total is considered.
+
+== Betting Options ==
+Players can place bets on the "Banker," the "Player," or a "Tie." The "Banker" bet is typically favored due to its slightly lower house edge.
+
+{| class="wikitable"
+|+ Baccarat Betting Options
+! Bet Type !! Payout !! House Edge
+|-
+| Banker || 1:1 (minus 5% commission) || 1.06%
+|-
+| Player || 1:1 || 1.24%
+|-
+| Tie || 8:1 or 9:1 || 14.36%
+|}
+
+== House Edge ==
+The house edge in Baccarat varies depending on the type of bet placed. The "Banker" bet has the lowest house edge at approximately 1.06%, making it the most favorable option for players. The "Player" bet has a slightly higher house edge of 1.24%, while the "Tie" bet has a significantly higher house edge, often exceeding 14%.
+
+== See Also ==
+* [[Casino Table Games]]
+* [[Table Game Odds]]
+
+== External Links ==
+* [https://www.austrac.gov.au/ Australian Transaction Reports and Analysis Centre]
+* [https://www.acma.gov.au/ Australian Communications and Media Authority]
+
+[[Category:Gambling Types]]

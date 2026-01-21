@@ -1,0 +1,49 @@
+<!--
+    Generated: 2026-01-12T11:42:25.193106
+    Page: External Resources
+    Category: Reference
+    Generator: OpenAI GPT-4o
+-->
+External resources related to gambling regulation in Australia provide essential information and support for individuals, researchers, and industry professionals. These resources include government websites, legislative databases, research organisations, support services, and industry bodies. They serve as authoritative references for understanding the legal and social aspects of gambling in Australia.
+
+== Government Websites ==
+* [https://www.australia.gov.au/ Australia.gov.au] - The official government portal providing access to government services and information.
+* [https://www.acma.gov.au/ Australian Communications and Media Authority] - Regulates broadcasting, radiocommunications, telecommunications, and online content.
+
+== Legislation Databases ==
+* [https://www.legislation.gov.au/ Federal Register of Legislation] - The official database of Australian Government legislation, including acts, regulations, and other legislative instruments.
+* [https://www.austlii.edu.au/ Australasian Legal Information Institute (AustLII)] - Provides free access to Australian legal materials.
+
+== Research Organisations ==
+* [https://www.anzsog.edu.au/ Australia and New Zealand School of Government (ANZSOG)] - Conducts research and provides education on public administration and policy.
+* [https://www.aihw.gov.au/ Australian Institute of Health and Welfare (AIHW)] - Provides statistics and information on Australia's health and welfare.
+
+== Support Services ==
+* [https://www.gamblinghelponline.org.au/ Gambling Help Online] - Offers free, confidential support and counselling for people affected by gambling.
+* [https://www.lifeline.org.au/ Lifeline Australia] - Provides 24/7 crisis support and suicide prevention services.
+
+== Industry Bodies ==
+* [https://www.iga.gov.au/ Interactive Gambling Act 2001] - The primary legislation regulating online gambling in Australia.
+* [https://www.iga.org.au/ Independent Gambling Authority (IGA)] - Regulates gambling activities in South Australia.
+
+{| class="wikitable"
+|+ Key Australian Gambling Resources
+|-
+! Resource !! Description
+|-
+| Australia.gov.au || Official government portal for services and information.
+|-
+| Federal Register of Legislation || Database of Australian Government legislation.
+|-
+| Gambling Help Online || Provides support and counselling for gambling issues.
+|}
+
+== See Also ==
+* [[Contact Directory]]
+
+== External Links ==
+* [https://www.australia.gov.au/ Australia.gov.au]
+* [https://www.legislation.gov.au/ Federal Register of Legislation]
+* [https://www.gamblinghelponline.org.au/ Gambling Help Online]
+
+[[Category:Reference]]

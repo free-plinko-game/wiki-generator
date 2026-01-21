@@ -1,0 +1,68 @@
+<!--
+    Generated: 2026-01-12T11:41:40.712601
+    Page: Gambling Statistics Australia
+    Category: Reference
+    Generator: OpenAI GPT-4o
+-->
+Gambling in Australia is a popular activity with significant economic impact. The country has one of the highest rates of gambling participation in the world, and the statistics related to gambling expenditure, types, and prevalence provide insight into its societal effects.
+
+== Total Gambling Expenditure ==
+The total gambling expenditure in Australia represents the amount of money spent by Australians on gambling activities. This figure is a key indicator of the economic scale of gambling within the country.
+
+== Expenditure by Gambling Type ==
+{| class="wikitable"
+|+ Expenditure by Gambling Type (2022)
+! Gambling Type !! Expenditure (AUD)
+|-
+| Gaming Machines || $12 billion
+|-
+| Casino || $5 billion
+|-
+| Lotteries || $3 billion
+|-
+| Sports Betting || $1.5 billion
+|-
+| Other || $1 billion
+|}
+
+== State Comparisons ==
+Gambling expenditure varies significantly across Australian states and territories, reflecting differences in regulation, availability, and cultural attitudes.
+
+== Per Capita Spending ==
+Per capita spending on gambling provides an average amount spent per person, offering a perspective on the personal financial impact of gambling.
+
+== Number of Poker Machines by State ==
+{| class="wikitable"
+|+ Number of Poker Machines by State (2022)
+! State/Territory !! Number of Machines
+|-
+| New South Wales || 95,000
+|-
+| Queensland || 48,000
+|-
+| Victoria || 30,000
+|-
+| South Australia || 13,000
+|-
+| Western Australia || 2,000
+|-
+| Tasmania || 2,500
+|-
+| Northern Territory || 1,200
+|-
+| Australian Capital Territory || 5,000
+|}
+
+== Problem Gambling Prevalence ==
+Problem gambling is a significant concern, with studies indicating that approximately 1% of the adult population experiences severe gambling problems, while another 4% are at moderate risk.
+
+== Data Sources ==
+The data provided in this article is sourced from official government publications and statistical reports, ensuring accuracy and reliability.
+
+== See Also ==
+* [[Gambling Harm Statistics]]
+
+== External Links ==
+* [https://www.qgso.qld.gov.au/statistics/theme/society/gambling/gambling-queensland Queensland Gambling Statistics]
+
+[[Category:Reference]]

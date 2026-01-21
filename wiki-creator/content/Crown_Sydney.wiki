@@ -1,0 +1,46 @@
+<!--
+    Generated: 2026-01-12T11:35:59.936236
+    Page: Crown Sydney
+    Category: Gambling Types
+    Generator: OpenAI GPT-4o
+-->
+'''Crown Sydney''' is a luxury casino and hotel complex located in Barangaroo, Sydney, Australia. It is operated by Crown Resorts and is one of the most recent additions to the Australian gambling landscape. The casino's development has been marked by significant regulatory scrutiny and legal challenges.
+
+== Opening and Licence History ==
+Crown Sydney officially opened its doors in December 2020, although its gaming operations were initially delayed. The casino was developed as part of a broader urban renewal project in the Barangaroo area. Crown Resorts was awarded a licence to operate a casino in Sydney in 2014, with the intention of creating a high-end gaming and hospitality destination.
+
+== Bergin Inquiry Impact ==
+The Bergin Inquiry, conducted by the New South Wales Independent Liquor and Gaming Authority (ILGA), investigated Crown Resorts' suitability to hold a casino licence in Sydney. The inquiry, led by former Supreme Court judge Patricia Bergin, found that Crown was not suitable to operate the casino due to issues related to money laundering and governance failures. The findings were published in February 2021, leading to significant reforms within Crown Resorts.
+
+== Conditional Gaming Licence ==
+Following the Bergin Inquiry, Crown Sydney was granted a conditional gaming licence. The conditions imposed required Crown Resorts to implement extensive changes to its corporate governance and anti-money laundering practices. The ILGA closely monitored these changes before allowing the casino to commence gaming operations.
+
+== Current Operations ==
+As of 2023, Crown Sydney operates under a conditional licence and has implemented numerous reforms to address the issues identified in the Bergin Inquiry. The casino offers a range of gaming options, luxury accommodations, and dining experiences. Crown Sydney continues to work with regulatory bodies to ensure compliance with all legal and ethical standards.
+
+{| class="wikitable"
+|+ Key Facts about Crown Sydney
+|-
+! Feature !! Details
+|-
+| Location || Barangaroo, Sydney
+|-
+| Opening Date || December 2020
+|-
+| Operator || Crown Resorts
+|-
+| Licence Status || Conditional
+|-
+| Regulatory Body || Independent Liquor and Gaming Authority (ILGA)
+|}
+
+== See Also ==
+* [[Casino Gambling]]
+* [[Bergin Inquiry]]
+* [[Liquor and Gaming NSW]]
+
+== External Links ==
+* [https://www.crownresorts.com.au/ Crown Resorts Official Website]
+* [https://www.liquorandgaming.nsw.gov.au/ Independent Liquor and Gaming Authority]
+
+[[Category:Gambling Types]]

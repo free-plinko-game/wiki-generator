@@ -1,0 +1,45 @@
+<!--
+    Generated: 2026-01-12T11:30:49.657385
+    Page: Cryptocurrency Gambling
+    Category: Payment Methods
+    Generator: OpenAI GPT-4o
+-->
+Cryptocurrency gambling refers to the use of digital currencies, such as Bitcoin and Ethereum, to place bets and participate in gambling activities. In Australia, while cryptocurrency itself is legal, gambling laws apply regardless of the payment method used. This means that most cryptocurrency casinos, which are typically offshore, operate illegally within the country.
+
+== Legal Status ==
+Cryptocurrency is recognized as a legal form of payment in Australia. However, the legality of gambling with cryptocurrencies is subject to the same regulations as traditional gambling. The Interactive Gambling Act 2001 prohibits the provision of certain online gambling services to Australians, regardless of the currency used.
+
+{| class="wikitable"
+|+ Cryptocurrency Gambling in Australia
+! Aspect !! Details
+|-
+| Legal Status || Cryptocurrency is legal; gambling laws apply
+|-
+| Regulation || Subject to the Interactive Gambling Act 2001
+|-
+| AUSTRAC Registration || Required for cryptocurrency exchanges
+|}
+
+== Risks of Cryptocurrency Gambling ==
+Cryptocurrency gambling carries several risks, including:
+
+* '''Irreversibility''': Transactions cannot be reversed once completed.
+* '''Volatility''': The value of cryptocurrencies can fluctuate significantly.
+* '''Scams''': Increased risk of fraudulent schemes and unlicensed operators.
+
+== Tax Implications ==
+The Australian Taxation Office (ATO) considers cryptocurrencies as assets for tax purposes. This means that any gains from gambling with cryptocurrencies may be subject to capital gains tax. It is important for individuals to maintain accurate records of their transactions.
+
+== Licensed Operators ==
+As of the last update, there are no licensed Australian gambling operators that accept cryptocurrencies as a payment method. Most operators that do accept cryptocurrencies are based offshore and are not regulated under Australian law.
+
+== See Also ==
+* [[Illegal Offshore Gambling]]
+* [[Anti-Money Laundering and Gambling]]
+* [[AUSTRAC]]
+
+== External Links ==
+* [https://www.austrac.gov.au/ AUSTRAC]
+* [https://www.ato.gov.au/ Australian Taxation Office]
+
+[[Category:Payment Methods]]

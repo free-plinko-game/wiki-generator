@@ -1,0 +1,43 @@
+<!--
+    Generated: 2026-01-12T11:39:59.302713
+    Page: Finkelstein Royal Commission
+    Category: History
+    Generator: OpenAI GPT-4o
+-->
+The '''Finkelstein Royal Commission''', formally known as the Victorian Royal Commission into Crown Melbourne, was an inquiry led by Commissioner Ray Finkelstein AO QC. The commission was established to investigate the suitability of Crown Melbourne to hold a casino license. The final report was delivered in October 2021, concluding that Crown was unsuitable to operate the casino without significant reforms.
+
+== Background ==
+The Royal Commission was initiated in response to allegations of misconduct and regulatory breaches by Crown Melbourne. The inquiry aimed to assess Crown's compliance with legal and ethical standards required for casino operations.
+
+== Key Findings ==
+The Finkelstein Royal Commission's report highlighted several critical issues with Crown Melbourne's operations:
+* Crown was found unsuitable to hold a casino license due to systemic governance and operational failures.
+* Evidence of money laundering and other illegal activities was uncovered.
+* The report recommended the appointment of a special manager to oversee Crown's operations for a period of two years.
+
+== Recommendations ==
+The Royal Commission made several recommendations to address the issues identified:
+* Appointment of a special manager to supervise Crown Melbourne's operations.
+* Establishment of the Victorian Gambling and Casino Control Commission (VGCCC) to replace the Victorian Commission for Gambling and Liquor Regulation (VCGLR).
+
+== Implementation ==
+Following the report, the Victorian government acted on the recommendations:
+{| class="wikitable"
+|-
+! Action !! Date
+|-
+| Special Manager Appointed || November 2021
+|-
+| VGCCC Established || January 2022
+|}
+
+== See Also ==
+* [[Major Gambling Inquiries]]
+* [[Crown Melbourne]]
+* [[Victorian Gambling and Casino Control Commission]]
+
+== External Links ==
+* [https://www.vic.gov.au/royal-commission-crown-melbourne Official Royal Commission into Crown Melbourne Website]
+* [https://www.vgccc.vic.gov.au/ Victorian Gambling and Casino Control Commission]
+
+[[Category:History]]

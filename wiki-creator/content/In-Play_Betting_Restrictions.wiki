@@ -1,0 +1,49 @@
+<!--
+    Generated: 2026-01-12T11:19:10.766992
+    Page: In-Play Betting Restrictions
+    Category: Federal Legislation
+    Generator: OpenAI GPT-4o
+-->
+'''In-Play Betting Restrictions''' refer to the legal limitations imposed on betting activities conducted during live sporting events in Australia. Under current regulations, online in-play betting is prohibited, while telephone in-play betting is permitted. These rules are primarily aimed at harm minimisation and maintaining the integrity of sports.
+
+== Online In-Play Betting Prohibition ==
+The prohibition of online in-play betting in Australia is governed by the [[Interactive Gambling Act 2001]]. This legislation restricts the offering of real-time betting services over the internet to prevent problem gambling and protect consumers.
+
+== Telephone In-Play Betting ==
+While online in-play betting is restricted, Australian law allows for in-play betting via telephone. This exception is intended to provide a controlled environment where operators can monitor and manage betting activities more effectively.
+
+== Policy Rationale ==
+The primary rationale behind these restrictions is harm minimisation. By limiting the immediacy and accessibility of in-play betting, regulators aim to reduce the potential for impulsive gambling and associated harms.
+
+== Click-to-Call Workarounds ==
+Operators have developed "click-to-call" systems as a workaround to the online in-play betting prohibition. These systems allow bettors to place in-play bets by initiating a call through an online platform, effectively complying with the telephone betting requirement.
+
+== Enforcement Challenges ==
+Enforcing in-play betting restrictions poses significant challenges. The rise of digital platforms and international operators complicates regulatory oversight, making it difficult to monitor and enforce compliance effectively.
+
+== International Comparison ==
+Internationally, in-play betting regulations vary. For example, the United Kingdom permits online in-play betting, while other jurisdictions, like the United States, have a mix of restrictions depending on state laws.
+
+== Reform Proposals ==
+There have been calls for reform to address the challenges and inconsistencies in current regulations. Proposals include tightening enforcement mechanisms, revisiting the click-to-call loophole, and considering the potential benefits of regulated online in-play betting.
+
+{| class="wikitable"
+|+ In-Play Betting Regulations by Country
+! Country !! Online In-Play Betting !! Telephone In-Play Betting
+|-
+| Australia || Prohibited || Permitted
+|-
+| United Kingdom || Permitted || Permitted
+|-
+| United States || Varies by state || Varies by state
+|}
+
+== See Also ==
+* [[Interactive Gambling Act 2001]]
+* [[Sports Betting]]
+
+== External Links ==
+* [https://www.legislation.gov.au/Details/C2017C00323 Interactive Gambling Act 2001 - Federal Register of Legislation]
+* [https://www.acma.gov.au/online-gambling Australian Communications and Media Authority - Online Gambling]
+
+[[Category:Federal Legislation]]

@@ -1,0 +1,57 @@
+<!--
+    Generated: 2026-01-12T11:36:33.049327
+    Page: Casino Table Games
+    Category: Gambling Types
+    Generator: OpenAI GPT-4o
+-->
+Casino table games are a popular form of gambling available in Australian casinos, offering a variety of games where players bet against the house or each other. These games typically involve cards, dice, or wheels and are governed by specific rules and strategies. Common table games include Blackjack, Roulette, Baccarat, Craps, Poker, and Pai Gow, each with unique gameplay and betting options.
+
+== Blackjack ==
+Blackjack is a card game where players aim to have a hand value closer to 21 than the dealer without exceeding it. It is one of the most popular casino games due to its simple rules and strategic depth.
+
+== Roulette ==
+Roulette involves a spinning wheel with numbered slots and a small ball. Players bet on where the ball will land, with options including specific numbers, colors, or ranges. The game is known for its variety of betting options and potential high payouts.
+
+== Baccarat ==
+Baccarat is a card game where players bet on the outcome of two hands: the "player" and the "banker." The goal is to have a hand value closest to nine. It is a game of chance with straightforward rules.
+
+== Craps ==
+Craps is a dice game where players bet on the outcome of the roll, or a series of rolls, of two dice. The game is known for its fast pace and variety of betting options.
+
+== Poker ==
+Poker is a card game that combines skill, strategy, and luck. Players bet based on the strength of their hand, with the goal of winning the pot by having the best hand or by bluffing opponents into folding.
+
+== Pai Gow ==
+Pai Gow is a game played with tiles or cards, where players aim to create two hands that beat the dealer's hands. It combines elements of poker and traditional Chinese domino games.
+
+== Minimum Bets ==
+Minimum bets for casino table games in Australia vary depending on the casino and the specific game. Generally, minimum bets can range from as low as $5 to $50 or more for high-stakes tables.
+
+{| class="wikitable"
+|+ Minimum Bets for Common Table Games in Australian Casinos
+! Game !! Typical Minimum Bet
+|-
+| Blackjack || $10
+|-
+| Roulette || $5
+|-
+| Baccarat || $20
+|-
+| Craps || $10
+|-
+| Poker || $5
+|-
+| Pai Gow || $15
+|}
+
+== See Also ==
+* [[Casino Gambling]]
+* [[Blackjack]]
+* [[Roulette]]
+* [[Baccarat]]
+
+== External Links ==
+* [https://www.australia.gov.au/information-and-services/money-and-tax/gambling Australian Government Gambling Information]
+* [https://www.acma.gov.au/gambling Australian Communications and Media Authority - Gambling]
+
+[[Category:Gambling Types]]

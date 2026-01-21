@@ -1,0 +1,55 @@
+<!--
+    Generated: 2026-01-12T11:34:21.316267
+    Page: Greyhound Racing Betting
+    Category: Gambling Types
+    Generator: OpenAI GPT-4o
+-->
+Greyhound racing betting in Australia involves placing wagers on the outcome of greyhound races, which are events where greyhounds compete on a track. This form of betting is regulated by state and territory governments, with each jurisdiction having its own rules and regulations.
+
+== How Greyhound Racing Works ==
+Greyhound racing is a competitive sport where greyhounds race around an oval track, chasing a mechanical lure. The races typically involve six to eight dogs, and the winner is the first to cross the finish line. Races are held at various tracks across Australia, and the sport is governed by state-specific racing authorities.
+
+== Betting Options ==
+There are several betting options available for greyhound racing in Australia, including:
+
+* '''Win Bet''': A bet on a greyhound to finish first.
+* '''Place Bet''': A bet on a greyhound to finish in the top two or three, depending on the number of runners.
+* '''Each-Way Bet''': A combination of a win and a place bet.
+* '''Quinella''': A bet on two greyhounds to finish first and second in any order.
+* '''Exacta''': A bet on two greyhounds to finish first and second in the exact order.
+* '''Trifecta''': A bet on three greyhounds to finish first, second, and third in the exact order.
+* '''First Four''': A bet on four greyhounds to finish first, second, third, and fourth in the exact order.
+
+== State Variations ==
+Each Australian state and territory has its own regulatory body overseeing greyhound racing, leading to variations in rules and betting options. The table below outlines some of the key differences:
+
+{| class="wikitable"
+|+ Greyhound Racing Regulatory Bodies by State
+! State/Territory !! Regulatory Body !! Key Regulations
+|-
+| New South Wales || Greyhound Racing NSW || Strict welfare standards, mandatory registration
+|-
+| Victoria || Greyhound Racing Victoria || Focus on integrity and animal welfare
+|-
+| Queensland || Racing Queensland || Comprehensive betting options, welfare initiatives
+|-
+| South Australia || Greyhound Racing SA || Emphasis on safety and welfare
+|-
+| Western Australia || Racing and Wagering WA || Advanced betting technologies, welfare policies
+|-
+| Tasmania || Tasracing || Small-scale operations, community engagement
+|-
+| Northern Territory || Racing Commission || Limited racing calendar, focus on integrity
+|-
+| Australian Capital Territory || ACT Gambling and Racing Commission || Limited racing events, strict regulations
+|}
+
+== See Also ==
+* [[Racing Betting]]
+
+== External Links ==
+* [https://www.gwic.nsw.gov.au Greyhound Welfare & Integrity Commission]
+* [https://www.grv.org.au Greyhound Racing Victoria]
+* [https://www.racingqueensland.com.au Racing Queensland]
+
+[[Category:Gambling Types]]

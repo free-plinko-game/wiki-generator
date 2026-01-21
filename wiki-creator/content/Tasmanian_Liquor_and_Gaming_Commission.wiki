@@ -1,0 +1,42 @@
+<!--
+    Generated: 2026-01-12T11:24:10.633505
+    Page: Tasmanian Liquor and Gaming Commission
+    Category: Regulatory Bodies
+    Generator: OpenAI GPT-4o
+-->
+The '''Tasmanian Liquor and Gaming Commission''' is the primary regulatory authority responsible for overseeing gambling activities in Tasmania, Australia. It ensures that gambling is conducted fairly and responsibly, in compliance with the state's legislation. The Commission regulates casinos, gaming machines, and implements future gaming market reforms, maintaining a minimum return to player (RTP) requirement of 85%.
+
+== Casino Regulation ==
+The Commission oversees the regulation of casinos in Tasmania, including the [[Wrest Point Casino]] and the Country Club Casino. These establishments are required to adhere to strict guidelines to ensure the integrity and fairness of casino operations.
+
+== Gaming Machine Regulation ==
+The regulation of gaming machines is a critical function of the Commission. It sets and enforces standards for the operation of gaming machines, ensuring they meet the minimum RTP requirement of 85%. This ensures that players receive a fair chance of winning, in line with regulatory standards.
+
+== Future Gaming Market Reforms ==
+The Tasmanian Liquor and Gaming Commission is actively involved in shaping the future of the gaming market in Tasmania. This includes implementing reforms aimed at enhancing the regulatory framework, promoting responsible gambling, and adapting to technological advancements in the gaming industry.
+
+== Minimum RTP Requirements ==
+The Commission mandates a minimum return to player (RTP) percentage of 85% for gaming machines. This requirement is designed to ensure that a fair proportion of the money wagered by players is returned as winnings over time.
+
+{| class="wikitable"
+|+ Key Facts about the Tasmanian Liquor and Gaming Commission
+|-
+! Aspect !! Details
+|-
+| Established || 1993
+|-
+| Jurisdiction || Tasmania, Australia
+|-
+| Minimum RTP || 85%
+|-
+| Regulated Entities || Casinos, Gaming Machines
+|}
+
+== See Also ==
+* [[State and Territory Regulators]]
+* [[Wrest Point Casino]]
+
+== External Links ==
+* [https://www.treasury.tas.gov.au/liquor-and-gaming Tasmanian Liquor and Gaming]
+
+[[Category:Regulatory Bodies]]

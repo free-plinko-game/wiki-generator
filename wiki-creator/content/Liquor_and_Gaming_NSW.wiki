@@ -1,0 +1,50 @@
+<!--
+    Generated: 2026-01-12T11:23:29.872210
+    Page: Liquor and Gaming NSW
+    Category: Regulatory Bodies
+    Generator: OpenAI GPT-4o
+-->
+'''Liquor and Gaming NSW''' is the regulatory authority responsible for overseeing the liquor, gaming, and registered clubs industries in New South Wales, Australia. It ensures compliance with the relevant legislation and policies to promote responsible gambling and the minimization of harm associated with gambling activities.
+
+== Jurisdiction and Powers ==
+Liquor and Gaming NSW operates under the jurisdiction of the New South Wales Government. It is empowered to enforce laws and regulations related to liquor licensing, gaming operations, and the conduct of registered clubs. The agency's responsibilities include monitoring compliance, investigating breaches, and implementing policies to ensure the integrity of the gaming and liquor industries.
+
+== Licensing Functions ==
+The agency is responsible for issuing licenses for various gambling activities, including poker machines, casinos, and club gaming. It assesses applications to ensure they meet the required standards and conditions set forth by the legislation. Licensing functions also involve the renewal, suspension, or cancellation of licenses as necessary.
+
+== Poker Machine Regulation ==
+Liquor and Gaming NSW regulates the operation of poker machines in clubs and hotels across New South Wales. The agency sets the rules for the installation, maintenance, and operation of these machines to ensure fair play and consumer protection. It also oversees the distribution of poker machine entitlements among venues.
+
+== Casino Regulation ==
+The agency oversees the regulation of casinos in New South Wales, including [[The Star Sydney]] and [[Crown Sydney]]. It ensures that these establishments comply with the Casino Control Act and other relevant legislation. This includes monitoring casino operations, auditing financial transactions, and ensuring responsible gambling practices are in place.
+
+== Club and Hotel Gaming ==
+In addition to poker machines, Liquor and Gaming NSW regulates other forms of gaming in clubs and hotels, such as keno and lotteries. The agency ensures that these activities are conducted fairly and transparently, with appropriate measures in place to protect patrons.
+
+== Minimum RTP Requirements ==
+Liquor and Gaming NSW mandates a minimum return to player (RTP) percentage of 85% for poker machines. This requirement ensures that a fair portion of the money wagered on poker machines is returned to players over time, promoting fairness and transparency in gaming operations.
+
+{| class="wikitable"
+|+ Key Facts about Liquor and Gaming NSW
+|-
+! Aspect !! Details
+|-
+| Jurisdiction || New South Wales, Australia
+|-
+| Minimum RTP for Poker Machines || 85%
+|-
+| Major Casinos Regulated || The Star Sydney, Crown Sydney
+|-
+| Licensing Functions || Issuance, renewal, suspension, cancellation
+|}
+
+== See Also ==
+* [[State and Territory Regulators]]
+* [[NSW Poker Machine Regulations]]
+* [[The Star Sydney]]
+* [[Crown Sydney]]
+
+== External Links ==
+* [https://www.liquorandgaming.nsw.gov.au Liquor & Gaming NSW]
+
+[[Category:Regulatory Bodies]]

@@ -1,0 +1,43 @@
+<!--
+    Generated: 2026-01-12T11:30:59.226224
+    Page: Prepaid Cards and Vouchers
+    Category: Payment Methods
+    Generator: OpenAI GPT-4o
+-->
+Prepaid cards and vouchers are popular payment methods used for online transactions, including gambling, due to their ease of use and security. In Australia, Paysafecard and Neosurf are two widely used prepaid options that allow users to make payments without the need for a bank account or credit card.
+
+== Paysafecard ==
+Paysafecard is a prepaid online payment method that allows users to make transactions by purchasing a voucher with a 16-digit PIN code. These vouchers can be bought at various retail locations and used to pay for services and goods online.
+
+== Neosurf ==
+Neosurf is another prepaid voucher system that operates similarly to Paysafecard. Users can purchase Neosurf vouchers at retail outlets and use the code provided to make online payments securely.
+
+== How They Work ==
+Prepaid cards and vouchers work by allowing users to purchase a specific amount of credit, which can then be used to make payments online. The process typically involves:
+* Purchasing a voucher with a unique code from a retail location.
+* Entering the code on the merchant's website during checkout.
+* Completing the transaction without the need for personal financial information.
+
+== Availability in Australia ==
+Both Paysafecard and Neosurf are available in Australia and can be purchased at numerous retail locations across the country. They are accepted by various online merchants, including those in the gambling industry.
+
+== Limits ==
+Prepaid cards and vouchers often have limits on the amount that can be loaded or spent. These limits can vary depending on the provider and the regulations in place. Users should check the specific terms and conditions of each service for detailed information.
+
+{| class="wikitable"
+|+ Prepaid Card and Voucher Limits
+! Provider !! Minimum Amount !! Maximum Amount
+|-
+| Paysafecard || AUD 10 || AUD 100
+|-
+| Neosurf || AUD 10 || AUD 250
+|}
+
+== See Also ==
+* [[Gambling Payment Methods]]
+
+== External Links ==
+* [https://www.paysafecard.com/en-au/ Official Paysafecard Australia]
+* [https://www.neosurf.com/en_AU/ Official Neosurf Australia]
+
+[[Category:Payment Methods]]

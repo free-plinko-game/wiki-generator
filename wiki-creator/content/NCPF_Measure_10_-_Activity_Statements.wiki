@@ -1,0 +1,48 @@
+<!--
+    Generated: 2026-01-12T11:21:12.030644
+    Page: NCPF Measure 10 - Activity Statements
+    Category: Federal Legislation
+    Generator: OpenAI GPT-4o
+-->
+The "NCPF Measure 10 - Activity Statements" is a regulation under the National Consumer Protection Framework (NCPF) that mandates wagering operators in Australia to provide customers with monthly activity statements. These statements are intended to promote transparency and responsible gambling by detailing a customer's gambling activity over the specified period.
+
+== Monthly Activity Statement Requirement ==
+Under NCPF Measure 10, all licensed wagering operators are required to issue monthly activity statements to their customers. This measure is designed to help individuals monitor their gambling behavior and make informed decisions.
+
+== Information Included in Activity Statements ==
+The activity statements must include the following information:
+* Total deposits made during the month
+* Total withdrawals made during the month
+* Net position, which is the difference between total deposits and withdrawals
+
+== Delivery Method ==
+Activity statements must be delivered to customers through one of the following methods:
+* Email
+* In-app notifications
+
+== Format Standards ==
+The format of the activity statements must adhere to specific standards to ensure clarity and accessibility. These standards include:
+* Clear and concise presentation of financial information
+* Use of simple language to ensure understanding
+* Consistent layout across all statements
+
+{| class="wikitable"
+|+ Example of Activity Statement Format
+! Information Type !! Example
+|-
+| Total Deposits || $500
+|-
+| Total Withdrawals || $300
+|-
+| Net Position || $200
+|}
+
+== See Also ==
+* [[National Consumer Protection Framework]]
+* [[Responsible Gambling Tools]]
+
+== External Links ==
+* [https://www.dss.gov.au/ Department of Social Services - National Consumer Protection Framework]
+* [https://www.acma.gov.au/ Australian Communications and Media Authority]
+
+[[Category:Federal Legislation]]

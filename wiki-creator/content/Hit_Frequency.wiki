@@ -1,0 +1,37 @@
+<!--
+    Generated: 2026-01-12T11:29:15.728377
+    Page: Hit Frequency
+    Category: Technical Standards
+    Generator: OpenAI GPT-4o
+-->
+Hit frequency is a term used in the gambling industry to describe the rate at which a gambling game, such as a slot machine or pokie, pays out winnings to players. It is an important metric for understanding the dynamics of a game, as it indicates how often a player can expect to receive a payout during gameplay.
+
+== Relationship to Volatility ==
+Hit frequency is closely related to the concept of volatility in gambling games. Volatility refers to the risk level of a game, indicating how much the payouts can vary over time. Games with high hit frequency tend to have lower volatility, as they provide frequent but smaller payouts. Conversely, games with low hit frequency often have higher volatility, offering larger payouts but less frequently.
+
+== Hit Frequency vs RTP ==
+While hit frequency measures how often a game pays out, Return to Player (RTP) is a separate metric that indicates the percentage of total wagered money that a game is expected to return to players over time. A game can have a high RTP but a low hit frequency, meaning that while the game returns a significant portion of wagers over the long term, payouts are infrequent.
+
+== Typical Ranges for Pokies ==
+In the context of pokies, or slot machines, hit frequency can vary widely. However, typical ranges for hit frequency in pokies are often between 10% to 30%. This means that in a game with a 20% hit frequency, a player can expect to receive a payout approximately once every five spins.
+
+{| class="wikitable"
+|+ Typical Hit Frequency Ranges for Pokies
+! Hit Frequency Range !! Description
+|-
+| 10% - 15% || Low hit frequency, higher volatility
+|-
+| 16% - 25% || Medium hit frequency, moderate volatility
+|-
+| 26% - 30% || High hit frequency, lower volatility
+|}
+
+== See Also ==
+* [[Volatility and Variance]]
+* [[Return to Player]]
+
+== External Links ==
+* [https://www.acma.gov.au/theACMA/gambling Australian Communications and Media Authority - Gambling]
+* [https://www.gamblinghelponline.org.au/ Gambling Help Online]
+
+[[Category:Technical Standards]]

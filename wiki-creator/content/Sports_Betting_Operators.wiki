@@ -1,0 +1,58 @@
+<!--
+    Generated: 2026-01-12T11:33:06.952180
+    Page: Sports Betting Operators
+    Category: Gambling Types
+    Generator: OpenAI GPT-4o
+-->
+Sports betting operators in Australia are entities licensed to offer wagering services on various sports events. These operators are regulated under state and territory laws, ensuring compliance with national standards for responsible gambling and consumer protection.
+
+== Major Operators ==
+In Australia, several major sports betting operators are licensed to provide services. These include:
+
+* Sportsbet
+* Ladbrokes
+* TAB
+* PointsBet
+* Neds
+* Unibet
+
+== Licensing Status ==
+Sports betting operators in Australia must obtain a license from the relevant state or territory authority. The Northern Territory is a popular licensing jurisdiction due to its favorable regulatory environment.
+
+== Key Features Comparison ==
+The following table provides a comparison of key features offered by major sports betting operators in Australia:
+
+{| class="wikitable"
+|-
+! Operator !! Mobile App !! Live Betting !! Cash Out !! Multi-Bet Options
+|-
+| Sportsbet || Yes || Yes || Yes || Yes
+|-
+| Ladbrokes || Yes || Yes || Yes || Yes
+|-
+| TAB || Yes || Yes || Yes || Yes
+|-
+| PointsBet || Yes || Yes || Yes || Yes
+|-
+| Neds || Yes || Yes || Yes || Yes
+|-
+| Unibet || Yes || Yes || Yes || Yes
+|}
+
+== Responsible Gambling Tools ==
+Australian sports betting operators are required to offer responsible gambling tools to help users manage their betting activities. These tools typically include:
+
+* Deposit limits
+* Time-out periods
+* Self-exclusion options
+* Reality checks
+
+== See Also ==
+* [[Sports Betting]]
+* [[Northern Territory Licensing]]
+
+== External Links ==
+* [https://www.acma.gov.au Australian Communications and Media Authority]
+* [https://www.responsiblegambling.vic.gov.au Victorian Responsible Gambling Foundation]
+
+[[Category:Gambling Types]]

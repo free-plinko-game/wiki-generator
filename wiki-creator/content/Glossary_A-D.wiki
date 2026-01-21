@@ -1,0 +1,64 @@
+<!--
+    Generated: 2026-01-12T11:40:44.926501
+    Page: Glossary A-D
+    Category: Reference
+    Generator: OpenAI GPT-4o
+-->
+The "Glossary A-D" is a comprehensive reference for terms related to gambling, covering entries from A to D. This glossary aims to provide clear definitions and explanations of various gambling-related terms, facilitating a better understanding of the industry and its terminology.
+
+== Glossary of Terms A-D ==
+
+=== A ===
+; Action
+: The total amount of money wagered in a specific period or on a particular event.
+; Ante
+: A small bet all players are required to make before a hand is dealt in poker.
+; Arbitrage
+: A betting strategy that involves placing bets on all possible outcomes of an event to guarantee a profit.
+
+=== B ===
+; Bankroll
+: The total amount of money a player has set aside for gambling purposes.
+; Bet
+: A wager placed on the outcome of a game or event.
+; Bookmaker
+: An individual or organization that accepts bets on sporting and other events at agreed-upon odds.
+
+=== C ===
+; Casino
+: A facility that houses and accommodates certain types of gambling activities.
+; Chip
+: A small disk used in casinos to represent money.
+; Comp
+: Complimentary items or services given to players by the casino.
+
+=== D ===
+; Dealer
+: The person responsible for dealing cards and managing the game at a casino table.
+; Double Down
+: In blackjack, the option to double the initial bet in exchange for committing to stand after receiving one more card.
+; Drop
+: The total amount of money exchanged for chips at a casino table.
+
+== Structured Data ==
+{| class="wikitable"
+|+ Glossary A-D Key Terms
+! Term !! Definition
+|-
+| Action || The total amount of money wagered in a specific period or on a particular event.
+|-
+| Bankroll || The total amount of money a player has set aside for gambling purposes.
+|-
+| Casino || A facility that houses and accommodates certain types of gambling activities.
+|-
+| Dealer || The person responsible for dealing cards and managing the game at a casino table.
+|}
+
+== See Also ==
+* [[Glossary of Gambling Terms]]
+
+== External Links ==
+* [https://www.australia.gov.au/information-and-services/sport-and-recreation/gambling Australian Government Gambling Information]
+* [https://www.acma.gov.au/gambling Australian Communications and Media Authority - Gambling]
+
+[[Category:Reference]]

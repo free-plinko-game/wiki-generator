@@ -1,0 +1,60 @@
+<!--
+    Generated: 2026-01-12T12:24:22.821473
+    Page: Gambling in Australia
+    Category: General
+    Generator: OpenAI GPT-4o
+-->
+Gambling in Australia is a popular activity with one of the highest participation rates globally. The country has a rich history of gambling, with various forms of legal gambling regulated at both federal and state levels. This page provides an overview of the history, types, regulation, and key statistics related to gambling in Australia.
+
+== History of Gambling in Australia ==
+Gambling in Australia dates back to the colonial era, with horse racing being one of the earliest forms of organized gambling. The first legal casino, Wrest Point, was established in 1973 in Tasmania. The 1990s saw a significant expansion in poker machines, commonly known as "pokies." Online gambling became regulated with the introduction of the Interactive Gambling Act 2001.
+
+== Types of Legal Gambling ==
+* '''Racing:''' Includes horse, harness, and greyhound racing.
+* '''Sports Betting:''' Legal and regulated across the country.
+* '''Lotteries:''' Offered by both state and national operators.
+* '''Poker Machines (Pokies):''' Widely available in clubs and pubs.
+* '''Casino Table Games:''' Available in licensed casinos.
+* '''Keno:''' Offered in various venues and online.
+
+== Regulatory Framework ==
+The regulatory framework for gambling in Australia is divided between the federal and state/territory governments. The federal government primarily regulates online gambling through the Interactive Gambling Act 2001, while land-based gambling is regulated by individual states and territories.
+
+== Key Statistics ==
+{| class="wikitable"
+|-
+! Statistic !! Value
+|-
+| Total gambling losses || Over $25 billion per year
+|-
+| Per capita losses || Among the highest globally
+|-
+| Number of poker machines || Approximately 200,000
+|}
+
+== Problem Gambling ==
+Problem gambling affects a small but significant portion of the Australian population. Approximately 0.5-1% of adults are considered problem gamblers, with an additional 2-3% at moderate risk. Various consumer protection measures are in place, including BetStop, a national self-exclusion register.
+
+== Consumer Protection Measures ==
+Australia has implemented several consumer protection measures to address problem gambling, including:
+* BetStop national self-exclusion
+* Responsible gambling codes of conduct
+* Support services like Gambling Help Online
+
+== See Also ==
+* [[Gambling Laws]]
+* [[Interactive Gambling Act 2001]]
+* [[Regulatory Bodies]]
+* [[Poker Machines]]
+* [[Sports Betting]]
+* [[Lotteries]]
+* [[Casino Gambling]]
+* [[Problem Gambling]]
+* [[BetStop]]
+* [[Australian Gambling Statistics]]
+
+== External Links ==
+* [https://www.acma.gov.au/online-gambling ACMA - Online Gambling]
+* [https://www.gamblinghelponline.org.au Gambling Help Online]
+
+[[Category:General]]

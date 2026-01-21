@@ -1,0 +1,43 @@
+<!--
+    Generated: 2026-01-12T11:24:24.413017
+    Page: ACT Gambling and Racing Commission
+    Category: Regulatory Bodies
+    Generator: OpenAI GPT-4o
+-->
+The '''ACT Gambling and Racing Commission''' is the regulatory authority responsible for overseeing gambling and racing activities within the Australian Capital Territory (ACT). The Commission ensures that gambling operations are conducted fairly and transparently, in compliance with the laws and regulations of the ACT.
+
+== Responsibilities ==
+The ACT Gambling and Racing Commission has several key responsibilities, including the regulation of gaming machines, oversight of Casino Canberra, and the management of club gaming activities. The Commission is tasked with ensuring that these activities are conducted in a manner that minimizes harm and upholds the integrity of the industry.
+
+== Gaming Machine Regulation ==
+The Commission regulates the operation of gaming machines in the ACT, ensuring compliance with legislative requirements. This includes setting and enforcing technical standards, as well as monitoring the distribution and use of gaming machines.
+
+== Casino Canberra Oversight ==
+Casino Canberra is the only casino in the ACT, and its operations are subject to the oversight of the ACT Gambling and Racing Commission. The Commission ensures that the casino adheres to the legal and regulatory framework, promoting responsible gambling practices and preventing criminal activities.
+
+== Club Gaming ==
+The Commission also oversees club gaming activities, which are a significant part of the ACT's gambling landscape. This includes the regulation of gaming machines within clubs and ensuring that these activities contribute to community benefits.
+
+== Minimum RTP Requirements ==
+The ACT Gambling and Racing Commission mandates a minimum return to player (RTP) requirement of 87% for gaming machines. This means that, on average, players can expect to receive 87% of their wagers back over time, ensuring a fair gaming environment.
+
+{| class="wikitable"
+|+ Key Facts
+|-
+! Aspect !! Description
+|-
+| Minimum RTP || 87%
+|-
+| Casino Oversight || Casino Canberra
+|-
+| Regulatory Body || ACT Gambling and Racing Commission
+|}
+
+== See Also ==
+* [[State and Territory Regulators]]
+* [[Casino Canberra]]
+
+== External Links ==
+* [https://www.gamblingandracing.act.gov.au ACT Gambling and Racing]
+
+[[Category:Regulatory Bodies]]

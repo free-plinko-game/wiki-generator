@@ -1,0 +1,64 @@
+<!--
+    Generated: 2026-01-12T12:12:23.939056
+    Page: Responsible Gambling
+    Category: Consumer Protection
+    Generator: OpenAI GPT-4o
+-->
+Responsible gambling refers to the practices and strategies designed to ensure that gambling remains a safe and enjoyable activity, minimizing the risk of harm to individuals and the community. In Australia, responsible gambling is supported by a range of measures and resources aimed at promoting safe gambling behaviors and providing assistance to those who may experience gambling-related issues.
+
+== National Consumer Protection Framework ==
+The National Consumer Protection Framework for Online Wagering in Australia consists of 10 measures designed to enhance consumer protection and promote responsible gambling. These measures include:
+* Prohibition of lines of credit offered by wagering providers
+* Consistent responsible gambling messaging
+* Staff training in responsible gambling
+* Reduction in direct marketing
+* Account closure and self-exclusion options
+* Activity statements for online wagering accounts
+* Pre-commitment options for deposit limits
+* Consistent customer verification processes
+* Restrictions on inducements
+* National self-exclusion register
+
+== BetStop National Self-Exclusion Register ==
+The BetStop National Self-Exclusion Register is a free service that allows individuals to exclude themselves from all licensed interactive wagering services in Australia. 
+
+; How to Register
+: Individuals can register for BetStop by visiting [https://www.betstop.gov.au BetStop] or calling 1800 931 934.
+
+; Exclusion Periods
+: The available exclusion periods include 3 months, 6 months, 12 months, or a lifetime exclusion.
+
+== Self-Help Tools Available ==
+Responsible gambling is supported by various self-help tools that allow individuals to manage their gambling activities effectively. These tools include:
+* '''Deposit limits''': Set limits on the amount of money deposited into gambling accounts.
+* '''Loss limits''': Establish limits on the amount of money that can be lost.
+* '''Time limits and session reminders''': Set limits on the duration of gambling sessions and receive reminders.
+* '''Reality checks''': Periodic notifications to remind gamblers of the time spent gambling.
+* '''Activity statements''': Detailed statements of gambling activity to help track spending and behavior.
+
+== Operator Obligations ==
+Operators of gambling services in Australia are required to adhere to responsible gambling practices. This includes providing information on responsible gambling, offering self-exclusion options, and ensuring that staff are trained to recognize and respond to signs of problem gambling.
+
+== Warning Signs of Problem Gambling ==
+Recognizing the warning signs of problem gambling is crucial for early intervention. These signs may include:
+* Preoccupation with gambling
+* Increasing amounts of money gambled to achieve excitement
+* Repeated unsuccessful attempts to control or stop gambling
+* Gambling to escape problems or relieve negative emotions
+* Lying to conceal the extent of gambling involvement
+
+== Getting Help ==
+Individuals seeking help for gambling-related issues can contact Gambling Help Online at 1800 858 858 or visit [https://www.gamblinghelponline.org.au Gambling Help Online] for support and resources.
+
+== See Also ==
+* [[BetStop]]
+* [[National Consumer Protection Framework]]
+* [[Responsible Gambling Tools]]
+* [[Problem Gambling]]
+* [[Gambling Help Services]]
+
+== External Links ==
+* [https://www.betstop.gov.au BetStop]
+* [https://www.gamblinghelponline.org.au Gambling Help Online]
+
+[[Category:Consumer Protection]]

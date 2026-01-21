@@ -1,0 +1,58 @@
+<!--
+    Generated: 2026-01-12T11:33:52.689989
+    Page: TAB
+    Category: Gambling Types
+    Generator: OpenAI GPT-4o
+-->
+The Totalisator Agency Board (TAB) is Australia's pari-mutuel betting system, which allows bettors to place wagers on horse racing, harness racing, and greyhound racing. The system pools all bets together, with payouts determined by the total amount wagered after the deduction of a commission.
+
+== History ==
+The Totalisator Agency Board was established in the 1960s in various Australian states to provide a legal framework for off-course betting. The introduction of the TAB aimed to curb illegal betting activities and to generate revenue for the government. Over the years, the TAB has evolved, incorporating technological advancements and expanding its services to include online betting.
+
+== How Pari-Mutuel Betting Works ==
+Pari-mutuel betting is a system where all bets of a particular type are placed together in a pool. The odds are calculated by sharing the pool among all winning bets, after deducting a percentage for management fees and taxes. This system contrasts with fixed-odds betting, where the payout is determined at the time the bet is placed.
+
+== TAB Retail Network ==
+The TAB operates a widespread retail network across Australia, consisting of betting shops, kiosks, and terminals located in pubs, clubs, and other venues. This network allows customers to place bets in person and receive immediate payouts on winning bets.
+
+== Online TAB Betting ==
+In addition to its physical presence, the TAB offers online betting services through websites and mobile applications. This platform provides bettors with the convenience of placing bets from anywhere at any time, accessing live racing streams, and managing their betting accounts digitally.
+
+== State TAB Variations ==
+Each Australian state has its own TAB, which operates independently but under similar regulations. The main state TABs include:
+* TAB New South Wales
+* TAB Victoria
+* TAB Queensland
+* TAB South Australia
+* TAB Western Australia
+
+These state TABs may offer different promotions, odds, and betting options tailored to their local markets.
+
+== Tabcorp Ownership ==
+Tabcorp Holdings Limited is a major player in the Australian gambling industry and owns several state TABs. Tabcorp's acquisition and management of these TABs have enabled the standardization and modernization of betting services across the country.
+
+{| class="wikitable"
+|+ Major State TABs and Their Establishment Dates
+|-
+! State !! TAB Name !! Year Established
+|-
+| New South Wales || TAB New South Wales || 1964
+|-
+| Victoria || TAB Victoria || 1961
+|-
+| Queensland || TAB Queensland || 1962
+|-
+| South Australia || TAB South Australia || 1967
+|-
+| Western Australia || TAB Western Australia || 1961
+|}
+
+== See Also ==
+* [[Racing Betting]]
+
+== External Links ==
+* [https://www.tabcorp.com.au Tabcorp Official Website]
+* [https://www.racingnsw.com.au Racing NSW]
+* [https://www.racingvictoria.com.au Racing Victoria]
+
+[[Category:Gambling Types]]

@@ -1,0 +1,45 @@
+<!--
+    Generated: 2026-01-12T11:39:51.261670
+    Page: Bergin Inquiry
+    Category: History
+    Generator: OpenAI GPT-4o
+-->
+The Bergin Inquiry was a public inquiry conducted by the New South Wales Independent Liquor and Gaming Authority to assess the suitability of Crown Resorts to hold a casino licence for its Crown Sydney development. The inquiry was led by Commissioner Patricia Bergin SC and culminated in a report released in February 2021.
+
+== Background ==
+The Bergin Inquiry was initiated under section 143 of the Casino Control Act 1992, following allegations of money laundering, links to organised crime through junket operators, and other probity failures at Crown Resorts.
+
+== Findings ==
+The inquiry's report, released in February 2021, found that Crown Resorts was unsuitable to hold a casino licence for its Barangaroo site in Sydney. Key findings included:
+
+* Evidence of money laundering through Crown's bank accounts.
+* Relationships with junket operators linked to organised crime.
+* Failures in corporate governance and risk management.
+
+== Recommendations ==
+The report outlined several remediation requirements for Crown Resorts to regain suitability, including:
+
+* Overhauling its board and management.
+* Terminating relationships with junket operators.
+* Implementing robust anti-money laundering measures.
+
+== Impact ==
+As a result of the inquiry, Crown Sydney's casino licence was withheld until Crown Resorts could demonstrate compliance with the recommended changes. This had significant implications for the company's operations and future in the Australian gambling industry.
+
+{| class="wikitable"
+|+ Key Details of the Bergin Inquiry
+|-
+! Commissioner !! Report Date !! Key Findings !! Impact
+|-
+| Patricia Bergin SC || February 2021 || Money laundering, junkets, probity failures || Crown found unsuitable for licence
+|}
+
+== See Also ==
+* [[Major Gambling Inquiries]]
+* [[Crown Sydney]]
+* [[Liquor and Gaming NSW]]
+
+== External Links ==
+* [https://www.parliament.nsw.gov.au/lcdocs/other/14447/Report%20of%20the%20Inquiry%20under%20section%20143%20of%20the%20Casino%20Control%20Act%201992%20-%20Volume%201.pdf Bergin Report (Volume 1)]
+
+[[Category:History]]

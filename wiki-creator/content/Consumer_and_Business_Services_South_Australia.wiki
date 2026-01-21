@@ -1,0 +1,42 @@
+<!--
+    Generated: 2026-01-12T11:24:03.682789
+    Page: Consumer and Business Services South Australia
+    Category: Regulatory Bodies
+    Generator: OpenAI GPT-4o
+-->
+Consumer and Business Services South Australia (CBS) is the regulatory authority responsible for overseeing gambling activities in South Australia. It operates under the jurisdiction of the South Australian Government and is tasked with ensuring compliance with gambling laws and regulations, including the management of gaming machines and the regulation of the Adelaide Casino.
+
+== Liquor and Gambling Commissioner ==
+The Liquor and Gambling Commissioner is the head of Consumer and Business Services South Australia. This role involves the administration and enforcement of the state's gambling laws, ensuring that all gambling operations adhere to legal standards and protect the interests of the public.
+
+== Adelaide Casino Regulation ==
+CBS is responsible for the regulation of the Adelaide Casino, ensuring that it operates within the legal framework established by South Australian gambling legislation. This includes monitoring casino activities, ensuring fair play, and maintaining the integrity of casino operations.
+
+== Gaming Machine Regulation ==
+Consumer and Business Services South Australia regulates the operation of gaming machines within the state. This includes the licensing of venues, monitoring of gaming machine operations, and ensuring compliance with technical standards.
+
+== Minimum RTP Requirements ==
+In South Australia, the minimum Return to Player (RTP) requirement for gaming machines is set at 87.5%. This means that, on average, 87.5% of the money wagered on gaming machines is returned to players over time. CBS ensures that all gaming machines meet this minimum RTP requirement.
+
+{| class="wikitable"
+|+ Key Facts about CBS
+|-
+! Aspect !! Details
+|-
+| Jurisdiction || South Australia
+|-
+| Minimum RTP for Gaming Machines || 87.5%
+|-
+| Responsible for || Adelaide Casino, Gaming Machines
+|-
+| Governing Body || South Australian Government
+|}
+
+== See Also ==
+* [[State and Territory Regulators]]
+* [[Adelaide Casino]]
+
+== External Links ==
+* [https://www.cbs.sa.gov.au/gambling CBS SA Gambling]
+
+[[Category:Regulatory Bodies]]

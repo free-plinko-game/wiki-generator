@@ -1,0 +1,54 @@
+<!--
+    Generated: 2026-01-12T11:27:18.840027
+    Page: Casino Licensing
+    Category: Licensing
+    Generator: OpenAI GPT-4o
+-->
+Casino licensing in Australia involves a complex framework of regulations and requirements that vary by state and territory. The licensing process is designed to ensure that casino operators maintain high standards of integrity, fairness, and compliance with the law. Licences are granted by state-based regulatory bodies and can be either exclusive or non-exclusive, depending on the jurisdiction and specific agreements.
+
+== State-Based Licensing ==
+In Australia, casino licences are issued by state and territory governments, each with its own regulatory authority. These authorities are responsible for assessing applications, granting licences, and ensuring ongoing compliance with legal and regulatory standards. The primary regulatory bodies include:
+* New South Wales: Independent Liquor and Gaming Authority
+* Victoria: Victorian Commission for Gambling and Liquor Regulation
+* Queensland: Office of Liquor and Gaming Regulation
+* Western Australia: Gaming and Wagering Commission
+
+== Exclusive vs Non-Exclusive Licences ==
+Casino licences can be classified as either exclusive or non-exclusive. Exclusive licences grant a single operator the right to operate a casino within a specific area, often for a set period. Non-exclusive licences allow multiple operators to establish casinos within the same jurisdiction, fostering competition.
+
+== Licence Conditions ==
+Casino licences come with various conditions that operators must adhere to, including:
+* Compliance with gaming laws and regulations
+* Implementation of responsible gambling measures
+* Maintenance of financial stability and transparency
+* Adherence to anti-money laundering protocols
+
+== Probity and Suitability ==
+Before a licence is granted, applicants undergo rigorous probity checks to assess their suitability. This process includes evaluating the financial background, criminal history, and business reputation of the applicant and key personnel. The aim is to ensure that only reputable and financially stable entities are permitted to operate casinos.
+
+== Licence Review and Renewal ==
+Casino licences are subject to periodic review and renewal. Regulatory bodies assess the operator's compliance with licence conditions and overall performance. Failure to meet standards can result in penalties, licence suspension, or revocation.
+
+== Recent Changes ==
+Recent high-profile cases, such as those involving Crown Resorts and The Star Entertainment Group, have led to increased scrutiny and regulatory changes. Investigations revealed significant breaches of compliance, resulting in fines, licence suspensions, and reforms to improve governance and accountability.
+
+{| class="wikitable"
+|+ Recent Regulatory Actions
+! Casino Operator !! Year !! Action Taken
+|-
+| Crown Resorts || 2021 || Licence suspended in New South Wales
+|-
+| The Star Entertainment Group || 2022 || Fined for compliance breaches
+|}
+
+== See Also ==
+* [[Casino Regulation]]
+* [[Crown Melbourne]]
+* [[The Star Sydney]]
+
+== External Links ==
+* [https://www.liquorandgaming.nsw.gov.au/ Independent Liquor and Gaming Authority]
+* [https://www.vcglr.vic.gov.au/ Victorian Commission for Gambling and Liquor Regulation]
+* [https://www.business.qld.gov.au/industries/hospitality-tourism-sport/liquor-gaming/gaming/ Office of Liquor and Gaming Regulation]
+
+[[Category:Licensing]]

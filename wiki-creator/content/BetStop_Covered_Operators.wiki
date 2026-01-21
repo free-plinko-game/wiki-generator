@@ -1,0 +1,49 @@
+<!--
+    Generated: 2026-01-12T11:25:00.232322
+    Page: BetStop/Covered Operators
+    Category: Consumer Protection
+    Generator: OpenAI GPT-4o
+-->
+BetStop is a national self-exclusion register designed to protect consumers by allowing individuals to exclude themselves from all licensed Australian interactive wagering services. The system is applicable to all operators holding a license to offer online gambling services within Australia, ensuring a comprehensive approach to consumer protection.
+
+== Covered Operators ==
+BetStop covers all licensed Australian interactive wagering services. This includes a wide range of operators who are authorized to provide online betting services to Australian residents. The following table lists some of the major operators covered by BetStop:
+
+{| class="wikitable"
+|+ Major Covered Operators
+! Operator Name
+! License Jurisdiction
+|-
+| Sportsbet
+| Northern Territory
+|-
+| Bet365
+| Northern Territory
+|-
+| Ladbrokes
+| Northern Territory
+|-
+| Neds
+| Northern Territory
+|-
+| PointsBet
+| Northern Territory
+|}
+
+== Services Not Covered ==
+While BetStop provides extensive coverage for online wagering services, there are certain gambling services that are not included under this self-exclusion register:
+
+* Land-based venues such as casinos and clubs
+* Lotteries, including national and state lotteries
+* Offshore gambling sites that are not licensed in Australia
+
+These exclusions mean that individuals seeking to self-exclude from these types of gambling will need to pursue alternative measures.
+
+== See Also ==
+* [[BetStop]]
+* [[Northern Territory Licensing]]
+
+== External Links ==
+* [https://www.acma.gov.au/self-exclusion-gambling Australian Communications and Media Authority - Self-exclusion from gambling]
+
+[[Category:Consumer Protection]]

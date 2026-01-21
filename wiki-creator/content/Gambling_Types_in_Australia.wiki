@@ -1,0 +1,50 @@
+<!--
+    Generated: 2026-01-12T10:57:53.428102
+    Page: Gambling Types in Australia
+    Category: Consumer Information
+    Generator: OpenAI GPT-4o
+-->
+Gambling in Australia encompasses a wide range of activities that are regulated by both federal and state governments. This page provides an overview of the legal gambling options available in Australia, including racing, sports betting, lotteries, gaming machines, casino gambling, and the distinctions between online and land-based gambling.
+
+== Racing ==
+Racing in Australia includes horse racing, harness racing, and greyhound racing. These events are popular and are regulated by state and territory authorities. Betting on races can be conducted through on-course bookmakers, off-course betting agencies, and online platforms.
+
+== Sports Betting ==
+Sports betting is legal in Australia, with a variety of sports available for wagering. However, there are restrictions on in-play betting, which can only be conducted over the phone or in person. This is to comply with the [[Interactive Gambling Act 2001]], which aims to minimize the risks associated with online gambling.
+
+== Lotteries ==
+Lotteries are a popular form of gambling in Australia, with national games such as Powerball and Oz Lotto. Each state and territory has its own lottery operator, and these games are regulated to ensure fairness and integrity.
+
+== Gaming Machines ==
+Gaming machines, commonly known as pokies, are prevalent in Australia, particularly in pubs and clubs. The regulation of gaming machines varies by state, with New South Wales and Queensland having the highest number of machines.
+
+{| class="wikitable"
+|+ Gaming Machines by State
+! State !! Number of Machines !! Regulation Authority
+|-
+| New South Wales || 95,000+ || Liquor & Gaming NSW
+|-
+| Queensland || 45,000+ || Office of Liquor and Gaming Regulation
+|-
+| Victoria || 30,000+ || Victorian Commission for Gambling and Liquor Regulation
+|-
+| South Australia || 12,000+ || Consumer and Business Services
+|-
+| Western Australia || 2,000+ || Department of Local Government, Sport and Cultural Industries
+|}
+
+== Casino Gambling ==
+Australia is home to several casinos, each regulated by the respective state or territory authority. Casinos offer a variety of games, including poker, blackjack, and roulette. The largest casino in Australia is Crown Melbourne, located in Victoria.
+
+== Online vs Land-Based Gambling ==
+Online gambling is regulated under the [[Interactive Gambling Act 2001]], which prohibits certain types of online betting services. Land-based gambling, such as at casinos and gaming venues, is regulated by state and territory laws. The distinction between online and land-based gambling is significant, as it affects the types of gambling activities that are legally available to consumers.
+
+== See Also ==
+* [[Interactive Gambling Act 2001]]
+* [[State and Territory Regulators]]
+
+== External Links ==
+* [https://www.austrac.gov.au/business/how-comply-and-report/guidance-resources/gambling-industry Australian Government - Gambling Industry]
+* [https://www.acma.gov.au/online-gambling Australian Communications and Media Authority - Online Gambling]
+
+[[Category:Consumer Information]]

@@ -1,0 +1,48 @@
+<!--
+    Generated: 2026-01-12T11:24:16.777812
+    Page: Northern Territory Racing Commission
+    Category: Regulatory Bodies
+    Generator: OpenAI GPT-4o
+-->
+The Northern Territory Racing Commission (NTRC) is the primary regulatory authority responsible for the licensing and regulation of gambling and racing activities in the Northern Territory, Australia. It plays a crucial role in overseeing online wagering operators and ensuring compliance with local laws and regulations.
+
+== Licensing of Online Wagering Operators ==
+The Northern Territory Racing Commission is recognized as the primary licensor for online wagering operators in Australia. The NTRC's regulatory framework is attractive to operators due to its efficient licensing process and favorable tax conditions. This has led to the Northern Territory becoming a dominant jurisdiction for online gambling licenses in Australia.
+
+== Sports Bookmaker Licensing ==
+The NTRC is responsible for issuing licenses to sports bookmakers operating within the Northern Territory. These licenses allow bookmakers to offer betting services on various sports events, both domestically and internationally. The commission ensures that all licensed bookmakers adhere to strict regulatory standards to maintain the integrity of the industry.
+
+== Racing Regulation ==
+In addition to online wagering, the Northern Territory Racing Commission regulates racing activities within the territory. This includes overseeing horse racing and greyhound racing events, ensuring they are conducted fairly and in accordance with established rules.
+
+== Licensed Operators ==
+The NTRC maintains a list of licensed operators, which includes both online wagering companies and sports bookmakers. This list is regularly updated to reflect any changes in licensing status.
+
+{| class="wikitable"
+|+ List of Licensed Operators (as of 2023)
+! Operator Name
+! License Type
+! Date of Issue
+|-
+| Sportsbet
+| Online Wagering
+| 2015
+|-
+| Bet365
+| Online Wagering
+| 2012
+|-
+| Ladbrokes
+| Sports Bookmaker
+| 2013
+|}
+
+== See Also ==
+* [[State and Territory Regulators]]
+* [[Northern Territory Licensing]]
+* [[Online Wagering Licensing]]
+
+== External Links ==
+* [https://ntrc.nt.gov.au NT Racing Commission]
+
+[[Category:Regulatory Bodies]]

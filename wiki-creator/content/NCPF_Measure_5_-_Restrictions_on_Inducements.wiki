@@ -1,0 +1,43 @@
+<!--
+    Generated: 2026-01-12T11:20:21.447562
+    Page: NCPF Measure 5 - Restrictions on Inducements
+    Category: Federal Legislation
+    Generator: OpenAI GPT-4o
+-->
+The "NCPF Measure 5 - Restrictions on Inducements" is a component of the National Consumer Protection Framework (NCPF) in Australia, designed to limit the use of bonus offers and incentives by gambling operators. This measure aims to protect consumers by prohibiting inducements to open gambling accounts, restricting bonus offers to existing customers, and ensuring that promotional material includes opt-out options.
+
+== Prohibition on Inducements to Open Accounts ==
+Under NCPF Measure 5, gambling operators are prohibited from offering inducements to encourage individuals to open new gambling accounts. This includes any form of bonus or incentive that could entice a person to register with a gambling service.
+
+== Restrictions on Bonus Offers to Existing Customers ==
+The measure also places restrictions on the types of bonus offers that can be provided to existing customers. Operators must ensure that any promotional offers are not misleading and are presented in a clear and transparent manner. Additionally, conditions attached to these offers must be fair and not exploitative.
+
+== Opt-out Requirements for Promotional Material ==
+Gambling operators are required to provide customers with the ability to opt-out of receiving promotional material. This ensures that individuals have control over the marketing communications they receive and can choose not to be exposed to gambling promotions if they wish.
+
+== State Variations ==
+While NCPF Measure 5 sets a federal standard, there may be variations in how these restrictions are implemented across different Australian states and territories. Each jurisdiction may have additional regulations that complement the national framework.
+
+{| class="wikitable"
+|+ Summary of NCPF Measure 5
+|-
+! Aspect !! Description
+|-
+| Inducements || Prohibited for account opening
+|-
+| Bonus Offers || Restricted for existing customers
+|-
+| Opt-out || Required for promotional material
+|-
+| State Variations || Possible additional state regulations
+|}
+
+== See Also ==
+* [[National Consumer Protection Framework]]
+* [[Gambling Advertising Restrictions]]
+
+== External Links ==
+* [https://www.dss.gov.au/ Department of Social Services - National Consumer Protection Framework]
+* [https://www.acma.gov.au/ Australian Communications and Media Authority - Gambling Regulations]
+
+[[Category:Federal Legislation]]

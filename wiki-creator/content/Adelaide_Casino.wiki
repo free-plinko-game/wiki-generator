@@ -1,0 +1,43 @@
+<!--
+    Generated: 2026-01-12T11:36:13.954505
+    Page: Adelaide Casino
+    Category: Gambling Types
+    Generator: OpenAI GPT-4o
+-->
+Adelaide Casino is a prominent casino located on North Terrace in Adelaide, South Australia. It is owned by SkyCity Entertainment Group and offers a variety of gaming options to its patrons.
+
+== Location ==
+Adelaide Casino is situated in the heart of Adelaide, the capital city of South Australia. The casino is housed in the historic Adelaide Railway Station building on North Terrace, providing a central and accessible location for both locals and tourists.
+
+== Ownership ==
+The casino is owned and operated by SkyCity Entertainment Group, a New Zealand-based gaming and entertainment company. SkyCity Entertainment acquired the Adelaide Casino in 2000 and has since invested in its development and expansion.
+
+== Gaming Offerings ==
+Adelaide Casino provides a wide range of gaming options, including:
+
+* Table games such as blackjack, roulette, and poker
+* Electronic gaming machines
+* VIP gaming facilities
+* Poker tournaments
+
+The casino also offers various dining and entertainment options to complement the gaming experience.
+
+{| class="wikitable"
+|-
+! Feature !! Details
+|-
+| Location || North Terrace, Adelaide, South Australia
+|-
+| Owner || SkyCity Entertainment Group
+|-
+| Main Gaming Offerings || Table games, electronic gaming machines, poker
+|}
+
+== See Also ==
+* [[Casino Gambling]]
+
+== External Links ==
+* [https://www.skycityadelaide.com.au/ SkyCity Adelaide Official Website]
+* [https://www.cbs.sa.gov.au/ South Australian Consumer and Business Services]
+
+[[Category:Gambling Types]]

@@ -1,0 +1,45 @@
+<!--
+    Generated: 2026-01-12T11:35:28.994913
+    Page: Western Australia Pokies Ban
+    Category: Gambling Types
+    Generator: OpenAI GPT-4o
+-->
+The Western Australia Pokies Ban refers to the legislative decision to prohibit poker machines, commonly known as pokies, outside of the Crown Perth casino. This policy is unique within Australia, where other states and territories allow pokies in various venues such as clubs and hotels.
+
+== Historical Decision ==
+The decision to ban pokies outside of casinos in Western Australia dates back to the 1980s. The state government implemented this measure as part of a broader strategy to control gambling and its associated social impacts. The legislation was aimed at reducing the proliferation of gambling machines and limiting their accessibility to the public.
+
+== Policy Rationale ==
+The primary rationale behind the pokies ban in Western Australia is to mitigate gambling-related harm. By restricting pokies to a single location, the government aims to reduce the potential for problem gambling and its negative effects on individuals and communities. This policy is supported by research indicating that limiting the availability of gambling opportunities can decrease gambling participation and associated harms.
+
+== Crown Perth Exclusivity ==
+Crown Perth holds the exclusive license to operate pokies in Western Australia. This exclusivity is part of a regulatory framework that allows the casino to offer a controlled gambling environment. The arrangement ensures that pokies are available only within a highly regulated setting, with measures in place to promote responsible gambling.
+
+== Impact on Gambling Harm ==
+Studies have shown that Western Australia's restrictive policy on pokies has contributed to lower rates of problem gambling compared to other Australian states. The limited availability of pokies is believed to play a significant role in these outcomes, as it reduces the opportunities for impulsive gambling behavior.
+
+== Political Debates ==
+The ban on pokies outside of Crown Perth has been a topic of political debate. Proponents argue that the policy effectively reduces gambling harm, while opponents claim it limits economic opportunities for other hospitality venues. Despite these debates, the policy has remained largely unchanged, reflecting its perceived success in achieving public health objectives.
+
+{| class="wikitable"
+|+ Key Facts about Western Australia Pokies Ban
+! Aspect !! Details
+|-
+| Implemented || 1980s
+|-
+| Exclusive Venue || Crown Perth
+|-
+| Policy Aim || Reduce gambling harm
+|-
+| Comparative Impact || Lower problem gambling rates
+|}
+
+== See Also ==
+* [[Poker Machines]]
+* [[Crown Perth]]
+
+== External Links ==
+* [https://www.dlgsc.wa.gov.au/ Department of Local Government, Sport and Cultural Industries - Gambling]
+* [https://www.racingandsports.com.au/en/tabs/wa-gambling-regulations Western Australia Gambling Regulations]
+
+[[Category:Gambling Types]]

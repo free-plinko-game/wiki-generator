@@ -1,0 +1,50 @@
+<!--
+    Generated: 2026-01-12T11:33:39.526818
+    Page: Racing Betting
+    Category: Gambling Types
+    Generator: OpenAI GPT-4o
+-->
+Racing betting in Australia refers to the practice of placing wagers on horse, harness, and greyhound races. It is a fully permitted form of gambling, regulated by both state and federal authorities. The industry is well-established, offering a variety of betting options including totalisator (TAB) and pari-mutuel betting, as well as services from corporate bookmakers.
+
+== Types of Racing ==
+Racing betting in Australia encompasses three main types:
+* '''Thoroughbred Racing''': The most popular form, involving purebred horses.
+* '''Harness Racing''': Features horses pulling a two-wheeled cart called a sulky.
+* '''Greyhound Racing''': Involves dogs racing around a track.
+
+== Betting Systems ==
+Australian racing betting is facilitated through several systems:
+* '''TAB and Pari-mutuel Betting''': Operated by state-run agencies, these systems pool bets and pay out dividends based on the total pool.
+* '''Corporate Bookmakers''': Offer fixed odds betting, allowing punters to lock in odds at the time of placing a bet.
+
+== Tote vs Fixed Odds ==
+The two primary betting methods are:
+* '''Tote Betting''': Also known as pari-mutuel, where all bets are pooled and the payout is determined by the total pool after deductions.
+* '''Fixed Odds Betting''': Offered by bookmakers, where the odds are fixed at the time of the bet and do not change.
+
+== Major Racing Events ==
+Australia hosts several major racing events that attract significant betting activity:
+{| class="wikitable"
+|-
+! Event !! Type !! Location !! Month
+|-
+| Melbourne Cup || Thoroughbred || Melbourne || November
+|-
+| The Everest || Thoroughbred || Sydney || October
+|-
+| Inter Dominion || Harness || Rotates || December
+|-
+| Golden Easter Egg || Greyhound || Sydney || April
+|}
+
+== See Also ==
+* [[TAB]]
+* [[Thoroughbred Racing Betting]]
+* [[Greyhound Racing Betting]]
+
+== External Links ==
+* [https://www.racingaustralia.horse Racing Australia]
+* [https://www.tab.com.au TAB Official Site]
+* [https://www.acma.gov.au Australian Communications and Media Authority]
+
+[[Category:Gambling Types]]

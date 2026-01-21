@@ -1,0 +1,41 @@
+<!--
+    Generated: 2026-01-12T11:22:44.616533
+    Page: ACMA Illegal Gambling Register
+    Category: Regulatory Bodies
+    Generator: OpenAI GPT-4o
+-->
+The '''ACMA Illegal Gambling Register''' is a public register maintained by the Australian Communications and Media Authority (ACMA) that lists websites determined to be providing illegal gambling services to Australians. The register is part of ACMA's efforts to enforce the Interactive Gambling Act 2001 and protect Australian consumers from illegal gambling activities.
+
+== Contents of the Register ==
+The ACMA Illegal Gambling Register includes websites that have been assessed and found to be operating in violation of Australian gambling laws. These sites typically offer services such as online casinos, poker, and other unlicensed gambling activities that are not permitted under Australian law.
+
+== Checking the Register ==
+Individuals and organizations can check the ACMA Illegal Gambling Register to verify whether a website is listed as illegal. The register is accessible through the ACMA's official website, providing transparency and information to the public about illegal gambling operations.
+
+== Reporting Illegal Sites ==
+The ACMA encourages the public to report any suspected illegal gambling websites. Reports can be made through the ACMA's official channels, and the information provided is used to investigate and potentially add sites to the register.
+
+== Frequency of Updates ==
+The ACMA Illegal Gambling Register is updated regularly as new websites are assessed and determined to be illegal. The frequency of updates ensures that the register remains current and reflects the latest findings by the ACMA.
+
+{| class="wikitable"
+|+ ACMA Illegal Gambling Register Overview
+! Aspect !! Details
+|-
+| Maintained by || Australian Communications and Media Authority (ACMA)
+|-
+| Purpose || List websites providing illegal gambling services
+|-
+| Accessibility || Publicly accessible via ACMA's website
+|-
+| Update Frequency || Regularly updated
+|}
+
+== See Also ==
+* [[ACMA]]
+* [[ACMA Website Blocking]]
+
+== External Links ==
+* [https://www.acma.gov.au/report-illegal-gambling Report Illegal Gambling to ACMA]
+
+[[Category:Regulatory Bodies]]

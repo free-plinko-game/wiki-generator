@@ -1,0 +1,44 @@
+<!--
+    Generated: 2026-01-12T11:21:03.079235
+    Page: NCPF Measure 9 - Opt-Out of Marketing
+    Category: Federal Legislation
+    Generator: OpenAI GPT-4o
+-->
+'''NCPF Measure 9 - Opt-Out of Marketing''' is a provision under the National Consumer Protection Framework (NCPF) for online wagering in Australia. It mandates that all licensed gambling operators provide customers with a straightforward mechanism to opt out of receiving direct marketing communications related to gambling services.
+
+== Opt-Out Mechanism ==
+The measure requires that gambling operators implement an easy and accessible opt-out mechanism for customers. This mechanism must be clearly communicated and allow customers to withdraw their consent to receive marketing materials at any time.
+
+== Scope of Marketing Covered ==
+The opt-out provision applies to all forms of direct marketing, including but not limited to:
+* Emails
+* SMS messages
+* Phone calls
+* Postal mail
+
+== Timeframe for Implementation ==
+The measure stipulates that gambling operators must comply with the opt-out requirements within a specified timeframe. The implementation deadline was set for 30 June 2022, ensuring that all operators provide the necessary opt-out options to their customers.
+
+{| class="wikitable"
+|+ Implementation Details
+! Aspect !! Requirement
+|-
+| Opt-Out Mechanism || Must be easy to access and use
+|-
+| Marketing Channels || Includes emails, SMS, phone calls, and postal mail
+|-
+| Compliance Deadline || 30 June 2022
+|}
+
+== Third-Party Marketing ==
+Operators are also responsible for ensuring that any third-party marketing affiliates adhere to the opt-out requests of customers. This means that once a customer opts out, their information should not be used for marketing purposes by any third-party entities associated with the gambling operator.
+
+== See Also ==
+* [[National Consumer Protection Framework]]
+* [[Gambling Advertising Restrictions]]
+
+== External Links ==
+* [https://www.dss.gov.au/ Department of Social Services - National Consumer Protection Framework]
+* [https://www.acma.gov.au/ Australian Communications and Media Authority]
+
+[[Category:Federal Legislation]]

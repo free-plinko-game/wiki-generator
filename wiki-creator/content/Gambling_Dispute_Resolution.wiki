@@ -1,0 +1,48 @@
+<!--
+    Generated: 2026-01-12T11:32:10.242230
+    Page: Gambling Dispute Resolution
+    Category: Consumer Protection
+    Generator: OpenAI GPT-4o
+-->
+Gambling dispute resolution refers to the processes and mechanisms available to consumers for resolving conflicts with gambling operators. These processes are designed to ensure fair treatment and compliance with regulatory standards. In Australia, the resolution of gambling disputes involves an internal complaints process, operator obligations, state regulators, external dispute resolution services, and legal options. However, consumers engaging with offshore gambling sites may have limited recourse.
+
+== Internal Complaints Process ==
+Gambling operators in Australia are required to have an internal complaints process to address consumer grievances. This process is typically the first step in resolving any disputes and involves the consumer contacting the operator directly to seek a resolution.
+
+== Operator Obligations ==
+Operators are obligated to handle complaints in a fair, transparent, and timely manner. They must provide clear information on how complaints can be lodged and the expected timeframes for resolution. Operators are also required to keep records of all complaints and their outcomes.
+
+== State Regulators as Escalation ==
+If a dispute cannot be resolved through the operator's internal process, consumers can escalate the issue to the relevant state or territory gambling regulator. These regulators oversee compliance with gambling laws and can intervene in disputes where necessary.
+
+{| class="wikitable"
+|+ State and Territory Regulators
+! State/Territory !! Regulator !! Contact Information
+|-
+| New South Wales || Liquor & Gaming NSW || [https://www.liquorandgaming.nsw.gov.au/ Contact]
+|-
+| Victoria || Victorian Commission for Gambling and Liquor Regulation || [https://www.vcglr.vic.gov.au/ Contact]
+|-
+| Queensland || Office of Liquor and Gaming Regulation || [https://www.business.qld.gov.au/industries/hospitality-tourism-sport/liquor-gaming Contact]
+|-
+| Western Australia || Department of Racing, Gaming and Liquor || [https://www.dlgsc.wa.gov.au/ Contact]
+|}
+
+== External Dispute Resolution ==
+In cases where state regulators cannot resolve the dispute, consumers may seek assistance from external dispute resolution bodies. These organizations provide independent mediation and arbitration services to help resolve conflicts between consumers and operators.
+
+== Legal Options ==
+If all other avenues fail, consumers may consider legal action. This can involve taking the dispute to court, although this option can be costly and time-consuming.
+
+== Offshore Sites (No Recourse) ==
+Consumers engaging with offshore gambling sites should be aware that they may have no recourse in the event of a dispute. These sites are not regulated by Australian authorities, and consumers may find it difficult to resolve issues or recover funds.
+
+== See Also ==
+* [[State and Territory Regulators]]
+* [[Illegal Offshore Gambling]]
+
+== External Links ==
+* [https://www.acma.gov.au Australian Communications and Media Authority]
+* [https://www.australia.gov.au Australian Government]
+
+[[Category:Consumer Protection]]

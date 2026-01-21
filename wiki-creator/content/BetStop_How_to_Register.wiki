@@ -1,0 +1,52 @@
+<!--
+    Generated: 2026-01-12T11:24:43.595042
+    Page: BetStop/How to Register
+    Category: Consumer Protection
+    Generator: OpenAI GPT-4o
+-->
+'''BetStop''' is Australia's national self-exclusion register, designed to help individuals manage their gambling habits by allowing them to exclude themselves from all licensed interactive wagering services. This page provides a step-by-step guide on how to register for BetStop.
+
+== Online Registration ==
+To register for BetStop online, visit the official website at [https://betstop.gov.au betstop.gov.au]. The registration process involves several steps to ensure the security and accuracy of the information provided.
+
+== Phone Registration ==
+Individuals can also register for BetStop by calling the dedicated phone line at 1800 931 934. This service is available for those who prefer to register via phone or require assistance during the registration process.
+
+== Required Information ==
+When registering for BetStop, you will need to provide the following information:
+* Full name
+* Date of birth
+* Residential address
+* Contact details (phone number and email address)
+
+== ID Verification Process ==
+BetStop requires verification of your identity to ensure that the registration is legitimate. This process may involve providing a form of government-issued identification, such as a driver's license or passport.
+
+{| class="wikitable"
+|+ ID Verification Documents
+! Document Type !! Example
+|-
+| Driver's License || State-issued driver's license
+|-
+| Passport || National passport
+|-
+| Other || Government-issued ID card
+|}
+
+== Choosing Exclusion Period ==
+During the registration process, you will be asked to select the duration of your self-exclusion. Options typically range from a minimum of 3 months to a maximum of permanent exclusion.
+
+== Confirmation Process ==
+Once you have completed the registration and ID verification, you will receive a confirmation via email or phone. This confirmation will detail the terms of your self-exclusion and the start date.
+
+== What Happens Next ==
+After registration, your details will be added to the BetStop register. All licensed interactive wagering service providers in Australia will be notified to exclude you from their services. You will not receive any marketing materials from these providers during your exclusion period.
+
+== See Also ==
+* [[BetStop]]
+
+== External Links ==
+* [https://betstop.gov.au BetStop Official Website]
+* [https://www.acma.gov.au Australian Communications and Media Authority]
+
+[[Category:Consumer Protection]]

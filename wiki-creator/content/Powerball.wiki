@@ -1,0 +1,55 @@
+<!--
+    Generated: 2026-01-12T11:34:44.283512
+    Page: Powerball
+    Category: Gambling Types
+    Generator: OpenAI GPT-4o
+-->
+Powerball is a popular Australian lottery game that offers players the chance to win substantial cash prizes. Managed by [[The Lott]], Powerball is known for its large jackpots and is drawn every Thursday evening.
+
+== How to Play ==
+To play Powerball, participants select seven numbers from a pool of 35, and one Powerball number from a separate pool of 20. Players can choose their numbers manually or opt for a QuickPick, where numbers are randomly generated. The aim is to match the drawn numbers to win prizes across multiple divisions.
+
+== Draw Schedule ==
+Powerball draws are conducted weekly on Thursday evenings. The draw results are published shortly after the draw is completed.
+
+== Odds of Winning ==
+The odds of winning the Powerball jackpot, which requires matching all seven numbers plus the Powerball, are 1 in 134,490,400. The odds of winning any prize are significantly better, with a 1 in 44 chance.
+
+{| class="wikitable"
+|+ Odds of Winning by Division
+! Division !! Numbers Matched !! Odds
+|-
+| 1 || 7 + Powerball || 1 in 134,490,400
+|-
+| 2 || 7 || 1 in 7,078,443
+|-
+| 3 || 6 + Powerball || 1 in 686,176
+|-
+| 4 || 6 || 1 in 36,115
+|-
+| 5 || 5 + Powerball || 1 in 16,943
+|-
+| 6 || 4 + Powerball || 1 in 1,173
+|-
+| 7 || 5 || 1 in 892
+|-
+| 8 || 3 + Powerball || 1 in 188
+|-
+| 9 || 2 + Powerball || 1 in 66
+|}
+
+== Prize Divisions ==
+Powerball offers nine prize divisions, with Division 1 being the highest. The prize amounts vary depending on the number of winners and the total prize pool for each draw.
+
+== Record Jackpots ==
+The largest Powerball jackpot in Australian history was $150 million, won on 19 September 2019. This record-breaking prize was shared by three winning entries.
+
+== See Also ==
+* [[Lotteries]]
+* [[The Lott]]
+
+== External Links ==
+* [https://www.thelott.com/powerball The Lott - Powerball Official Site]
+* [https://www.acma.gov.au/ Australian Communications and Media Authority]
+
+[[Category:Gambling Types]]

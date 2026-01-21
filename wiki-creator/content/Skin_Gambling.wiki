@@ -1,0 +1,41 @@
+<!--
+    Generated: 2026-01-12T11:37:39.046938
+    Page: Skin Gambling
+    Category: Gambling Types
+    Generator: OpenAI GPT-4o
+-->
+Skin gambling is a form of gambling where players use virtual items, known as "skins," from video games as a form of currency to place bets on various games of chance. These skins are often cosmetic items that alter the appearance of characters or weapons in a game but do not affect gameplay. Skin gambling has gained popularity due to its association with popular video games and the perceived value of these virtual items.
+
+== Legal Status in Australia ==
+In Australia, skin gambling is subject to the same regulations as other forms of online gambling. The Australian Communications and Media Authority (ACMA) is responsible for enforcing these regulations. Skin gambling sites that operate without a license are considered illegal under the Interactive Gambling Act 2001. The ACMA has the authority to issue warnings, fines, and even block access to illegal gambling websites.
+
+== ACMA Enforcement ==
+The ACMA actively monitors and enforces compliance with gambling laws in Australia. In recent years, the ACMA has increased its efforts to combat illegal skin gambling by targeting unlicensed operators and working with internet service providers to block access to these sites. The ACMA also provides resources and support for individuals affected by illegal gambling activities.
+
+{| class="wikitable"
+|+ ACMA Enforcement Actions (2022)
+! Action Type !! Number of Actions
+|-
+| Warnings Issued || 15
+|-
+| Fines Imposed || 5
+|-
+| Websites Blocked || 10
+|}
+
+== Risks ==
+Skin gambling poses several risks, particularly to younger audiences who are often the primary users of video games. These risks include:
+* Exposure to gambling at a young age
+* Potential for addiction
+* Financial loss due to the unregulated nature of many skin gambling sites
+* Lack of consumer protection
+
+== See Also ==
+* [[Loot Boxes]]
+* [[Esports Betting]]
+
+== External Links ==
+* [https://www.acma.gov.au/ Australian Communications and Media Authority]
+* [https://www.legislation.gov.au/Details/C2019C00279 Interactive Gambling Act 2001]
+
+[[Category:Gambling Types]]

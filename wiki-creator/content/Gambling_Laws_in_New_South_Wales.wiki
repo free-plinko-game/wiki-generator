@@ -1,0 +1,61 @@
+<!--
+    Generated: 2026-01-12T12:24:13.622715
+    Page: Gambling Laws in New South Wales
+    Category: Gambling Laws
+    Generator: OpenAI GPT-4o
+-->
+Gambling laws in New South Wales (NSW) govern the largest gambling market in Australia, encompassing a range of activities from poker machines to casino operations. The regulatory framework is established through several key pieces of legislation and is overseen by Liquor and Gaming NSW, a division of NSW Fair Trading.
+
+== Key Legislation ==
+The gambling industry in NSW is regulated by several important legislative acts:
+
+* '''Gaming and Liquor Administration Act 2007''': Establishes the administrative framework for gaming and liquor regulation.
+* '''Gaming Machines Act 2001''': Governs the use and regulation of gaming machines.
+* '''Casino Control Act 1992''': Regulates the operation of casinos.
+* '''Betting and Racing Act 1998''': Covers betting and racing activities.
+* '''Unlawful Gambling Act 1998''': Addresses illegal gambling activities.
+
+== Regulatory Body ==
+Liquor and Gaming NSW is responsible for the regulation and oversight of gambling activities in the state. It ensures compliance with legislation and promotes responsible gambling practices.
+
+== Poker Machines ==
+New South Wales has the largest number of poker machines in Australia, with approximately 85,000 to 90,000 machines located in registered clubs and hotels. Key regulations include:
+
+{| class="wikitable"
+|-
+! Aspect !! Details
+|-
+| Minimum Return to Player (RTP) || 85%
+|-
+| Maximum Bet || $10 (reducing to $5)
+|}
+
+== Casinos ==
+NSW hosts two major casinos:
+
+* '''The Star Sydney''': Located in Pyrmont, it is one of the largest casinos in Australia.
+* '''Crown Sydney''': Situated in Barangaroo, it is a recent addition to the casino landscape.
+
+== Recent Reforms and Inquiries ==
+Recent years have seen significant reforms and inquiries into the gambling sector:
+
+* '''Bergin Inquiry (2021)''': Investigated Crown Sydney's suitability to hold a casino license.
+* '''Bell Inquiry (2022)''': Examined operations at The Star Sydney.
+* '''Cashless Gaming Trials''': Initiatives aimed at reducing gambling-related harm.
+* '''Self-Exclusion Schemes''': Programs allowing individuals to voluntarily exclude themselves from gambling venues.
+* '''Harm Minimisation Measures''': Strategies to mitigate the negative impacts of gambling.
+
+== See Also ==
+* [[Gambling Laws]]
+* [[Liquor and Gaming NSW]]
+* [[The Star Sydney]]
+* [[Crown Sydney]]
+* [[Poker Machines]]
+* [[Bergin Inquiry]]
+* [[Bell Inquiry]]
+
+== External Links ==
+* [https://www.liquorandgaming.nsw.gov.au Liquor and Gaming NSW]
+* [https://legislation.nsw.gov.au NSW Legislation]
+
+[[Category:Gambling Laws]]

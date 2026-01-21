@@ -1,0 +1,70 @@
+<!--
+    Generated: 2026-01-12T11:35:39.055553
+    Page: Casino Gambling
+    Category: Gambling Types
+    Generator: OpenAI GPT-4o
+-->
+Casino gambling in Australia refers to the operation of state-licensed land-based casinos offering a variety of gaming options, including table games and gaming machines. These establishments are regulated by state and territory governments to ensure compliance with legal and ethical standards.
+
+== Legal Status ==
+Casino gambling in Australia is legal and regulated at the state and territory level. Each jurisdiction has its own regulatory body responsible for licensing and overseeing casino operations. Casinos must adhere to strict regulations to maintain their licenses, including measures to promote responsible gambling and prevent money laundering.
+
+== List of Australian Casinos ==
+Australia is home to several prominent casinos, including:
+
+* Crown Melbourne
+* The Star Sydney
+* Crown Perth
+* SkyCity Adelaide
+* Treasury Brisbane
+* The Star Gold Coast
+* Wrest Point Casino
+
+== Table Games Offered ==
+Australian casinos offer a wide range of table games, including:
+
+* Blackjack
+* Roulette
+* Baccarat
+* Poker
+* Craps
+
+== Gaming Machines ==
+Gaming machines, commonly known as pokies, are a significant feature of Australian casinos. These machines are regulated to ensure fairness and are subject to specific payout requirements.
+
+== VIP Gaming ==
+VIP gaming areas cater to high-stakes gamblers, offering exclusive services and higher betting limits. These areas are subject to additional regulatory scrutiny to prevent illegal activities and ensure compliance with responsible gambling practices.
+
+== Regulation ==
+Casino gambling in Australia is regulated by various state and territory authorities, including:
+
+* Victorian Commission for Gambling and Liquor Regulation
+* New South Wales Independent Liquor & Gaming Authority
+* Queensland Office of Liquor and Gaming Regulation
+
+These bodies are responsible for enforcing gambling laws, issuing licenses, and conducting audits and investigations.
+
+== Recent Inquiries ==
+Recent inquiries into major casino operators, such as Crown Resorts and Star Entertainment Group, have highlighted issues related to money laundering and governance failures. These inquiries have led to significant regulatory changes and increased scrutiny of casino operations.
+
+{| class="wikitable"
+|+ Recent Casino Inquiries
+! Casino Operator !! Inquiry Year !! Key Findings
+|-
+| Crown Resorts || 2021 || Money laundering, governance failures
+|-
+| Star Entertainment Group || 2022 || Regulatory non-compliance, money laundering
+|}
+
+== See Also ==
+* [[Casino Licensing]]
+* [[Crown Melbourne]]
+* [[The Star Sydney]]
+* [[Casino Table Games]]
+
+== External Links ==
+* [https://www.vcglr.vic.gov.au Victorian Commission for Gambling and Liquor Regulation]
+* [https://www.liquorandgaming.nsw.gov.au New South Wales Independent Liquor & Gaming Authority]
+* [https://www.business.qld.gov.au/industries/hospitality-tourism-sport/liquor-gaming Queensland Office of Liquor and Gaming Regulation]
+
+[[Category:Gambling Types]]

@@ -1,0 +1,52 @@
+<!--
+    Generated: 2026-01-12T11:28:22.288818
+    Page: House Edge
+    Category: Technical Standards
+    Generator: OpenAI GPT-4o
+-->
+The '''house edge''' is a measure of the mathematical advantage that a casino has over players in a gambling game. It is calculated as 100% minus the Return to Player (RTP) percentage. This advantage ensures that, over the long term, the casino will always make a profit from the games it offers.
+
+== Calculation of House Edge ==
+The house edge is expressed as a percentage and represents the average gross profit the casino expects to make from each game. For example, if a game has a house edge of 5%, the casino expects to keep $5 for every $100 wagered.
+
+== House Edge by Game ==
+Different casino games have varying house edges. The following table provides a comparison of the house edge for several popular games:
+
+{| class="wikitable"
+|+ House Edge by Game
+! Game !! House Edge (%)
+|-
+| Blackjack || 0.5 - 1.5
+|-
+| Roulette (European) || 2.7
+|-
+| Roulette (American) || 5.26
+|-
+| Baccarat || 1.06 - 1.24
+|-
+| Craps || 1.36 - 5.56
+|-
+| Slot Machines || 2 - 10
+|-
+| Keno || 25 - 29
+|}
+
+== Why Casinos Always Win Long-Term ==
+The house edge ensures that casinos will profit over the long term, even if players win in the short term. This is because the house edge applies to every bet placed, and over a large number of bets, the statistical advantage will result in a net gain for the casino.
+
+== Best and Worst Bets ==
+* '''Best Bets:''' Games with a low house edge, such as Blackjack and Baccarat, offer better odds for players.
+* '''Worst Bets:''' Games with a high house edge, like Keno and American Roulette, are less favorable for players.
+
+== Relationship to RTP ==
+The Return to Player (RTP) is the inverse of the house edge and represents the percentage of total bets that a game will pay back to players over time. For example, if a game has an RTP of 95%, the house edge is 5%.
+
+== See Also ==
+* [[Return to Player]]
+* [[Table Game Odds]]
+
+== External Links ==
+* [https://www.acma.gov.au/gambling Australian Communications and Media Authority - Gambling]
+* [https://www.austrac.gov.au/ Australian Transaction Reports and Analysis Centre - Gambling]
+
+[[Category:Technical Standards]]

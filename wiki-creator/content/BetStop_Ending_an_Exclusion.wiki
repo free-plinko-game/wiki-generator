@@ -1,0 +1,31 @@
+<!--
+    Generated: 2026-01-12T11:25:06.960000
+    Page: BetStop/Ending an Exclusion
+    Category: Consumer Protection
+    Generator: OpenAI GPT-4o
+-->
+BetStop is a national self-exclusion register in Australia that allows individuals to exclude themselves from all licensed interactive wagering services. Ending or revoking a BetStop exclusion involves specific processes depending on the type of exclusion initially chosen.
+
+== Fixed-term Exclusions ==
+Fixed-term exclusions under BetStop are designed to end automatically once the designated period has elapsed. Individuals who have opted for a fixed-term exclusion do not need to take any additional steps to resume gambling activities after the exclusion period ends. However, there is a mandatory 7-day cooling-off period before they can begin gambling again.
+
+== Lifetime Exclusion Revocation ==
+For those who have chosen a lifetime exclusion, the process to revoke this exclusion is more involved. Individuals must wait a minimum of three months from the start of their exclusion before they can apply for revocation. Additionally, they are required to attend a counselling session as part of the revocation process. This session aims to ensure that the individual is making an informed decision about returning to gambling.
+
+{| class="wikitable"
+|+ BetStop Exclusion Revocation Process
+! Type of Exclusion !! Automatic End !! Minimum Time Before Revocation !! Counselling Requirement
+|-
+| Fixed-term || Yes || Not applicable || No
+|-
+| Lifetime || No || 3 months || Yes
+|}
+
+== See Also ==
+* [[BetStop]]
+* [[Gambling Help Services]]
+
+== External Links ==
+* [https://www.acma.gov.au/betstop BetStop - Australian Communications and Media Authority]
+
+[[Category:Consumer Protection]]

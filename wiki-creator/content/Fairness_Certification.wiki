@@ -1,0 +1,57 @@
+<!--
+    Generated: 2026-01-12T11:28:52.254356
+    Page: Fairness Certification
+    Category: Technical Standards
+    Generator: OpenAI GPT-4o
+-->
+'''Fairness Certification''' refers to the process by which gambling games are evaluated and verified to ensure they operate fairly and in accordance with established standards. This certification is crucial for maintaining player trust and ensuring the integrity of gambling operations.
+
+== What Certification Means ==
+Fairness certification involves a comprehensive evaluation of gambling games to ensure they are fair, random, and comply with industry standards. This process is typically conducted by independent testing agencies that assess various aspects of the game, including the software and algorithms used.
+
+== Certified Testing Agencies ==
+Certified testing agencies are independent organizations that specialize in evaluating and certifying gambling games. These agencies use rigorous testing methodologies to ensure games meet specific standards of fairness and randomness.
+
+{| class="wikitable"
+|-
+! Agency Name !! Location !! Accreditation
+|-
+| eCOGRA || United Kingdom || ISO/IEC 17025
+|-
+| Gaming Laboratories International (GLI) || United States || ISO/IEC 17025
+|-
+| iTech Labs || Australia || ISO/IEC 17025
+|}
+
+== Scope of Testing ==
+The scope of testing for fairness certification typically includes:
+* Verification of random number generators (RNGs)
+* Evaluation of game rules and payout calculations
+* Security assessments of the software
+* Ensuring compliance with jurisdictional regulations
+
+== How to Verify a Game is Certified ==
+To verify if a game is certified, players can:
+* Look for certification seals or logos on the game's website
+* Check the list of certified games on the testing agency's website
+* Contact the casino or game provider for certification details
+
+== Limitations of Certification ==
+While certification ensures a level of fairness, it does not guarantee that games are free from all forms of manipulation or fraud. Certification is limited to the aspects tested and does not cover operational practices of the casino.
+
+== Red Flags ==
+Players should be wary of:
+* Games without visible certification seals
+* Casinos that refuse to provide certification details
+* Unaccredited testing agencies
+
+== See Also ==
+* [[Random Number Generators]]
+* [[RNG Testing Laboratories]]
+
+== External Links ==
+* [https://www.ecogra.org eCOGRA Official Website]
+* [https://gaminglabs.com Gaming Laboratories International]
+* [https://itechlabs.com iTech Labs]
+
+[[Category:Technical Standards]]

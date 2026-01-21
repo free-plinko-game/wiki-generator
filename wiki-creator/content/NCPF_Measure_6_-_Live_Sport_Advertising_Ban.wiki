@@ -1,0 +1,46 @@
+<!--
+    Generated: 2026-01-12T11:20:31.611429
+    Page: NCPF Measure 6 - Live Sport Advertising Ban
+    Category: Federal Legislation
+    Generator: OpenAI GPT-4o
+-->
+'''NCPF Measure 6 - Live Sport Advertising Ban''' refers to a legislative measure under the National Consumer Protection Framework aimed at restricting gambling advertisements during live sports broadcasts in Australia. This measure is designed to minimize the exposure of gambling promotions to children and vulnerable audiences.
+
+== Overview ==
+NCPF Measure 6 prohibits gambling advertisements during the play of live sports, extending from five minutes before the start of play until five minutes after the conclusion of play. This restriction applies to broadcasts aired between 5:00 am and 8:30 pm. The measure is enforced by the Australian Communications and Media Authority (ACMA).
+
+== Broadcast Restrictions ==
+The ban specifically targets live sports broadcasts, with the following restrictions:
+
+{| class="wikitable"
+|+ Broadcast Restrictions
+! Timeframe !! Restriction
+|-
+| 5 minutes before play || No gambling ads
+|-
+| During play || No gambling ads
+|-
+| 5 minutes after play || No gambling ads
+|-
+| 5:00 am - 8:30 pm || No gambling ads during live sports
+|}
+
+== Exceptions ==
+There are exceptions to this measure, particularly concerning racing events. Gambling advertisements are permitted during the coverage of racing events, recognizing the integral role of betting in this sport.
+
+== Online Streaming ==
+The advertising ban also applies to online streaming services, ensuring that the restrictions are consistent across both traditional and digital media platforms.
+
+== Enforcement ==
+The Australian Communications and Media Authority (ACMA) is responsible for enforcing the advertising ban. ACMA monitors compliance and has the authority to impose penalties on broadcasters and streaming services that violate the restrictions.
+
+== See Also ==
+* [[National Consumer Protection Framework]]
+* [[Gambling Advertising Restrictions]]
+* [[Broadcasting Services Act 1992]]
+
+== External Links ==
+* [https://www.acma.gov.au/ Australian Communications and Media Authority]
+* [https://www.communications.gov.au/ Department of Infrastructure, Transport, Regional Development, Communications and the Arts]
+
+[[Category:Federal Legislation]]

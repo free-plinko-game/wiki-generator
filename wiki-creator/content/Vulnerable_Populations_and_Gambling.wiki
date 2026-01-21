@@ -1,0 +1,52 @@
+<!--
+    Generated: 2026-01-12T11:32:35.143143
+    Page: Vulnerable Populations and Gambling
+    Category: Consumer Protection
+    Generator: OpenAI GPT-4o
+-->
+Vulnerable populations are groups within society that are at a higher risk of experiencing negative consequences from gambling activities. These groups often require targeted protections and support to mitigate the potential harms associated with gambling.
+
+== Young Adults ==
+Young adults are particularly susceptible to gambling-related harm due to a combination of factors such as developmental vulnerability, exposure to gambling through digital platforms, and social influences. Research indicates that young adults are more likely to engage in risky gambling behaviors and may lack the necessary experience to make informed decisions.
+
+== Indigenous Australians ==
+Indigenous Australians face unique challenges related to gambling, including cultural and socio-economic factors. Gambling can be both a social activity and a source of financial strain within Indigenous communities. Efforts to address gambling harm in these populations often involve culturally sensitive approaches and community-led initiatives.
+
+== CALD Communities ==
+Culturally and Linguistically Diverse (CALD) communities may experience gambling harm due to language barriers, cultural differences in the perception of gambling, and limited access to support services. Tailored interventions that respect cultural contexts are essential in providing effective support to these communities.
+
+== People with Mental Health Issues ==
+Individuals with mental health issues are at an increased risk of developing gambling problems. Gambling may be used as a coping mechanism for mental health challenges, leading to a cycle of addiction and exacerbation of mental health symptoms. Integrated support services that address both gambling and mental health are crucial.
+
+== People Experiencing Financial Stress ==
+Financial stress can drive individuals to gamble in the hope of alleviating their financial difficulties, often resulting in further financial harm. Support services that provide financial counseling and education can help mitigate the risks for those experiencing financial stress.
+
+== Targeted Protections ==
+To protect vulnerable populations, various targeted protections have been implemented, including:
+* Restrictions on gambling advertising
+* Self-exclusion programs
+* Access to gambling help services
+* Culturally appropriate support programs
+
+{| class="wikitable"
+|+ Targeted Protections for Vulnerable Populations
+! Protection Type !! Description
+|-
+| Advertising Restrictions || Limits on gambling advertisements to reduce exposure, especially to young people.
+|-
+| Self-Exclusion Programs || Programs that allow individuals to voluntarily ban themselves from gambling venues.
+|-
+| Gambling Help Services || Access to counseling and support for individuals experiencing gambling harm.
+|-
+| Cultural Support Programs || Initiatives designed to provide culturally sensitive support to CALD and Indigenous communities.
+|}
+
+== See Also ==
+* [[Gambling Help Services]]
+* [[Responsible Gambling Tools]]
+
+== External Links ==
+* [https://www.responsiblegambling.vic.gov.au/ Responsible Gambling Victoria]
+* [https://www.gamblinghelponline.org.au/ Gambling Help Online]
+
+[[Category:Consumer Protection]]

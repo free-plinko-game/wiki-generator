@@ -1,0 +1,41 @@
+<!--
+    Generated: 2026-01-12T11:20:52.954200
+    Page: NCPF Measure 8 - Customer Verification
+    Category: Federal Legislation
+    Generator: OpenAI GPT-4o
+-->
+'''NCPF Measure 8 - Customer Verification''' is a component of the National Consumer Protection Framework (NCPF) for online wagering in Australia. It mandates identity verification standards to ensure that customers are verified before they are permitted to place bets. This measure is designed to align with the Anti-Money Laundering and Counter-Terrorism Financing (AML/CTF) requirements.
+
+== Verification Requirements ==
+NCPF Measure 8 requires that online wagering operators conduct a verification process equivalent to the 100-point ID check. This process is essential to confirm the identity of the customer before allowing them to engage in betting activities. The verification process typically involves the use of document verification services to authenticate the identity documents provided by the customer.
+
+== Document Verification Services ==
+Document verification services are employed to ensure the authenticity of the identity documents submitted by customers. These services cross-check the provided documents against official records to confirm their validity. This step is crucial in preventing fraudulent activities and ensuring compliance with regulatory standards.
+
+== Relationship to AML/CTF Requirements ==
+The customer verification process under NCPF Measure 8 is closely related to the Anti-Money Laundering and Counter-Terrorism Financing (AML/CTF) requirements. By verifying the identity of customers, online wagering operators contribute to the broader efforts of preventing money laundering and terrorism financing activities. Compliance with these requirements is monitored by the Australian Transaction Reports and Analysis Centre (AUSTRAC).
+
+== Key Data ==
+{| class="wikitable"
+|-
+! Requirement !! Description
+|-
+| Verification Timing || Before betting is permitted
+|-
+| Verification Standard || Equivalent to 100-point ID check
+|-
+| Verification Method || Document verification services
+|-
+| Regulatory Alignment || AML/CTF requirements
+|}
+
+== See Also ==
+* [[National Consumer Protection Framework]]
+* [[Know Your Customer Requirements]]
+* [[AUSTRAC]]
+
+== External Links ==
+* [https://www.austrac.gov.au/ AUSTRAC Official Website]
+* [https://www.dss.gov.au/ Department of Social Services - National Consumer Protection Framework]
+
+[[Category:Federal Legislation]]

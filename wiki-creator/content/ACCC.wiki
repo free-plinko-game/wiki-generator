@@ -1,0 +1,61 @@
+<!--
+    Generated: 2026-01-12T12:24:40.163514
+    Page: ACCC
+    Category: Regulatory Bodies
+    Generator: OpenAI GPT-4o
+-->
+The Australian Competition and Consumer Commission (ACCC) is an independent Commonwealth statutory authority responsible for enforcing the Competition and Consumer Act 2010. While not the primary regulator for gambling, the ACCC plays a significant role in consumer protection, ensuring advertising standards compliance, and addressing unfair contract terms within the gambling industry.
+
+== Role in Gambling Regulation ==
+The ACCC's involvement in gambling regulation focuses on several key areas:
+* Consumer protection for gambling services
+* Enforcement against misleading and deceptive conduct
+* Compliance with advertising standards
+* Addressing unfair contract terms in gambling terms and conditions
+* Scam protection
+
+=== Key Gambling-Related Functions ===
+The ACCC undertakes various functions related to gambling, including:
+* Investigating misleading gambling promotions
+* Taking action against false advertising
+* Ensuring consumer guarantees for gambling services
+* Addressing competition issues in gambling markets
+
+=== Relationship with Other Regulators ===
+The ACCC collaborates with other regulatory bodies to ensure comprehensive oversight of the gambling industry:
+* [[Australian Communications and Media Authority]] (ACMA): Responsible for online gambling enforcement
+* State regulators: Handle licensing and venue operations
+* [[AUSTRAC]]: Focuses on anti-money laundering measures
+
+== Reporting Gambling-Related Consumer Issues ==
+Consumers can report gambling-related issues to the ACCC through their official complaint channels. The ACCC investigates these complaints to ensure compliance with consumer protection laws.
+
+== Notable Gambling-Related Enforcement Actions ==
+The ACCC has been involved in several enforcement actions related to gambling, particularly in cases of misleading promotions and false advertising.
+
+{| class="wikitable"
+|+ Key Facts about the ACCC
+|-
+! Attribute !! Details
+|-
+| Full Name || Australian Competition and Consumer Commission
+|-
+| Established || 1995
+|-
+| Primary Legislation || Competition and Consumer Act 2010
+|-
+| Website || [https://www.accc.gov.au ACCC Official Website]
+|}
+
+== See Also ==
+* [[Regulatory Bodies]]
+* [[Australian Communications and Media Authority]]
+* [[AUSTRAC]]
+* [[Gambling Advertising Restrictions]]
+* [[Consumer Protection]]
+
+== External Links ==
+* [https://www.accc.gov.au ACCC Official Website]
+* [https://www.accc.gov.au/about-us/contact-us/make-a-complaint ACCC - Make a Complaint]
+
+[[Category:Regulatory Bodies]]

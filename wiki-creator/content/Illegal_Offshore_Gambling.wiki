@@ -1,0 +1,61 @@
+<!--
+    Generated: 2026-01-12T11:31:55.227163
+    Page: Illegal Offshore Gambling
+    Category: Consumer Protection
+    Generator: OpenAI GPT-4o
+-->
+Illegal offshore gambling refers to online gambling services offered by operators that are not licensed or regulated within Australia. These sites are considered illegal under Australian law and pose significant risks to consumers, including lack of consumer protection, absence of responsible gambling tools, and potential data security issues.
+
+== What Makes a Site Illegal in Australia ==
+In Australia, a gambling site is deemed illegal if it operates without a licence from an Australian regulatory authority. The [[Interactive Gambling Act 2001]] prohibits the provision of certain online gambling services to Australian residents, unless the operator holds a valid licence.
+
+== Risks of Using Illegal Offshore Gambling Sites ==
+Illegal offshore gambling sites present numerous risks to consumers:
+
+=== No Consumer Protection ===
+Consumers using illegal sites are not protected by Australian laws, which means they have no legal recourse if they encounter issues with the operator.
+
+=== No Responsible Gambling Tools ===
+These sites typically do not offer tools to help manage gambling behaviour, such as self-exclusion or deposit limits.
+
+=== No Dispute Resolution ===
+There is no formal process for resolving disputes with illegal offshore operators, leaving consumers vulnerable.
+
+=== Payment Risks ===
+Payments made to illegal sites carry significant risks, as there is no guarantee of recourse if funds are lost or misappropriated.
+
+=== Data Security Concerns ===
+Illegal sites may not adhere to stringent data protection standards, putting personal and financial information at risk.
+
+=== Fairness Concerns ===
+Games offered by illegal operators may not be independently tested for fairness, increasing the risk of unfair practices.
+
+== How to Identify Illegal Sites ==
+Consumers can identify illegal offshore gambling sites by looking for certain red flags:
+
+{| class="wikitable"
+|-
+! Red Flag !! Description
+|-
+| No Australian Licence || The site does not display a valid Australian gambling licence.
+|-
+| Unusual Payment Methods || The site requires payments through unconventional or risky methods.
+|-
+| Lack of Contact Information || The site does not provide clear contact details or customer support options.
+|-
+| No Responsible Gambling Information || The site lacks information or tools related to responsible gambling.
+|}
+
+== Reporting Illegal Sites ==
+Consumers can report illegal offshore gambling sites to the Australian Communications and Media Authority (ACMA) for investigation and potential action, such as website blocking.
+
+== See Also ==
+* [[Interactive Gambling Act 2001]]
+* [[ACMA Website Blocking]]
+* [[International Gambling Licences]]
+
+== External Links ==
+* [https://www.acma.gov.au/online-gambling ACMA Online Gambling Information]
+* [https://www.acma.gov.au/reporting-illegal-gambling ACMA Reporting Illegal Gambling]
+
+[[Category:Consumer Protection]]

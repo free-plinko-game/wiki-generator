@@ -1,0 +1,61 @@
+<!--
+    Generated: 2026-01-12T11:36:58.076192
+    Page: Roulette
+    Category: Gambling Types
+    Generator: OpenAI GPT-4o
+-->
+Roulette is a popular casino game found in Australian casinos, characterized by a spinning wheel and a small ball. Players place bets on where they think the ball will land when the wheel stops spinning. There are two main types of roulette wheels: European and American, each with distinct features and house edges.
+
+== Types of Roulette Wheels ==
+
+Roulette wheels are categorized into two main types: European and American. The primary difference between them is the number of zero pockets.
+
+* '''European Roulette''': Features a single zero (0) pocket, resulting in a total of 37 pockets.
+* '''American Roulette''': Includes both a single zero (0) and a double zero (00) pocket, resulting in a total of 38 pockets.
+
+{| class="wikitable"
+|+ Comparison of European and American Roulette Wheels
+! Wheel Type !! Number of Pockets !! Zero Pockets !! House Edge
+|-
+| European || 37 || 1 (0) || 2.7%
+|-
+| American || 38 || 2 (0, 00) || 5.26%
+|}
+
+== Bet Types ==
+
+Roulette offers a variety of betting options, which can be broadly categorized into inside and outside bets:
+
+* '''Inside Bets''': Placed on specific numbers or small groups of numbers.
+** Straight-up: Bet on a single number.
+** Split: Bet on two adjacent numbers.
+** Street: Bet on three numbers in a row.
+* '''Outside Bets''': Placed on larger groups of numbers.
+** Red or Black: Bet on the color of the number.
+** Odd or Even: Bet on whether the number is odd or even.
+** High or Low: Bet on whether the number is in the high range (19-36) or low range (1-18).
+
+== House Edge ==
+
+The house edge in roulette is the advantage that the casino has over the players. It varies depending on the type of wheel:
+
+* European Roulette: 2.7%
+* American Roulette: 5.26%
+
+The additional double zero in American roulette increases the house edge, making European roulette more favorable for players.
+
+== Australian Preferences ==
+
+In Australian casinos, European roulette is generally preferred due to its lower house edge. Players are more likely to find European roulette tables, although American roulette is also available in some establishments.
+
+== See Also ==
+
+* [[Casino Table Games]]
+* [[Table Game Odds]]
+
+== External Links ==
+
+* [https://www.austrac.gov.au/ Australian Transaction Reports and Analysis Centre]
+* [https://www.acma.gov.au/ Australian Communications and Media Authority]
+
+[[Category:Gambling Types]]

@@ -1,0 +1,43 @@
+<!--
+    Generated: 2026-01-12T11:39:29.798255
+    Page: Productivity Commission 1999 Inquiry
+    Category: History
+    Generator: OpenAI GPT-4o
+-->
+The '''Productivity Commission 1999 Inquiry''' was the first major national inquiry into gambling in Australia, conducted by the Productivity Commission. It aimed to assess the economic and social impacts of the gambling industry, with a particular focus on problem gambling.
+
+== Scope and Terms of Reference ==
+The inquiry was tasked with evaluating the economic benefits and costs of the gambling industries, including their social impacts. It was to consider the implications for consumers, the community, and the economy, and to assess the effectiveness of existing regulatory frameworks.
+
+== Key Findings ==
+The inquiry found that while the gambling industry contributed significantly to the economy, it also had substantial social costs. It estimated that around 2.1% of Australian adults were problem gamblers, with an additional 4.7% at moderate risk.
+
+== Problem Gambling Estimates ==
+The inquiry provided detailed estimates of problem gambling prevalence, highlighting the significant personal and social costs associated with gambling addiction.
+
+{| class="wikitable"
+|-
+! Category !! Percentage of Adult Population
+|-
+| Problem Gamblers || 2.1%
+|-
+| Moderate Risk Gamblers || 4.7%
+|}
+
+== Recommendations ==
+The Productivity Commission made several recommendations, including:
+* The implementation of a national framework for gambling regulation.
+* Improved consumer protection measures.
+* Enhanced support services for problem gamblers.
+* Greater transparency in the reporting of gambling-related data.
+
+== Impact on Policy ==
+The inquiry's findings and recommendations influenced subsequent gambling policies in Australia, leading to reforms aimed at reducing the harm associated with gambling. It raised awareness of the need for a balanced approach to regulation that considers both economic benefits and social costs.
+
+== See Also ==
+* [[Major Gambling Inquiries]]
+
+== External Links ==
+* [https://www.pc.gov.au/inquiries/completed/gambling-1999 Productivity Commission 1999 Inquiry Report]
+
+[[Category:History]]

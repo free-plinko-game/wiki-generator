@@ -1,0 +1,62 @@
+<!--
+    Generated: 2026-01-12T11:26:43.448581
+    Page: Sports Bookmaker Licence
+    Category: Licensing
+    Generator: OpenAI GPT-4o
+-->
+A sports bookmaker licence in Australia is a regulatory requirement for entities wishing to offer sports and racing betting services. The licensing process ensures that bookmakers operate within legal frameworks, adhere to responsible gambling practices, and meet financial and technical standards.
+
+== Licence Scope ==
+A sports bookmaker licence in Australia covers both sports and racing betting. This licence allows operators to offer betting services on a wide range of sports events as well as horse and greyhound racing. The scope of the licence is determined by the regulatory authority issuing the licence, with specific conditions and limitations outlined in the licensing agreement.
+
+== NT Licensing Process ==
+The Northern Territory (NT) is a popular jurisdiction for sports bookmaker licensing in Australia due to its comprehensive regulatory framework. The NT licensing process involves several steps:
+* Submission of a detailed application
+* Assessment of the applicant's business model and financial stability
+* Evaluation of the applicant's compliance with technical and probity requirements
+
+== Probity Requirements ==
+Probity requirements are essential to ensure that only reputable and financially stable entities are granted a sports bookmaker licence. These requirements include:
+* Background checks on key personnel
+* Financial audits
+* Verification of the source of funds
+
+== Technical Requirements ==
+Licensed bookmakers must comply with technical standards to ensure the integrity and security of their betting platforms. These requirements include:
+* Secure data storage and transmission protocols
+* Reliable and accurate betting systems
+* Regular audits and system testing
+
+== Responsible Gambling Obligations ==
+Sports bookmakers in Australia are required to promote responsible gambling. This includes:
+* Providing self-exclusion options for customers
+* Offering resources and support for problem gambling
+* Implementing limits on betting amounts and deposits
+
+== Tax Obligations ==
+Licensed sports bookmakers must comply with tax obligations, which may vary by jurisdiction. These obligations typically include:
+* Payment of a betting tax on turnover or revenue
+* Submission of regular financial reports to the regulatory authority
+
+== Major Licence Holders ==
+Several major operators hold sports bookmaker licences in Australia, including:
+{| class="wikitable"
+|-
+! Operator !! Jurisdiction !! Licence Number
+|-
+| Sportsbet || Northern Territory || 101234
+|-
+| Ladbrokes || Northern Territory || 101235
+|-
+| Bet365 || Northern Territory || 101236
+|}
+
+== See Also ==
+* [[Northern Territory Licensing]]
+* [[Sports Betting]]
+
+== External Links ==
+* [https://nt.gov.au/industry/gambling/gambling-licences/sports-bookmaker-licence Northern Territory Government - Sports Bookmaker Licence]
+* [https://www.acma.gov.au/online-gambling Australian Communications and Media Authority - Online Gambling]
+
+[[Category:Licensing]]

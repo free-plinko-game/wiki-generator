@@ -1,0 +1,68 @@
+<!--
+    Generated: 2026-01-12T11:35:49.531743
+    Page: Crown Melbourne
+    Category: Gambling Types
+    Generator: OpenAI GPT-4o
+-->
+Crown Melbourne is a large casino and entertainment complex located on the south bank of the Yarra River in Melbourne, Victoria, Australia. It is one of the largest integrated resorts in the Southern Hemisphere, featuring a casino, hotels, restaurants, and entertainment facilities. Crown Melbourne is a key player in the Australian gambling industry and operates under a licence granted by the Victorian Government.
+
+== Location and Facilities ==
+Crown Melbourne is situated in the heart of Melbourne, offering a wide range of facilities including:
+* Three hotels: Crown Towers, Crown Metropol, and Crown Promenade
+* Over 40 restaurants and bars
+* A variety of entertainment options including nightclubs, a cinema, and live theatre
+* Retail shopping outlets
+* Convention and event spaces
+
+== Gaming Offerings ==
+The casino at Crown Melbourne provides a diverse array of gaming options:
+* More than 2,500 electronic gaming machines
+* Over 350 table games, including blackjack, roulette, and baccarat
+* Poker rooms and private gaming salons
+* Sports betting facilities
+
+== Licence Holder ==
+Crown Melbourne operates under a licence issued by the [[Victorian Gambling and Casino Control Commission]]. The licence allows Crown to conduct casino operations and is subject to regulatory oversight to ensure compliance with legal and ethical standards.
+
+== Finkelstein Royal Commission Findings ==
+The [[Finkelstein Royal Commission]] was established to investigate the suitability of Crown Melbourne to hold a casino licence. The Commission found significant issues related to governance, compliance, and money laundering controls. Key findings included:
+* Failure to implement adequate anti-money laundering measures
+* Poor corporate governance practices
+* Breaches of responsible gambling obligations
+
+== Regulatory Remediation ==
+Following the findings of the Finkelstein Royal Commission, Crown Melbourne has been subject to a series of regulatory remediation measures, including:
+* Appointment of a Special Manager to oversee operations
+* Implementation of stricter anti-money laundering protocols
+* Revamping corporate governance structures
+* Enhanced responsible gambling programs
+
+== Current Status ==
+As of the latest update, Crown Melbourne continues to operate under stringent regulatory oversight. The casino is working to address the issues identified by the Royal Commission and improve its compliance and governance frameworks.
+
+{| class="wikitable"
+|+ Key Facts about Crown Melbourne
+|-
+! Aspect !! Details
+|-
+| Location || Melbourne, Victoria, Australia
+|-
+| Licence Holder || Crown Resorts Limited
+|-
+| Number of Gaming Machines || Over 2,500
+|-
+| Number of Table Games || Over 350
+|-
+| Hotels || Crown Towers, Crown Metropol, Crown Promenade
+|}
+
+== See Also ==
+* [[Casino Gambling]]
+* [[Finkelstein Royal Commission]]
+* [[Victorian Gambling and Casino Control Commission]]
+
+== External Links ==
+* [https://www.crownmelbourne.com.au/ Official Crown Melbourne Website]
+* [https://www.vcglr.vic.gov.au/ Victorian Gambling and Casino Control Commission]
+
+[[Category:Gambling Types]]

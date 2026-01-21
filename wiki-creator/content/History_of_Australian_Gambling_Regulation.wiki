@@ -1,0 +1,56 @@
+<!--
+    Generated: 2026-01-12T11:38:28.922759
+    Page: History of Australian Gambling Regulation
+    Category: History
+    Generator: OpenAI GPT-4o
+-->
+The '''history of Australian gambling regulation''' reflects the evolving legal and social attitudes towards gambling from the colonial era to the present day. This timeline outlines significant developments in the regulation of gambling activities in Australia, highlighting key legislative changes and reforms.
+
+== Colonial Era (1788-1901) ==
+Gambling in Australia began with the arrival of the First Fleet in 1788. Initially unregulated, gambling activities were common among settlers and convicts. The first recorded horse race took place in Sydney in 1810, marking the beginning of organized gambling. By the late 19th century, various forms of gambling, including lotteries and betting, were subject to rudimentary regulation by colonial governments.
+
+== Federation to 1970s ==
+Following the federation of Australia in 1901, gambling regulation remained primarily under state jurisdiction. The early 20th century saw the introduction of the Totalisator, a system for betting on horse races, which was legalized in several states. The 1950s and 1960s witnessed the proliferation of poker machines, particularly in New South Wales, where they were legalized in 1956.
+
+== Casino Legalisation (1973 Onwards) ==
+The 1970s marked a significant shift with the legalisation of casinos. The first legal casino, the Wrest Point Hotel Casino, opened in Hobart, Tasmania, in 1973. This was followed by the establishment of casinos in other states, leading to a structured regulatory framework for casino operations.
+
+== Poker Machine Expansion ==
+Poker machines, also known as "pokies," expanded rapidly throughout the late 20th century. By the 1990s, they were a major source of revenue for clubs and pubs, particularly in New South Wales and Victoria. State governments imposed regulations to manage their proliferation and address problem gambling.
+
+== Internet Gambling and IGA 2001 ==
+The rise of the internet in the late 1990s introduced new challenges for gambling regulation. In response, the federal government enacted the [[Interactive Gambling Act 2001]] (IGA), which aimed to restrict online gambling services to Australians. The IGA prohibited the provision of certain online gambling services, although it allowed online wagering on sports and racing.
+
+== 2017 Reforms ==
+In 2017, significant reforms were introduced to strengthen the IGA. These reforms included the prohibition of online in-play betting and the establishment of a national self-exclusion register for online gambling, known as BetStop.
+
+== Recent Inquiries and BetStop ==
+Recent years have seen increased scrutiny of gambling practices, with several major inquiries into the industry. The introduction of BetStop in 2022 marked a significant step in providing support for individuals seeking to self-exclude from online gambling platforms.
+
+{| class="wikitable"
+|+ Key Dates in Australian Gambling Regulation
+! Year !! Event
+|-
+| 1810 || First recorded horse race in Sydney
+|-
+| 1956 || Legalisation of poker machines in New South Wales
+|-
+| 1973 || Opening of the first legal casino in Hobart, Tasmania
+|-
+| 2001 || Enactment of the Interactive Gambling Act
+|-
+| 2017 || Introduction of reforms to the Interactive Gambling Act
+|-
+| 2022 || Launch of BetStop, national self-exclusion register
+|}
+
+== See Also ==
+* [[Interactive Gambling Act 2001]]
+* [[First Legal Casino]]
+* [[Major Gambling Inquiries]]
+
+== External Links ==
+* [https://www.austrac.gov.au/ Australian Transaction Reports and Analysis Centre]
+* [https://www.acma.gov.au/ Australian Communications and Media Authority]
+
+[[Category:History]]

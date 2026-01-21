@@ -1,0 +1,42 @@
+<!--
+    Generated: 2026-01-12T11:30:16.323738
+    Page: Bank Transfers
+    Category: Payment Methods
+    Generator: OpenAI GPT-4o
+-->
+Bank transfers are a widely used method for depositing and withdrawing funds in the context of gambling in Australia. This method involves transferring money directly from a player's bank account to a gambling operator's account, offering a secure and straightforward way to manage gambling funds.
+
+== Domestic Bank Transfers ==
+Domestic bank transfers are a common method for Australian players to deposit and withdraw funds from gambling accounts. This process involves the electronic transfer of money between banks within Australia. It is typically used for both deposits and withdrawals, providing a direct link between a player's bank account and their gambling account.
+
+== BPAY ==
+BPAY is an Australian electronic bill payment service that allows users to pay bills and make deposits using their bank's online or telephone banking service. Many gambling operators in Australia accept BPAY as a method for depositing funds into gambling accounts. It is a secure and convenient option for players who prefer not to use credit cards or other online payment methods.
+
+== Processing Times ==
+The processing times for bank transfers can vary depending on the bank and the gambling operator. Generally, domestic bank transfers can take between 1 to 3 business days to process. BPAY transactions are usually processed within 1 to 2 business days. It is important for players to consider these times when planning their gambling activities.
+
+== Limits ==
+The limits for bank transfers can vary depending on the gambling operator and the player's bank. Some operators may impose minimum and maximum deposit and withdrawal limits. Players should check with their bank and the gambling operator for specific information regarding transaction limits.
+
+== Security ==
+Bank transfers are considered a secure method for transferring funds to and from gambling accounts. They involve direct transactions between banks, which are regulated and monitored to prevent fraud and ensure the safety of funds. BPAY also offers a high level of security, as it is integrated with the banking system and uses secure channels for transactions.
+
+{| class="wikitable"
+|+ Bank Transfer Details
+|-
+! Method !! Processing Time !! Security Level !! Typical Limits
+|-
+| Domestic Bank Transfer || 1-3 business days || High || Varies by operator
+|-
+| BPAY || 1-2 business days || High || Varies by operator
+|}
+
+== See Also ==
+* [[Gambling Payment Methods]]
+* [[PayID]]
+
+== External Links ==
+* [https://www.bpay.com.au/ BPAY Official Website]
+* [https://www.ausbanking.org.au/ Australian Banking Association]
+
+[[Category:Payment Methods]]

@@ -1,0 +1,51 @@
+<!--
+    Generated: 2026-01-12T11:33:19.500548
+    Page: Types of Sports Bets
+    Category: Gambling Types
+    Generator: OpenAI GPT-4o
+-->
+Sports betting involves wagering on the outcome of sports events. There are various types of sports bets that cater to different preferences and strategies. These include head-to-head bets, line betting, over/under bets, futures, multi-bets, same game multis, prop bets, and different odds formats.
+
+== Head-to-Head (Match Result) ==
+Head-to-head betting, also known as match result betting, involves predicting the winner of a specific match or event. This is one of the simplest forms of sports betting.
+
+== Line Betting (Handicap) ==
+Line betting, or handicap betting, involves giving one team a virtual advantage or disadvantage to even the playing field. This type of bet is popular in sports where there is a perceived imbalance between the competitors.
+
+== Over/Under (Totals) ==
+Over/under betting, also known as totals betting, involves wagering on whether the total points scored in a game will be over or under a specified number set by the bookmaker.
+
+== Futures (Outright) ==
+Futures bets are wagers placed on the outcome of an event that will occur in the future, such as which team will win a championship. These bets are typically placed well in advance of the event.
+
+== Multi-Bets (Parlays) ==
+Multi-bets, or parlays, involve combining multiple bets into one. All selections must win for the bettor to receive a payout, which is higher due to the increased risk.
+
+== Same Game Multi ==
+A same game multi allows bettors to combine multiple selections from the same game into a single bet. This type of bet is popular for its potential high returns and flexibility.
+
+== Prop Bets ==
+Proposition bets, or prop bets, are wagers on specific events within a game that do not necessarily affect the final outcome. Examples include betting on which player will score first.
+
+== Odds Formats ==
+Sports betting odds can be presented in different formats, including decimal, fractional, and moneyline. Decimal odds are commonly used in Australia and represent the total payout, including the stake.
+
+{| class="wikitable"
+|+ Odds Formats
+! Format !! Example !! Description
+|-
+| Decimal || 1.50 || Represents the total payout for a $1 bet, including the stake.
+|-
+| Fractional || 1/2 || Shows the profit relative to the stake; a $2 bet returns $1 profit.
+|-
+| Moneyline || -200 || Indicates how much needs to be wagered to win $100 (negative) or how much is won on a $100 bet (positive).
+|}
+
+== See Also ==
+* [[Sports Betting]]
+
+== External Links ==
+* [https://www.acma.gov.au/ Australian Communications and Media Authority]
+* [https://www.australia.gov.au/ Australian Government]
+
+[[Category:Gambling Types]]

@@ -1,0 +1,62 @@
+<!--
+    Generated: 2026-01-12T11:32:22.190305
+    Page: Gambling Harm Statistics
+    Category: Consumer Protection
+    Generator: OpenAI GPT-4o
+-->
+Gambling harm statistics in Australia provide critical insights into the prevalence and impact of gambling activities on individuals and communities. These statistics are essential for understanding the extent of problem gambling, the financial implications of gambling, and the demographic factors that influence gambling behavior. The data is primarily sourced from the Australian Institute of Family Studies (AIFS) and various state surveys.
+
+== Prevalence of Gambling ==
+Gambling is a common activity in Australia, with a significant portion of the adult population engaging in various forms of gambling. The prevalence rates vary across different types of gambling, such as lotteries, sports betting, and electronic gaming machines.
+
+== Problem Gambling Rates ==
+Problem gambling is a significant concern, affecting a small but impactful percentage of the population. It is characterized by an inability to control gambling habits, leading to adverse personal, financial, and social consequences.
+
+{| class="wikitable"
+|+ Problem Gambling Rates by State (2022)
+! State !! Problem Gambling Rate (%)
+|-
+| New South Wales || 1.0
+|-
+| Victoria || 0.8
+|-
+| Queensland || 0.7
+|-
+| Western Australia || 0.6
+|-
+| South Australia || 0.9
+|}
+
+== Gambling Expenditure by Type ==
+Australians spend billions annually on gambling, with expenditures distributed across various gambling types. The following table outlines the gambling expenditure by type for the year 2022.
+
+{| class="wikitable"
+|+ Gambling Expenditure by Type (2022)
+! Type !! Expenditure (AUD Billion)
+|-
+| Lotteries || 5.5
+|-
+| Sports Betting || 3.0
+|-
+| Electronic Gaming Machines || 12.0
+|-
+| Casino Games || 4.5
+|}
+
+== State Comparisons ==
+Gambling behaviors and expenditures can vary significantly between states due to differences in regulation, availability of gambling venues, and cultural attitudes towards gambling.
+
+== Demographic Factors ==
+Certain demographic factors, such as age, gender, and socioeconomic status, can influence gambling behavior. Studies have shown that younger males and individuals from lower socioeconomic backgrounds are more likely to experience gambling-related harm.
+
+== Data Sources ==
+The primary sources of gambling harm statistics in Australia include the Australian Institute of Family Studies (AIFS) and state-specific surveys. These sources provide comprehensive data that inform policy and consumer protection measures.
+
+== See Also ==
+* [[Gambling Help Services]]
+* [[Problem Gambling Warning Signs]]
+
+== External Links ==
+* [https://aifs.gov.au/research/gambling AIFS Gambling Research]
+
+[[Category:Consumer Protection]]

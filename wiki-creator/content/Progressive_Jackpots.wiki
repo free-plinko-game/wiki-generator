@@ -1,0 +1,47 @@
+<!--
+    Generated: 2026-01-12T11:29:53.213192
+    Page: Progressive Jackpots
+    Category: Technical Standards
+    Generator: OpenAI GPT-4o
+-->
+Progressive jackpots are a type of jackpot system commonly used in gambling machines, such as slot machines and poker machines, where the prize amount increases each time the game is played but the jackpot is not won. There are several types of progressive jackpots, including standalone, linked, and wide-area progressives, each varying in scope and prize potential.
+
+== Types of Progressive Jackpots ==
+Progressive jackpots can be categorized into three main types:
+
+* '''Standalone Progressives''': These jackpots are confined to a single machine. The jackpot increases with each bet placed on that machine until it is won.
+* '''Linked Progressives''': These jackpots are linked across multiple machines within a single venue. The jackpot grows as players on any of the linked machines contribute to the prize pool.
+* '''Wide-Area Progressives''': These jackpots are linked across multiple venues, often across a wide geographic area. They offer the largest jackpots due to the high number of contributing machines.
+
+== Contribution Rates ==
+The contribution rate is the percentage of each bet that is added to the progressive jackpot. This rate can vary depending on the machine and the type of progressive system. Typically, a small percentage, ranging from 1% to 5%, is contributed to the jackpot.
+
+{| class="wikitable"
+|+ Example Contribution Rates
+! Type !! Contribution Rate
+|-
+| Standalone || 1% - 2%
+|-
+| Linked || 2% - 3%
+|-
+| Wide-Area || 3% - 5%
+|}
+
+== Impact on Base RTP ==
+The Return to Player (RTP) is the percentage of total bets that a machine is expected to return to players over time. Progressive jackpots can impact the base RTP of a machine, as a portion of the RTP is allocated to the jackpot contribution. This means the base game RTP may be lower, as a percentage is reserved for building the jackpot.
+
+== Odds of Winning ==
+The odds of winning a progressive jackpot vary significantly depending on the type of jackpot and the specific game. Generally, the odds are lower for wide-area progressives due to the large number of machines and players contributing to the jackpot. Exact odds are typically not disclosed by manufacturers or casinos.
+
+== Notable Australian Jackpots ==
+Australia has several notable progressive jackpots, particularly in the realm of poker machines. Some of the largest jackpots have been won on wide-area progressive systems, which are popular in Australian casinos and clubs.
+
+== See Also ==
+* [[Return to Player]]
+* [[Poker Machines]]
+
+== External Links ==
+* [https://www.acma.gov.au/gambling Australian Communications and Media Authority - Gambling]
+* [https://www.legislation.gov.au/Details/F2021C00950 Interactive Gambling Act 2001]
+
+[[Category:Technical Standards]]

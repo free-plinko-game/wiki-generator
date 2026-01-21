@@ -1,0 +1,61 @@
+<!--
+    Generated: 2026-01-12T11:42:09.113415
+    Page: Frequently Asked Questions
+    Category: Reference
+    Generator: OpenAI GPT-4o
+-->
+The "Frequently Asked Questions" page provides answers to common inquiries regarding gambling regulation in Australia. This page aims to clarify legal aspects, self-exclusion measures, and reporting procedures related to gambling activities within the country.
+
+== Is online gambling legal in Australia? ==
+Online gambling is regulated under the [[Interactive Gambling Act 2001]]. While online sports betting and lotteries are legal, online casino games and poker are prohibited. It is important to consult the latest regulations as they may change.
+
+== What is BetStop and how do I register? ==
+BetStop is Australia's National Self-Exclusion Register, allowing individuals to exclude themselves from all licensed interactive wagering services. To register, visit the official BetStop website and follow the registration process, which typically involves providing personal identification details.
+
+== How do I self-exclude from gambling? ==
+Self-exclusion can be done through BetStop for online gambling. For physical venues, contact the gambling provider directly to request self-exclusion. Each state and territory may have specific procedures, so it is advisable to check local regulations.
+
+== Are offshore casino sites legal? ==
+Offshore casino sites are illegal under Australian law. The [[Interactive Gambling Act 2001]] prohibits the provision of certain gambling services to Australians by offshore operators. Engaging with these sites may pose legal risks.
+
+== How do I report an illegal gambling site? ==
+To report an illegal gambling site, contact the Australian Communications and Media Authority (ACMA). They have the authority to investigate and take action against illegal operators. Reports can be made via their official website.
+
+== What is the minimum RTP in my state? ==
+The minimum Return to Player (RTP) percentage varies by state and territory. Below is a summary of the minimum RTP requirements:
+
+{| class="wikitable"
+|-
+! State/Territory !! Minimum RTP
+|-
+| New South Wales || 85%
+|-
+| Victoria || 87%
+|-
+| Queensland || 85%
+|-
+| South Australia || 87.5%
+|-
+| Western Australia || 90%
+|-
+| Tasmania || 85%
+|-
+| Northern Territory || 85%
+|-
+| Australian Capital Territory || 88%
+|}
+
+== Can I use a credit card to gamble online? ==
+As of 2023, the use of credit cards for online gambling is prohibited in Australia. This measure aims to reduce gambling-related harm by preventing individuals from using borrowed funds to gamble.
+
+== See Also ==
+* [[Interactive Gambling Act 2001]]
+* [[BetStop]]
+* [[Illegal Offshore Gambling]]
+
+== External Links ==
+* [https://www.acma.gov.au/ Australian Communications and Media Authority]
+* [https://www.betstop.gov.au/ BetStop Official Website]
+* [https://www.legislation.gov.au/Details/C2023C00193 Interactive Gambling Act 2001]
+
+[[Category:Reference]]

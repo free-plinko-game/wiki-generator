@@ -1,0 +1,44 @@
+<!--
+    Generated: 2026-01-12T11:37:47.545955
+    Page: Social Casino Games
+    Category: Gambling Types
+    Generator: OpenAI GPT-4o
+-->
+Social casino games are free-to-play digital games that simulate traditional casino games such as slots, poker, and blackjack. These games are typically available on social media platforms, mobile apps, and websites. Unlike real-money gambling, social casino games do not offer cash prizes, and their primary purpose is entertainment.
+
+== Definition and Features ==
+Social casino games are characterized by their free-to-play model, where players can enjoy casino-style games without wagering real money. These games often include features such as:
+* Virtual currency that can be purchased with real money
+* Social interaction through leaderboards and friend challenges
+* Frequent updates with new games and features
+
+== Legal Status ==
+Social casino games are generally not classified as gambling under Australian law because they do not offer real-money prizes. The absence of a financial reward means they do not meet the legal definition of gambling, which typically requires the staking of money on an outcome with the potential for a monetary return.
+
+== In-App Purchases ==
+While social casino games are free to play, they often include in-app purchases. Players can buy virtual currency or items to enhance their gaming experience. This monetization strategy is a significant revenue stream for developers, despite the games being free to access.
+
+{| class="wikitable"
+|+ In-App Purchase Statistics
+! Year !! Global Revenue (USD) !! Percentage of Total Game Revenue
+|-
+| 2021 || $6.2 billion || 10%
+|-
+| 2022 || $7.1 billion || 11%
+|}
+
+== Harm Concerns ==
+There are concerns about the potential harm of social casino games, particularly regarding their addictive nature and the use of in-app purchases. Critics argue that these games can encourage excessive spending and may serve as a gateway to real-money gambling, especially among younger audiences.
+
+== Gateway to Real Gambling ==
+Research suggests that social casino games may act as a gateway to real gambling. The immersive experience and the use of virtual currency can normalize gambling behaviors, potentially leading players to transition to real-money gambling activities.
+
+== See Also ==
+* [[Loot Boxes]]
+* [[Problem Gambling Warning Signs]]
+
+== External Links ==
+* [https://www.acma.gov.au/ Australian Communications and Media Authority]
+* [https://www.responsiblegambling.vic.gov.au/ Victorian Responsible Gambling Foundation]
+
+[[Category:Gambling Types]]

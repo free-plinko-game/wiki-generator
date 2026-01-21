@@ -1,0 +1,59 @@
+<!--
+    Generated: 2026-01-12T11:39:20.749921
+    Page: Major Gambling Inquiries
+    Category: History
+    Generator: OpenAI GPT-4o
+-->
+Major gambling inquiries in Australia have played a crucial role in shaping the regulatory landscape of the gambling industry. These inquiries, often conducted by government bodies or through royal commissions, aim to investigate and address issues related to gambling operations, regulatory compliance, and social impacts.
+
+== Productivity Commission 1999 ==
+The Productivity Commission's 1999 inquiry into Australia's gambling industries was a landmark investigation that examined the economic and social impacts of gambling. It provided a comprehensive analysis of the gambling sector and offered recommendations for policy reform.
+
+== Productivity Commission 2010 ==
+In 2010, the Productivity Commission conducted a follow-up inquiry to assess changes since the 1999 report. This inquiry focused on the effectiveness of harm minimisation strategies and the regulation of gambling, particularly in relation to electronic gaming machines.
+
+== Bergin Inquiry 2021 (Crown NSW) ==
+The Bergin Inquiry, officially known as the Inquiry under section 143 of the Casino Control Act 1992 (NSW), was conducted in 2021 to investigate the suitability of Crown Resorts to hold a casino license in New South Wales. The inquiry uncovered significant governance failures and recommended major reforms.
+
+== Finkelstein Royal Commission 2021 (Crown VIC) ==
+The Finkelstein Royal Commission was established in 2021 to examine the conduct of Crown Resorts in Victoria. The commission found evidence of misconduct and regulatory breaches, leading to recommendations for stricter oversight and governance reforms.
+
+== Bell Inquiry 2022 (Star NSW) ==
+The Bell Inquiry, conducted in 2022, investigated the operations of The Star Entertainment Group in New South Wales. It identified serious compliance issues and recommended changes to improve regulatory frameworks and corporate governance.
+
+== Gotterson Review (Star QLD) ==
+The Gotterson Review focused on The Star Entertainment Group's operations in Queensland. It aimed to assess the company's adherence to regulatory standards and propose measures to enhance compliance and accountability.
+
+== Key Findings and Recommendations ==
+{| class="wikitable"
+|+ Summary of Key Findings and Recommendations
+|-
+! Inquiry !! Key Findings !! Recommendations
+|-
+| Productivity Commission 1999 || Identified significant social costs of gambling || Implementation of harm minimisation strategies
+|-
+| Productivity Commission 2010 || Evaluated effectiveness of previous reforms || Enhanced consumer protection measures
+|-
+| Bergin Inquiry 2021 || Governance failures at Crown NSW || Revocation of casino license, governance reforms
+|-
+| Finkelstein Royal Commission 2021 || Misconduct at Crown VIC || Stricter regulatory oversight
+|-
+| Bell Inquiry 2022 || Compliance issues at Star NSW || Improved corporate governance
+|-
+| Gotterson Review || Regulatory breaches at Star QLD || Strengthened compliance frameworks
+|}
+
+== See Also ==
+* [[Bergin Inquiry]]
+* [[Finkelstein Royal Commission]]
+* [[Bell Inquiry]]
+
+== External Links ==
+* [https://www.pc.gov.au/inquiries/completed/gambling-1999 Productivity Commission 1999 Report]
+* [https://www.pc.gov.au/inquiries/completed/gambling-2010 Productivity Commission 2010 Report]
+* [https://www.nswcasinoinquiry.com.au Bergin Inquiry Report]
+* [https://www.vic.gov.au/finkelstein-royal-commission-report Finkelstein Royal Commission Report]
+* [https://www.starentertainmentgroup.com.au Bell Inquiry Report]
+* [https://www.qld.gov.au/gotterson-review Gotterson Review]
+
+[[Category:History]]

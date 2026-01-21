@@ -1,0 +1,103 @@
+<!--
+    Generated: 2026-01-12T11:41:58.519280
+    Page: Contact Directory
+    Category: Reference
+    Generator: OpenAI GPT-4o
+-->
+The "Contact Directory" provides essential contact information for gambling regulators and support services in Australia. This directory includes federal and state regulators, support services, and industry bodies, offering a comprehensive resource for individuals seeking assistance or information related to gambling regulation and support.
+
+== Federal Regulators ==
+
+=== Australian Communications and Media Authority (ACMA) ===
+The ACMA is responsible for regulating online gambling and ensuring compliance with the Interactive Gambling Act 2001.
+
+{| class="wikitable"
+|-
+! Contact Method !! Details
+|-
+| Phone || 1300 850 115
+|-
+| Email || info@acma.gov.au
+|-
+| Website || [https://www.acma.gov.au Australian Communications and Media Authority]
+|}
+
+=== Australian Transaction Reports and Analysis Centre (AUSTRAC) ===
+AUSTRAC oversees anti-money laundering and counter-terrorism financing measures within the gambling industry.
+
+{| class="wikitable"
+|-
+! Contact Method !! Details
+|-
+| Phone || 1300 021 037
+|-
+| Email || contact@austrac.gov.au
+|-
+| Website || [https://www.austrac.gov.au Australian Transaction Reports and Analysis Centre]
+|}
+
+== State Regulators ==
+
+=== New South Wales ===
+* '''Liquor & Gaming NSW'''
+** Phone: 1300 024 720
+** Email: info@liquorandgaming.nsw.gov.au
+** Website: [https://www.liquorandgaming.nsw.gov.au Liquor & Gaming NSW]
+
+=== Victoria ===
+* '''Victorian Commission for Gambling and Liquor Regulation (VCGLR)'''
+** Phone: 1300 182 457
+** Email: contact@vcglr.vic.gov.au
+** Website: [https://www.vcglr.vic.gov.au Victorian Commission for Gambling and Liquor Regulation]
+
+== Support Services ==
+
+=== Gambling Help Online ===
+A national online support service offering free and confidential support 24/7.
+
+{| class="wikitable"
+|-
+! Contact Method !! Details
+|-
+| Phone || 1800 858 858
+|-
+| Website || [https://www.gamblinghelponline.org.au Gambling Help Online]
+|}
+
+=== Lifeline Australia ===
+Provides crisis support and suicide prevention services.
+
+{| class="wikitable"
+|-
+! Contact Method !! Details
+|-
+| Phone || 13 11 14
+|-
+| Website || [https://www.lifeline.org.au Lifeline Australia]
+|}
+
+== Industry Bodies ==
+
+=== Responsible Wagering Australia (RWA) ===
+An industry body representing the interests of the online wagering industry.
+
+{| class="wikitable"
+|-
+! Contact Method !! Details
+|-
+| Email || info@responsiblewagering.com.au
+|-
+| Website || [https://www.responsiblewagering.com.au Responsible Wagering Australia]
+|}
+
+== See Also ==
+* [[Gambling Help Services]]
+* [[State and Territory Regulators]]
+
+== External Links ==
+* [https://www.acma.gov.au Australian Communications and Media Authority]
+* [https://www.austrac.gov.au Australian Transaction Reports and Analysis Centre]
+* [https://www.gamblinghelponline.org.au Gambling Help Online]
+* [https://www.lifeline.org.au Lifeline Australia]
+
+[[Category:Reference]]

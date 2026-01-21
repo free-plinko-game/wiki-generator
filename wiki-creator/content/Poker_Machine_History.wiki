@@ -1,0 +1,54 @@
+<!--
+    Generated: 2026-01-12T11:39:06.624888
+    Page: Poker Machine History
+    Category: History
+    Generator: OpenAI GPT-4o
+-->
+Poker machines, also known as slot machines or "pokies," have a significant history in Australia, with their introduction dating back to the mid-20th century. These machines have become a prominent feature of the Australian gambling landscape, evolving through various legal and social changes over the decades.
+
+== Introduction of Poker Machines in NSW ==
+The first legal poker machines in Australia were introduced in New South Wales (NSW) in 1956. Initially, these machines were permitted only in registered clubs, sparking a debate over their presence in clubs versus hotels. This debate centered around the potential social impacts and economic benefits of allowing poker machines in different types of venues.
+
+== Club vs Hotel Debate ==
+The introduction of poker machines in NSW clubs led to discussions about whether hotels should also be allowed to host these machines. Proponents argued that expanding poker machines to hotels would increase state revenue and tourism, while opponents raised concerns about problem gambling and community welfare.
+
+== State-by-State Legalisation Timeline ==
+Poker machines were gradually legalized in other Australian states and territories following their introduction in NSW. The timeline of legalisation is as follows:
+
+{| class="wikitable"
+|+ Legalisation of Poker Machines by State
+! State/Territory !! Year Legalised
+|-
+| New South Wales || 1956
+|-
+| Victoria || 1991
+|-
+| Queensland || 1992
+|-
+| South Australia || 1994
+|-
+| Tasmania || 1997
+|-
+| Australian Capital Territory || 1976
+|-
+| Northern Territory || 1996
+|-
+| Western Australia || Not legalised (limited to casinos)
+|}
+
+== 1990s Expansion ==
+The 1990s marked a significant expansion of poker machines across Australia. This period saw a rapid increase in the number of machines and their availability in various venues, driven by legislative changes and the growing popularity of gambling as a form of entertainment.
+
+== Reform Movements ==
+Over the years, there have been numerous reform movements aimed at addressing the social impacts of poker machines, particularly problem gambling. These movements have called for measures such as reduced machine numbers, lower betting limits, and enhanced support for affected individuals. Despite various reforms, poker machines remain a contentious issue in Australian society.
+
+== See Also ==
+* [[Poker Machines]]
+* [[History of Australian Gambling Regulation]]
+
+== External Links ==
+* [https://www.nsw.gov.au NSW Government - Gambling Regulation]
+* [https://www.vcglr.vic.gov.au Victorian Commission for Gambling and Liquor Regulation]
+* [https://www.qld.gov.au Queensland Government - Gambling]
+
+[[Category:History]]

@@ -1,0 +1,47 @@
+<!--
+    Generated: 2026-01-12T11:26:10.328551
+    Page: Deposit Limits
+    Category: Consumer Protection
+    Generator: OpenAI GPT-4o
+-->
+Deposit limits are a consumer protection measure that allows individuals to set maximum amounts they can deposit into their gambling accounts over a specified period. These limits are designed to help manage gambling expenditure and promote responsible gambling practices.
+
+== Types of Deposit Limits ==
+Deposit limits can be set for different timeframes, including daily, weekly, and monthly limits. These limits are flexible and can be adjusted according to the gambler's preferences and financial situation.
+
+== Setting Deposit Limits ==
+To set deposit limits, users typically access their gambling account settings where they can specify the desired limit for each timeframe. The process is straightforward and can usually be completed online through the gambling operator's website or app.
+
+== Cooling-off Period ==
+When a user requests to increase their deposit limit, a cooling-off period is applied. This period is a mandatory delay, often ranging from 24 to 48 hours, before the new higher limit takes effect. This measure is intended to prevent impulsive decisions that could lead to excessive gambling.
+
+== Immediate Decrease ==
+Conversely, if a user decides to decrease their deposit limit, the change is implemented immediately. This allows users to quickly reduce their spending capacity if they feel it is necessary for their financial well-being.
+
+== Operator Obligations ==
+Gambling operators are required to provide tools for setting deposit limits and must ensure these limits are enforced. They are also responsible for informing users about the availability of deposit limits and the procedures for setting or adjusting them.
+
+{| class="wikitable"
+|+ Deposit Limit Features
+! Feature !! Description
+|-
+| Daily Limit || Maximum deposit amount allowed per day
+|-
+| Weekly Limit || Maximum deposit amount allowed per week
+|-
+| Monthly Limit || Maximum deposit amount allowed per month
+|-
+| Cooling-off Period || Delay before an increased limit takes effect
+|-
+| Immediate Decrease || Immediate effect of a reduced limit
+|}
+
+== See Also ==
+* [[Responsible Gambling Tools]]
+* [[National Consumer Protection Framework]]
+
+== External Links ==
+* [https://www.acma.gov.au Australian Communications and Media Authority]
+* [https://www.responsiblegambling.vic.gov.au Victorian Responsible Gambling Foundation]
+
+[[Category:Consumer Protection]]

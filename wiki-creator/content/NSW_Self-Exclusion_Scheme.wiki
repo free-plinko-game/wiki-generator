@@ -1,0 +1,61 @@
+<!--
+    Generated: 2026-01-12T11:25:33.653131
+    Page: NSW Self-Exclusion Scheme
+    Category: Consumer Protection
+    Generator: OpenAI GPT-4o
+-->
+The '''NSW Self-Exclusion Scheme''' is a multi-venue self-exclusion (MVSE) program available in New South Wales, Australia. It allows individuals to voluntarily exclude themselves from multiple gambling venues, including clubs, hotels, and the casino, to help manage gambling-related issues.
+
+== Multi-Venue Self-Exclusion (MVSE) ==
+The MVSE program in New South Wales enables individuals to self-exclude from multiple gambling venues simultaneously. This approach is designed to provide a more comprehensive and effective means of limiting access to gambling environments across the state.
+
+== Coverage ==
+The NSW Self-Exclusion Scheme covers a wide range of gambling venues, including:
+* Clubs
+* Hotels
+* The Star Casino in Sydney
+
+This extensive coverage ensures that individuals seeking to control their gambling habits can do so across various types of venues.
+
+== Registration Process ==
+To register for the NSW Self-Exclusion Scheme, individuals must complete the following steps:
+# Contact a participating venue or the MVSE program directly.
+# Complete the self-exclusion application form.
+# Attend a meeting with a venue representative or MVSE program officer to discuss the exclusion process and confirm details.
+
+== Duration Options ==
+Participants in the NSW Self-Exclusion Scheme can choose from various duration options for their exclusion. These options typically include:
+* 6 months
+* 12 months
+* 24 months
+* Indefinite period
+
+The flexibility in duration allows individuals to select a timeframe that best suits their personal needs and circumstances.
+
+{| class="wikitable"
+|+ NSW Self-Exclusion Scheme Duration Options
+! Duration
+! Description
+|-
+| 6 months
+| Short-term exclusion for initial control
+|-
+| 12 months
+| Medium-term exclusion for sustained management
+|-
+| 24 months
+| Long-term exclusion for comprehensive support
+|-
+| Indefinite
+| Permanent exclusion until further notice
+|}
+
+== See Also ==
+* [[State Self-Exclusion Schemes]]
+* [[Liquor and Gaming NSW]]
+
+== External Links ==
+* [https://www.liquorandgaming.nsw.gov.au/ Liquor and Gaming NSW Official Website]
+* [https://www.gamblinghelp.nsw.gov.au/ NSW Gambling Help]
+
+[[Category:Consumer Protection]]

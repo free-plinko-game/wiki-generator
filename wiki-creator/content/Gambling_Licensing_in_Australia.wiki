@@ -1,0 +1,53 @@
+<!--
+    Generated: 2026-01-12T11:26:22.578510
+    Page: Gambling Licensing in Australia
+    Category: Licensing
+    Generator: OpenAI GPT-4o
+-->
+Gambling licensing in Australia is governed by a combination of federal and state/territory laws. The federal government primarily regulates online gambling, while each state and territory manages land-based gambling operations within its jurisdiction. This dual system ensures that both national and local interests are addressed in the regulation of gambling activities.
+
+== Federal vs State Jurisdiction ==
+In Australia, the regulation of gambling is divided between federal and state/territory governments. The federal government, through the [[Interactive Gambling Act 2001]], oversees online gambling services, prohibiting certain online gambling activities and regulating the advertising of these services. Meanwhile, each state and territory has its own regulatory body responsible for licensing and regulating land-based gambling, such as casinos, poker machines, and betting shops.
+
+== Online vs Land-Based Licensing ==
+Online gambling services must comply with federal laws and obtain licenses from the relevant state or territory if they wish to operate legally in Australia. Land-based gambling, such as casinos and gaming machines, is licensed and regulated by the respective state or territory authorities. Each jurisdiction has its own set of rules and requirements for obtaining and maintaining a gambling license.
+
+== Types of Licences ==
+There are several types of gambling licenses available in Australia, including:
+* Casino Licenses
+* Gaming Machine Licenses
+* Bookmaker Licenses
+* Lottery Licenses
+* Interactive Gambling Licenses
+
+{| class="wikitable"
+|+ Types of Gambling Licenses in Australia
+! License Type !! Description !! Issuing Authority
+|-
+| Casino License || Allows operation of a casino || State/Territory Regulatory Bodies
+|-
+| Gaming Machine License || Permits the operation of poker machines || State/Territory Regulatory Bodies
+|-
+| Bookmaker License || Authorizes sports betting operations || State/Territory Regulatory Bodies
+|-
+| Lottery License || Permits the conduct of lotteries || State/Territory Regulatory Bodies
+|-
+| Interactive Gambling License || Required for online gambling services || State/Territory Regulatory Bodies
+|}
+
+== Application Process Overview ==
+The application process for obtaining a gambling license in Australia varies by jurisdiction but generally includes the submission of detailed business plans, financial records, and personal background checks of key personnel. Applicants must demonstrate their ability to operate a gambling business responsibly and in compliance with regulatory requirements.
+
+== Ongoing Compliance ==
+Licensed gambling operators in Australia must adhere to strict compliance requirements, including regular reporting, audits, and adherence to responsible gambling measures. Failure to comply with these requirements can result in fines, suspension, or revocation of the license.
+
+== See Also ==
+* [[Northern Territory Licensing]]
+* [[State and Territory Regulators]]
+* [[Interactive Gambling Act 2001]]
+
+== External Links ==
+* [https://www.acma.gov.au/ Australian Communications and Media Authority]
+* [https://www.australia.gov.au/information-and-services/business-and-industry/gambling Australian Government - Gambling]
+
+[[Category:Licensing]]

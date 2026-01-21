@@ -1,0 +1,61 @@
+<!--
+    Generated: 2026-01-12T12:24:47.784775
+    Page: Online Wagering Licensing
+    Category: Licensing
+    Generator: OpenAI GPT-4o
+-->
+Online wagering licensing in Australia refers to the process by which operators obtain the necessary permissions to offer wagering services over the internet. The Northern Territory is the primary jurisdiction for online wagering licensing, known for its business-friendly regulatory environment and competitive tax rates.
+
+== Overview ==
+The Northern Territory (NT) dominates the online wagering licensing landscape in Australia. The NT Racing Commission serves as the primary licensor for online wagering operators. Historically, the NT has attracted operators due to its favourable regulatory conditions and lower tax obligations compared to other Australian states and territories.
+
+== Types of Online Wagering Licences ==
+Online wagering operators in Australia can apply for various types of licences, including:
+* '''Sports bookmaker licence''': Allows operators to offer fixed-odds betting on sports events.
+* '''Betting exchange licence''': Permits the operation of a platform where customers can bet against each other.
+* '''Totalisator licence''': Enables the operation of a pool betting system.
+
+== Licence Application Process ==
+The application process for an online wagering licence involves several key steps:
+* '''Probity and suitability checks''': Ensuring the integrity and suitability of applicants.
+* '''Financial capability assessment''': Evaluating the financial stability of the operator.
+* '''Technical systems review''': Assessing the reliability and security of the operator's systems.
+* '''Responsible gambling plan''': Requiring a comprehensive plan to promote responsible gambling.
+
+== Ongoing Compliance Requirements ==
+Licensed operators must adhere to ongoing compliance requirements, including:
+* Participation in '''BetStop''', the national self-exclusion register.
+* Compliance with the '''National Consumer Protection Framework'''.
+* Fulfilment of responsible gambling obligations.
+* Adherence to Anti-Money Laundering and Counter-Terrorism Financing (AML/CTF) regulations.
+* Regular audits and reporting to ensure continued compliance.
+
+== Major Licensed Operators ==
+Several major operators hold online wagering licences in Australia, including:
+* Sportsbet
+* Ladbrokes
+* TAB
+* PointsBet
+* Neds
+* Unibet
+* bet365
+
+== Fees and Taxation ==
+The Northern Territory offers competitive fees and tax rates for online wagering operators, making it an attractive location for licensing.
+
+== International Licences ==
+International licences are not recognised in Australia, meaning operators must obtain a local licence to legally offer services to Australian residents.
+
+== See Also ==
+* [[Licensing]]
+* [[Northern Territory Licensing]]
+* [[Northern Territory Racing Commission]]
+* [[Sports Bookmaker Licence]]
+* [[BetStop]]
+* [[National Consumer Protection Framework]]
+
+== External Links ==
+* [https://ntrc.nt.gov.au NT Racing Commission]
+* [https://ntrc.nt.gov.au/licensed-operators NT Licensed Operators List]
+
+[[Category:Licensing]]

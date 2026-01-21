@@ -1,0 +1,44 @@
+<!--
+    Generated: 2026-01-12T11:30:32.575044
+    Page: Credit Card Ban
+    Category: Payment Methods
+    Generator: OpenAI GPT-4o
+-->
+Australia implemented a ban on the use of credit cards for online gambling services, effective from 11 June 2020. This measure was introduced to enhance consumer protection and mitigate gambling-related harm by preventing the use of borrowed funds for gambling activities.
+
+== Legal Basis ==
+The credit card ban is enforced under the Interactive Gambling Act 2001, which provides the legal framework for regulating online gambling services in Australia. The Australian Communications and Media Authority (ACMA) is responsible for overseeing compliance with this regulation.
+
+== Scope ==
+The ban specifically targets online wagering services, prohibiting the use of credit cards for placing bets or making deposits. This applies to all forms of online gambling that fall under the jurisdiction of the Interactive Gambling Act 2001.
+
+== Permitted Payment Methods ==
+While credit cards are banned, the use of debit cards remains permissible for online gambling transactions. This allows consumers to use their own funds rather than borrowed money, aligning with the policy's consumer protection goals.
+
+== Enforcement ==
+The ACMA is tasked with monitoring compliance and enforcing the ban. Online gambling operators are required to ensure that their payment systems do not accept credit card transactions. Non-compliance can result in significant penalties, including fines and potential revocation of licenses.
+
+== Policy Rationale ==
+The primary rationale for the credit card ban is to reduce gambling-related harm by preventing individuals from using borrowed funds, which can exacerbate financial difficulties. The policy is part of a broader effort to promote responsible gambling and protect vulnerable consumers.
+
+{| class="wikitable"
+|+ Key Facts about the Credit Card Ban
+! Aspect !! Details
+|-
+| Effective Date || 11 June 2020
+|-
+| Legal Basis || Interactive Gambling Act 2001
+|-
+| Enforcement Body || Australian Communications and Media Authority (ACMA)
+|-
+| Permitted Payment Methods || Debit Cards
+|}
+
+== See Also ==
+* [[Gambling Payment Methods]]
+* [[National Consumer Protection Framework]]
+
+== External Links ==
+* [https://www.acma.gov.au/ban-credit-card-gambling ACMA - Credit Card Ban]
+
+[[Category:Payment Methods]]

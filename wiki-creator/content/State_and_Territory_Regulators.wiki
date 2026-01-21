@@ -1,0 +1,54 @@
+<!--
+    Generated: 2026-01-12T11:23:19.403133
+    Page: State and Territory Regulators
+    Category: Regulatory Bodies
+    Generator: OpenAI GPT-4o
+-->
+State and territory regulators in Australia are responsible for the oversight and regulation of gambling activities within their respective jurisdictions. While the federal government, through the Australian Communications and Media Authority (ACMA), oversees certain aspects of online gambling, the regulation of land-based gambling is primarily the responsibility of individual states and territories. Each jurisdiction has its own regulatory body to manage and enforce gambling laws, ensuring compliance with local legislation.
+
+== Federal vs State/Territory Jurisdiction ==
+In Australia, gambling regulation is divided between federal and state/territory governments. The federal government, through agencies like the ACMA, regulates aspects of online gambling, particularly in relation to advertising and the prohibition of certain types of online gambling services. However, the regulation of land-based gambling, including casinos, gaming machines, and wagering, is managed by state and territory governments. Each jurisdiction has established its own regulatory body to administer these activities, reflecting local laws and community standards.
+
+== Land-based vs Online Gambling Regulation ==
+Land-based gambling activities, such as casinos and gaming machines, are regulated by state and territory authorities. These regulators are responsible for licensing, compliance, and enforcement within their jurisdictions. Online gambling, on the other hand, is subject to both federal and state/territory oversight. The ACMA plays a significant role in regulating online gambling, particularly in enforcing the Interactive Gambling Act 2001, which prohibits certain online gambling services.
+
+== Comparison of State and Territory Regulators ==
+{| class="wikitable"
+|+ Australian State and Territory Gambling Regulators
+! Jurisdiction !! Regulator !! Key Responsibilities !! Official Website
+|-
+| New South Wales || Liquor and Gaming NSW || Licensing, compliance, and enforcement of gambling activities || [https://www.liquorandgaming.nsw.gov.au Liquor and Gaming NSW]
+|-
+| Victoria || Victorian Gambling and Casino Control Commission || Oversight of gambling and casino operations || [https://www.vgccc.vic.gov.au Victorian Gambling and Casino Control Commission]
+|-
+| Queensland || Office of Liquor and Gaming Regulation || Regulation of gaming machines, casinos, and wagering || [https://www.business.qld.gov.au/industries/hospitality-tourism-sport/liquor-gaming Office of Liquor and Gaming Regulation]
+|-
+| Western Australia || Department of Local Government, Sport and Cultural Industries || Regulation of gaming and wagering activities || [https://www.dlgsc.wa.gov.au Department of Local Government, Sport and Cultural Industries]
+|-
+| South Australia || Consumer and Business Services || Licensing and regulation of gambling activities || [https://www.cbs.sa.gov.au Consumer and Business Services]
+|-
+| Tasmania || Tasmanian Liquor and Gaming Commission || Oversight of gaming and wagering || [https://www.treasury.tas.gov.au/liquor-and-gaming Tasmanian Liquor and Gaming Commission]
+|-
+| Australian Capital Territory || ACT Gambling and Racing Commission || Regulation of gambling and racing activities || [https://www.gamblingandracing.act.gov.au ACT Gambling and Racing Commission]
+|-
+| Northern Territory || Northern Territory Racing Commission || Oversight of racing and betting activities || [https://justice.nt.gov.au Northern Territory Racing Commission]
+|}
+
+== See Also ==
+* [[ACMA]]
+* [[Liquor and Gaming NSW]]
+* [[Victorian Gambling and Casino Control Commission]]
+* [[Office of Liquor and Gaming Regulation Queensland]]
+
+== External Links ==
+* [https://www.acma.gov.au Australian Communications and Media Authority]
+* [https://www.liquorandgaming.nsw.gov.au Liquor and Gaming NSW]
+* [https://www.vgccc.vic.gov.au Victorian Gambling and Casino Control Commission]
+* [https://www.business.qld.gov.au/industries/hospitality-tourism-sport/liquor-gaming Office of Liquor and Gaming Regulation Queensland]
+* [https://www.dlgsc.wa.gov.au Department of Local Government, Sport and Cultural Industries]
+* [https://www.cbs.sa.gov.au Consumer and Business Services]
+* [https://www.treasury.tas.gov.au/liquor-and-gaming Tasmanian Liquor and Gaming Commission]
+* [https://www.gamblingandracing.act.gov.au ACT Gambling and Racing Commission]
+* [https://justice.nt.gov.au Northern Territory Racing Commission]
+
+[[Category:Regulatory Bodies]]

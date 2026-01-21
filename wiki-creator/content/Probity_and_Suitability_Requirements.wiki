@@ -1,0 +1,55 @@
+<!--
+    Generated: 2026-01-12T11:27:30.849473
+    Page: Probity and Suitability Requirements
+    Category: Licensing
+    Generator: OpenAI GPT-4o
+-->
+Probity and suitability requirements are critical components of the gambling licensing process in Australia. These requirements ensure that individuals and entities involved in the gambling industry maintain high standards of integrity, financial stability, and ethical conduct. The process involves thorough background checks on key personnel, a review of corporate structures, financial capability assessments, criminal history checks, ongoing disclosure obligations, and the identification of unsuitable associates.
+
+== Key Personnel Checks ==
+Key personnel, including directors, executives, and significant shareholders, undergo comprehensive background checks. These checks assess the individual's integrity, character, and history to ensure they are fit to hold positions of responsibility within a gambling operation.
+
+== Corporate Structure Review ==
+The corporate structure of an applicant is scrutinized to ensure transparency and accountability. This review helps identify the ultimate beneficial owners and assesses the complexity of the corporate arrangements to prevent any potential for illicit activities.
+
+== Financial Capability ==
+Applicants must demonstrate sufficient financial capability to sustain operations and meet all financial obligations. This includes providing detailed financial statements and projections to prove the financial health and viability of the business.
+
+== Criminal History Checks ==
+Criminal history checks are conducted on all key personnel to identify any past criminal activities that may disqualify them from holding a gambling licence. These checks are crucial in maintaining the integrity of the gambling industry.
+
+== Ongoing Disclosure Obligations ==
+Licence holders are required to comply with ongoing disclosure obligations. This includes reporting any changes in key personnel, corporate structure, or financial status that may affect their suitability to hold a licence.
+
+== Unsuitable Associates ==
+Associates of the licence applicant, such as business partners or close affiliates, are also assessed for suitability. The presence of unsuitable associates can lead to the denial or revocation of a gambling licence.
+
+== Structured Data Table ==
+{| class="wikitable"
+|+ Probity and Suitability Requirements Overview
+|-
+! Requirement !! Description
+|-
+| Key Personnel Checks || Background checks on integrity and character of key individuals
+|-
+| Corporate Structure Review || Assessment of corporate arrangements for transparency
+|-
+| Financial Capability || Evaluation of financial health and sustainability
+|-
+| Criminal History Checks || Identification of past criminal activities
+|-
+| Ongoing Disclosure Obligations || Requirement to report changes affecting suitability
+|-
+| Unsuitable Associates || Assessment of business partners and affiliates
+|}
+
+== See Also ==
+* [[Gambling Licensing in Australia]]
+* [[Casino Licensing]]
+
+== External Links ==
+* [https://www.acma.gov.au Australian Communications and Media Authority]
+* [https://www.vcglr.vic.gov.au Victorian Commission for Gambling and Liquor Regulation]
+* [https://www.liquorandgaming.nsw.gov.au Liquor & Gaming NSW]
+
+[[Category:Licensing]]

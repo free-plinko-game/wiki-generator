@@ -1,0 +1,39 @@
+<!--
+    Generated: 2026-01-12T11:26:50.969542
+    Page: Betting Exchange Licence
+    Category: Licensing
+    Generator: OpenAI GPT-4o
+-->
+A betting exchange is a platform that allows users to bet against each other rather than against a bookmaker. This form of wagering enables individuals to set their own odds and accept bets from other users, often resulting in better odds for bettors. Betting exchanges require a specific type of licence to operate legally in Australia.
+
+== Licensing Requirements ==
+In Australia, the operation of a betting exchange requires a licence issued by a relevant state or territory authority. The licensing process involves meeting stringent regulatory standards to ensure fair and responsible gambling practices. Operators must demonstrate financial stability, integrity, and the ability to maintain a secure and transparent betting environment.
+
+== Betfair's NT Licence ==
+Betfair, one of the most prominent betting exchanges globally, operates under a licence issued by the Northern Territory Government in Australia. This licence allows Betfair to offer its services to Australian residents under the regulatory framework established by the Northern Territory Racing Commission.
+
+{| class="wikitable"
+|+ Betfair's Northern Territory Licence Details
+|-
+! Licence Holder !! Licence Type !! Issuing Authority !! Date Issued
+|-
+| Betfair Pty Limited || Betting Exchange || Northern Territory Racing Commission || 2012
+|}
+
+== Regulatory Obligations ==
+Betting exchange operators in Australia must adhere to various regulatory obligations, which include:
+* Ensuring compliance with anti-money laundering and counter-terrorism financing laws.
+* Implementing measures to promote responsible gambling.
+* Providing secure and reliable systems for betting transactions.
+* Reporting suspicious activities to the relevant authorities.
+* Maintaining transparency in operations and customer dealings.
+
+== See Also ==
+* [[Northern Territory Licensing]]
+* [[Betfair]]
+
+== External Links ==
+* [https://nt.gov.au/industry/gambling/licensing-and-regulation Northern Territory Government - Licensing and Regulation]
+* [https://www.betfair.com.au/about-us Betfair Australia - About Us]
+
+[[Category:Licensing]]

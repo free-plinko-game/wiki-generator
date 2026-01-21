@@ -1,0 +1,67 @@
+<!--
+    Generated: 2026-01-12T12:13:15.003076
+    Page: Research and Reports
+    Category: Reference
+    Generator: OpenAI GPT-4o
+-->
+Research and reports on gambling in Australia provide critical insights into the social, economic, and health impacts of gambling activities. These studies are conducted by various research organisations and are essential for informing policy decisions and understanding gambling behaviours.
+
+== Overview of Gambling Research in Australia ==
+Gambling research in Australia is a collaborative effort involving government bodies, academic institutions, and independent research organisations. The research focuses on understanding the prevalence of gambling, its impacts on individuals and communities, and the effectiveness of regulatory measures.
+
+== Key Research Organisations ==
+Several key organisations are involved in gambling research in Australia:
+
+* '''Australian Institute of Family Studies (AIFS)''': Conducts research on family wellbeing, including the impacts of gambling.
+* '''Australian Gambling Research Centre''': A division of AIFS dedicated to gambling research.
+* '''Gambling Research Australia''': A national research program that funds studies on gambling.
+* '''Victorian Responsible Gambling Foundation''': Provides resources and conducts research to foster responsible gambling.
+* '''Queensland Government Statistician's Office''': Offers statistical data on gambling in Queensland.
+
+== Major Reports and Inquiries ==
+Australia has conducted several significant inquiries into gambling:
+
+{| class="wikitable"
+|+
+! Inquiry !! Year !! Focus
+|-
+| Productivity Commission Inquiry || 1999 || Comprehensive review of gambling impacts and policy recommendations.
+|-
+| Productivity Commission Inquiry || 2010 || Follow-up to the 1999 inquiry, examining changes and ongoing issues.
+|-
+| Bergin Inquiry (Crown NSW) || 2021 || Investigation into Crown Resorts' suitability to hold a casino license in NSW.
+|-
+| Finkelstein Royal Commission (Crown VIC) || 2021 || Examination of Crown Melbourne's operations and governance.
+|-
+| Bell Inquiry (Star NSW) || 2022 || Inquiry into the operations of The Star Entertainment Group in NSW.
+|}
+
+== Statistics Sources ==
+Research and reports often rely on various sources of gambling statistics:
+
+* State gambling expenditure data
+* Problem gambling prevalence studies
+* Industry revenue data
+
+== Academic Research Hubs ==
+Academic institutions across Australia contribute to gambling research, providing valuable insights and fostering collaboration among researchers.
+
+== How to Access Reports ==
+Reports and research findings can be accessed through the websites of the respective organisations, libraries, or government publications.
+
+== See Also ==
+* [[Gambling Research Organisations]]
+* [[Major Gambling Inquiries]]
+* [[Productivity Commission 1999 Inquiry]]
+* [[Productivity Commission 2010 Inquiry]]
+* [[Bergin Inquiry]]
+* [[Finkelstein Royal Commission]]
+* [[Gambling Harm Statistics]]
+* [[Gambling Statistics Australia]]
+
+== External Links ==
+* [https://aifs.gov.au/research/gambling AIFS Gambling Research]
+* [https://responsiblegambling.vic.gov.au/resources/publications/ Victorian Responsible Gambling Foundation]
+* [https://www.qgso.qld.gov.au/statistics/theme/society/gambling Queensland Gambling Statistics]
+
+[[Category:Reference]]

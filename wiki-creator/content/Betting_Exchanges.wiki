@@ -1,0 +1,40 @@
+<!--
+    Generated: 2026-01-12T11:37:59.673617
+    Page: Betting Exchanges
+    Category: Gambling Types
+    Generator: OpenAI GPT-4o
+-->
+A betting exchange is a platform that allows individuals to bet against each other rather than against a traditional bookmaker. This peer-to-peer model enables users to offer and accept bets at odds they set themselves, with the exchange acting as an intermediary.
+
+== How Betting Exchanges Work ==
+Betting exchanges function by matching bets between users who wish to back a selection and those who wish to lay it. Unlike traditional bookmakers, exchanges do not set odds or take positions on outcomes. Instead, they facilitate the matching of bets and charge a commission on net winnings.
+
+== Back and Lay Betting ==
+In a betting exchange, users can either back a selection, betting on it to win, or lay a selection, betting on it to lose. This dual capability allows for more flexible betting strategies, such as trading positions to lock in profits or minimize losses.
+
+== Betfair in Australia ==
+Betfair is the most prominent betting exchange operating in Australia. It launched in the country in 2006 and has since become a significant player in the Australian gambling market. Betfair operates under a license from the Northern Territory Government, adhering to Australian gambling regulations.
+
+== Legal Status ==
+Betting exchanges are legal in Australia, provided they operate under a valid license. The regulatory framework ensures that exchanges comply with responsible gambling practices and protect the interests of consumers.
+
+== Commission Structure ==
+Betting exchanges typically charge a commission on net winnings from successful bets. The commission rate can vary, but it is generally a percentage of the winnings. For example, Betfair charges a base commission rate of around 5%, which can be reduced through a loyalty program based on betting volume.
+
+{| class="wikitable"
+|+ Example Commission Structure
+|-
+! Exchange !! Base Commission Rate !! Reduced Rate
+|-
+| Betfair || 5% || As low as 2% with loyalty program
+|}
+
+== See Also ==
+* [[Betting Exchange Licence]]
+* [[Sports Betting]]
+
+== External Links ==
+* [https://www.betfair.com.au Betfair Australia Official Site]
+* [https://nt.gov.au/industry/gambling Northern Territory Government - Gambling Regulation]
+
+[[Category:Gambling Types]]
