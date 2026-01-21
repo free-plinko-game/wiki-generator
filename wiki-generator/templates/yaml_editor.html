@@ -73,6 +73,14 @@
         <div class="yaml-preview-content">
             <pre id="yaml-output">Loading...</pre>
         </div>
+        <div style="padding: 20px; border-top: 1px solid var(--color-border);">
+            <h4 class="yaml-builder-title" style="margin-bottom: 8px;">Import YAML</h4>
+            <textarea id="yaml-import-input" class="form-textarea" placeholder="Paste your pages.yaml here" rows="8"></textarea>
+            <div class="btn-group btn-group-right" style="margin-top: 12px;">
+                <button type="button" class="btn btn-secondary btn-sm" id="clear-yaml-import">Clear</button>
+                <button type="button" class="btn btn-primary btn-sm" id="apply-yaml-import">Apply YAML</button>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -212,12 +220,13 @@
     const projectId = '{{ project.id }}';
     const saveUrl = '{{ url_for("save_structure", project_id=project.id) }}';
     const generateUrl = '{{ url_for("project_generate", project_id=project.id) }}';
+    const importUrl = '{{ url_for("import_structure", project_id=project.id) }}';
     const livePagesUrl = '{{ url_for("project_live_pages", project_id=project.id) }}';
     const livePageUrl = '{{ url_for("project_live_page_content", project_id=project.id) }}';
     const livePreviewUrl = '{{ url_for("project_live_page_preview", project_id=project.id) }}';
     const liveSaveUrl = '{{ url_for("project_live_page_save", project_id=project.id) }}';
 
-    initYamlEditor(existingConfig, projectId, saveUrl, generateUrl);
+    initYamlEditor(existingConfig, projectId, saveUrl, generateUrl, importUrl);
 
     const livePagesBtn = document.getElementById('refresh-live-pages');
     const livePagesStatus = document.getElementById('live-pages-status');

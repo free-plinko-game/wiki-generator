@@ -3,13 +3,10 @@
 let pages = [];
 let pageIndex = 0;
 
-function initYamlEditor(existingConfig, projectId, saveUrl, generateUrl) {
+function initYamlEditor(existingConfig, projectId, saveUrl, generateUrl, importUrl) {
     // Load existing config if available
     if (existingConfig && existingConfig.pages) {
-        pages = existingConfig.pages;
-        document.getElementById('wiki_name').value = existingConfig.wiki_name || '';
-        document.getElementById('default_category').value = existingConfig.default_category || 'General';
-        renderPages();
+        applyConfigToEditor(existingConfig);
     }
 
     // Event listeners
@@ -17,6 +14,7 @@ function initYamlEditor(existingConfig, projectId, saveUrl, generateUrl) {
     document.getElementById('download-yaml').addEventListener('click', downloadYaml);
     document.getElementById('save-structure').addEventListener('click', () => saveStructure(saveUrl));
     document.getElementById('continue-btn').addEventListener('click', () => continueToGenerate(saveUrl, generateUrl));
+    setupYamlImport(importUrl);
 
     // Update YAML preview on input changes
     document.addEventListener('input', debounce(updateYamlPreview, 300));
@@ -24,6 +22,62 @@ function initYamlEditor(existingConfig, projectId, saveUrl, generateUrl) {
     updateYamlPreview();
 }
 
+function applyConfigToEditor(config) {
+    pages = config.pages || [];
+    pageIndex = 0;
+
+    document.getElementById('wiki_name').value = config.wiki_name || '';
+    document.getElementById('default_category').value = config.default_category || 'General';
+
+    renderPages();
+}
+
+function setupYamlImport(importUrl) {
+    const input = document.getElementById('yaml-import-input');
+    const applyBtn = document.getElementById('apply-yaml-import');
+    const clearBtn = document.getElementById('clear-yaml-import');
+
+    if (!input || !applyBtn || !clearBtn || !importUrl) {
+        return;
+    }
+
+    clearBtn.addEventListener('click', () => {
+        input.value = '';
+        showToast('YAML input cleared', 'info');
+    });
+
+    applyBtn.addEventListener('click', async () => {
+        const yamlText = input.value.trim();
+        if (!yamlText) {
+            showToast('Paste YAML before applying', 'error');
+            return;
+        }
+
+        applyBtn.disabled = true;
+        applyBtn.classList.add('btn-loading');
+
+        try {
+            const response = await fetch(importUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ yaml: yamlText })
+            });
+            const data = await response.json();
+            if (!data.success) {
+                showToast(data.error || 'Failed to import YAML', 'error');
+                return;
+            }
+
+            applyConfigToEditor(data.config || {});
+            showToast('YAML imported', 'success');
+        } catch (error) {
+            showToast('Import error: ' + error.message, 'error');
+        } finally {
+            applyBtn.disabled = false;
+            applyBtn.classList.remove('btn-loading');
+        }
+    });
+}
 function addPage() {
     const template = document.getElementById('page-template');
     const clone = template.content.cloneNode(true);

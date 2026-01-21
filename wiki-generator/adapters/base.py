@@ -91,6 +91,10 @@ class BaseAdapter(ABC):
         """
         pass
 
+    def parse_page(self, content: str, title: Optional[str] = None) -> str:
+        """Render content to HTML (default: return content as-is)."""
+        return content
+
     @staticmethod
     def get_content_extension() -> str:
         """Return the file extension for content files (e.g., '.wiki')."""

@@ -73,7 +73,13 @@
         <a href="{{ url_for('project_structure', project_id=project.id) }}" class="page-list-item" style="text-decoration: none; color: inherit;">
             <div class="page-list-item-info">
                 <span class="page-list-item-title">{{ project.name }}</span>
-                <span class="page-list-item-meta">{{ project.wiki_domain }}</span>
+                <span class="page-list-item-meta">
+                    {% if project.platform == 'confluence' %}
+                        {{ project.base_url }} · {{ project.space_key }}
+                    {% else %}
+                        {{ project.wiki_domain }}
+                    {% endif %}
+                </span>
             </div>
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path d="M7 5L12 10L7 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>

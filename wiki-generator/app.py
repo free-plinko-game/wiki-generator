@@ -17,6 +17,7 @@ from flask import Flask, render_template, request, jsonify, redirect, url_for, f
 
 from config import config
 from adapters.mediawiki import MediaWikiAdapter
+from adapters.confluence import ConfluenceAdapter
 
 app = Flask(__name__)
 app.config.from_object(config['default'])
@@ -54,6 +55,25 @@ def save_project(project_id, data):
     config_path = project_dir / 'config.json'
     with open(config_path, 'w') as f:
         json.dump(data, f, indent=2)
+
+
+def get_adapter(project: dict):
+    """Return the appropriate adapter for a project."""
+    platform = project.get('platform', 'miraheze')
+    if platform == 'confluence':
+        return ConfluenceAdapter({
+            'base_url': project['base_url'],
+            'space_key': project['space_key'],
+            'user_email': project['user_email'],
+            'api_token': project['api_token']
+        })
+
+    return MediaWikiAdapter({
+        'wiki_domain': project['wiki_domain'],
+        'bot_username': project['bot_username'],
+        'bot_password': project['bot_password'],
+        'api_path': project.get('api_path', '/w/api.php')
+    })
 
 
 def load_pages_config(project_id):
@@ -131,25 +151,48 @@ def new_project():
     if request.method == 'POST':
         # Validate and create project
         name = request.form.get('name', '').strip()
-        wiki_domain = request.form.get('wiki_domain', '').strip()
-        bot_username = request.form.get('bot_username', '').strip()
-        bot_password = request.form.get('bot_password', '')
+        platform = request.form.get('platform', 'miraheze').strip()
 
-        if not all([name, wiki_domain, bot_username, bot_password]):
-            flash('All fields are required', 'error')
-            return render_template('new_project.html')
+        if platform == 'confluence':
+            base_url = request.form.get('base_url', '').strip()
+            space_key = request.form.get('space_key', '').strip()
+            user_email = request.form.get('user_email', '').strip()
+            api_token = request.form.get('api_token', '')
+
+            if not all([name, base_url, space_key, user_email, api_token]):
+                flash('All fields are required', 'error')
+                return render_template('new_project.html')
+        else:
+            wiki_domain = request.form.get('wiki_domain', '').strip()
+            bot_username = request.form.get('bot_username', '').strip()
+            bot_password = request.form.get('bot_password', '')
+
+            if not all([name, wiki_domain, bot_username, bot_password]):
+                flash('All fields are required', 'error')
+                return render_template('new_project.html')
 
         # Create project
         project_id = str(uuid.uuid4())[:8]
         project_data = {
             'name': name,
-            'platform': 'miraheze',
-            'wiki_domain': wiki_domain,
-            'bot_username': bot_username,
-            'bot_password': bot_password,  # In production, encrypt this
-            'api_path': '/w/api.php',
+            'platform': platform,
             'created_at': datetime.now().isoformat()
         }
+
+        if platform == 'confluence':
+            project_data.update({
+                'base_url': base_url,
+                'space_key': space_key,
+                'user_email': user_email,
+                'api_token': api_token  # In production, encrypt this
+            })
+        else:
+            project_data.update({
+                'wiki_domain': wiki_domain,
+                'bot_username': bot_username,
+                'bot_password': bot_password,  # In production, encrypt this
+                'api_path': '/w/api.php'
+            })
 
         save_project(project_id, project_data)
 
@@ -164,26 +207,49 @@ def test_connection():
     """Test wiki connection via AJAX."""
     data = request.get_json()
 
-    wiki_domain = data.get('wiki_domain', '').strip()
-    bot_username = data.get('bot_username', '').strip()
-    bot_password = data.get('bot_password', '')
+    platform = data.get('platform', 'miraheze').strip()
 
-    if not all([wiki_domain, bot_username, bot_password]):
-        return jsonify({'success': False, 'error': 'All fields are required'})
+    if platform == 'confluence':
+        base_url = data.get('base_url', '').strip()
+        space_key = data.get('space_key', '').strip()
+        user_email = data.get('user_email', '').strip()
+        api_token = data.get('api_token', '')
 
-    # Test connection using adapter
-    try:
-        adapter = MediaWikiAdapter({
-            'wiki_domain': wiki_domain,
-            'bot_username': bot_username,
-            'bot_password': bot_password,
-            'api_path': '/w/api.php'
-        })
+        if not all([base_url, space_key, user_email, api_token]):
+            return jsonify({'success': False, 'error': 'All fields are required'})
 
-        result = adapter.test_connection()
-        return jsonify(result)
-    except Exception as e:
-        return jsonify({'success': False, 'error': str(e)})
+        try:
+            adapter = ConfluenceAdapter({
+                'base_url': base_url,
+                'space_key': space_key,
+                'user_email': user_email,
+                'api_token': api_token
+            })
+            result = adapter.test_connection()
+            return jsonify(result)
+        except Exception as e:
+            return jsonify({'success': False, 'error': str(e)})
+    else:
+        wiki_domain = data.get('wiki_domain', '').strip()
+        bot_username = data.get('bot_username', '').strip()
+        bot_password = data.get('bot_password', '')
+
+        if not all([wiki_domain, bot_username, bot_password]):
+            return jsonify({'success': False, 'error': 'All fields are required'})
+
+        # Test connection using adapter
+        try:
+            adapter = MediaWikiAdapter({
+                'wiki_domain': wiki_domain,
+                'bot_username': bot_username,
+                'bot_password': bot_password,
+                'api_path': '/w/api.php'
+            })
+
+            result = adapter.test_connection()
+            return jsonify(result)
+        except Exception as e:
+            return jsonify({'success': False, 'error': str(e)})
 
 
 @app.route('/project/<project_id>/structure', methods=['GET'])
@@ -209,12 +275,7 @@ def project_live_pages(project_id):
         return jsonify({'success': False, 'error': 'Project not found'}), 404
 
     try:
-        adapter = MediaWikiAdapter({
-            'wiki_domain': project['wiki_domain'],
-            'bot_username': project['bot_username'],
-            'bot_password': project['bot_password'],
-            'api_path': project.get('api_path', '/w/api.php')
-        })
+        adapter = get_adapter(project)
 
         if not adapter.login():
             return jsonify({'success': False, 'error': 'Failed to login to wiki'}), 401
@@ -243,12 +304,7 @@ def project_live_page_content(project_id):
         return jsonify({'success': False, 'error': 'Missing title'}), 400
 
     try:
-        adapter = MediaWikiAdapter({
-            'wiki_domain': project['wiki_domain'],
-            'bot_username': project['bot_username'],
-            'bot_password': project['bot_password'],
-            'api_path': project.get('api_path', '/w/api.php')
-        })
+        adapter = get_adapter(project)
 
         if not adapter.login():
             return jsonify({'success': False, 'error': 'Failed to login to wiki'}), 401
@@ -285,12 +341,7 @@ def project_live_page_save(project_id):
         return jsonify({'success': False, 'error': 'Missing title'}), 400
 
     try:
-        adapter = MediaWikiAdapter({
-            'wiki_domain': project['wiki_domain'],
-            'bot_username': project['bot_username'],
-            'bot_password': project['bot_password'],
-            'api_path': project.get('api_path', '/w/api.php')
-        })
+        adapter = get_adapter(project)
 
         if not adapter.login():
             return jsonify({'success': False, 'error': 'Failed to login to wiki'}), 401
@@ -321,12 +372,7 @@ def project_live_page_preview(project_id):
         return jsonify({'success': False, 'error': 'Missing content'}), 400
 
     try:
-        adapter = MediaWikiAdapter({
-            'wiki_domain': project['wiki_domain'],
-            'bot_username': project['bot_username'],
-            'bot_password': project['bot_password'],
-            'api_path': project.get('api_path', '/w/api.php')
-        })
+        adapter = get_adapter(project)
 
         if not adapter.login():
             return jsonify({'success': False, 'error': 'Failed to login to wiki'}), 401
@@ -350,6 +396,60 @@ def save_structure(project_id):
         return jsonify({'success': True})
     except Exception as e:
         return jsonify({'success': False, 'error': str(e)})
+
+
+@app.route('/project/<project_id>/structure/import', methods=['POST'])
+def import_structure(project_id):
+    """Parse pasted YAML and return normalized config."""
+    project = load_project(project_id)
+    if not project:
+        return jsonify({'success': False, 'error': 'Project not found'}), 404
+
+    data = request.get_json() or {}
+    raw_yaml = (data.get('yaml') or '').strip()
+    if not raw_yaml:
+        return jsonify({'success': False, 'error': 'YAML input is empty'}), 400
+
+    try:
+        parsed = yaml.safe_load(raw_yaml) or {}
+    except yaml.YAMLError as e:
+        return jsonify({'success': False, 'error': f'YAML parse error: {e}'}), 400
+
+    if not isinstance(parsed, dict):
+        return jsonify({'success': False, 'error': 'YAML must define a mapping at the top level'}), 400
+
+    wiki_block = parsed.get('wiki') if isinstance(parsed.get('wiki'), dict) else {}
+    pages = parsed.get('pages', [])
+    if not pages:
+        pages = wiki_block.get('pages', [])
+    if pages is None:
+        pages = []
+    if not isinstance(pages, list):
+        return jsonify({'success': False, 'error': 'pages must be a list'}), 400
+
+    normalized_pages = []
+    for page in pages:
+        if not isinstance(page, dict):
+            continue
+        title = str(page.get('title', '')).strip()
+        if not title:
+            continue
+
+        normalized_pages.append({
+            'title': title,
+            'category': page.get('category', parsed.get('default_category', wiki_block.get('default_category', 'General'))) or 'General',
+            'description': page.get('description', '') or '',
+            'key_points': page.get('key_points', []) or [],
+            'related_pages': page.get('related_pages', []) or []
+        })
+
+    config = {
+        'wiki_name': parsed.get('wiki_name', wiki_block.get('name', '')),
+        'default_category': parsed.get('default_category', wiki_block.get('default_category', 'General')),
+        'pages': normalized_pages
+    }
+
+    return jsonify({'success': True, 'config': config})
 
 
 @app.route('/project/<project_id>/generate', methods=['GET'])
@@ -423,9 +523,18 @@ def run_generation(project_id, api_key, selected_pages):
     output_dir.mkdir(exist_ok=True)
 
     progress = progress_store[project_id]
+    project = load_project(project_id)
+    if not project:
+        progress['status'] = 'error'
+        progress['error'] = 'Project not found'
+        return
 
     try:
-        generator = WikiContentGenerator(str(yaml_path), api_key)
+        generator = WikiContentGenerator(
+            str(yaml_path),
+            api_key,
+            content_format=project.get('platform', 'miraheze')
+        )
 
         for i, title in enumerate(selected_pages):
             progress['current_page'] = title
@@ -440,7 +549,8 @@ def run_generation(project_id, api_key, selected_pages):
                 content = generator.generate_page(page)
 
                 # Save to file
-                filename = title.replace(' ', '_').replace('/', '_') + '.wiki'
+                extension = '.html' if generator.content_format == 'confluence' else '.wiki'
+                filename = title.replace(' ', '_').replace('/', '_') + extension
                 filepath = output_dir / filename
                 filepath.write_text(content, encoding='utf-8')
 
@@ -489,13 +599,14 @@ def project_review(project_id):
 
     generated_pages = []
     if generated_dir.exists():
-        for wiki_file in generated_dir.glob('*.wiki'):
-            stat = wiki_file.stat()
-            generated_pages.append({
-                'filename': wiki_file.name,
-                'title': wiki_file.stem.replace('_', ' '),
-                'size': f"{stat.st_size / 1024:.1f} KB"
-            })
+        for ext in ('*.wiki', '*.html'):
+            for wiki_file in generated_dir.glob(ext):
+                stat = wiki_file.stat()
+                generated_pages.append({
+                    'filename': wiki_file.name,
+                    'title': wiki_file.stem.replace('_', ' '),
+                    'size': f"{stat.st_size / 1024:.1f} KB"
+                })
 
     if not generated_pages:
         flash('No generated content found. Please generate content first.', 'warning')
@@ -561,12 +672,7 @@ def run_upload(project_id, project, selected_pages):
     generated_dir = get_project_path(project_id) / 'generated'
 
     try:
-        adapter = MediaWikiAdapter({
-            'wiki_domain': project['wiki_domain'],
-            'bot_username': project['bot_username'],
-            'bot_password': project['bot_password'],
-            'api_path': project.get('api_path', '/w/api.php')
-        })
+        adapter = get_adapter(project)
 
         if not adapter.login():
             progress['status'] = 'error'
@@ -574,7 +680,7 @@ def run_upload(project_id, project, selected_pages):
             return
 
         for i, filename in enumerate(selected_pages):
-            progress['current_page'] = filename.replace('.wiki', '').replace('_', ' ')
+            progress['current_page'] = filename.replace('.wiki', '').replace('.html', '').replace('_', ' ')
 
             filepath = generated_dir / filename
             if not filepath.exists():
@@ -599,7 +705,7 @@ def run_upload(project_id, project, selected_pages):
             'success': len(progress['completed']),
             'failed': len(progress['failed']),
             'total': len(selected_pages),
-            'pages': [f.replace('.wiki', '').replace('_', ' ') for f in progress['completed']]
+            'pages': [f.replace('.wiki', '').replace('.html', '').replace('_', ' ') for f in progress['completed']]
         }
 
     except Exception as e:

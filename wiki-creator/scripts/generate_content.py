@@ -29,11 +29,23 @@ def load_config(config_path: str) -> dict:
         return yaml.safe_load(f)
 
 
-def build_system_prompt(config: dict) -> str:
+def build_system_prompt(config: dict, content_format: str) -> str:
     """Build the system prompt for content generation."""
     style = config.get('style', {})
 
-    prompt = f"""You are an expert wiki content writer creating pages for the "{config.get('wiki_name', 'Wiki')}".
+    if content_format == 'confluence':
+        prompt = f"""You are an expert wiki content writer creating pages for the "{config.get('wiki_name', 'Wiki')}".
+
+Your task is to generate high-quality Confluence Storage Format content (XHTML-compatible).
+
+## Writing Style
+- Tone: {style.get('tone', 'encyclopaedic, neutral')}
+- Format: Confluence Storage Format (NOT Markdown)
+
+## Required Elements
+"""
+    else:
+        prompt = f"""You are an expert wiki content writer creating pages for the "{config.get('wiki_name', 'Wiki')}".
 
 Your task is to generate high-quality MediaWiki-formatted content.
 
@@ -51,7 +63,25 @@ Your task is to generate high-quality MediaWiki-formatted content.
     for item in style.get('avoid', []):
         prompt += f"- {item}\n"
 
-    prompt += """
+    if content_format == 'confluence':
+        prompt += """
+## Confluence Storage Format Reference
+- Headings: <h1>, <h2>, <h3>
+- Bold: <strong>text</strong>
+- Italic: <em>text</em>
+- Links: <a href="https://url.com">Link Text</a>
+- Bullet list: <ul><li>item</li></ul>
+- Numbered list: <ol><li>item</li></ol>
+- Tables: <table><tbody><tr><th>...</th></tr>...</tbody></table>
+
+## Important
+- Use ONLY Confluence storage format (XHTML-compatible), never Markdown
+- Include a table for structured data where appropriate
+- Be factual and cite official sources where possible
+- For Australian gambling content, reference official government sources
+"""
+    else:
+        prompt += """
 ## MediaWiki Syntax Reference
 - Headings: = H1 =, == H2 ==, === H3 ===
 - Bold: '''text'''
@@ -71,10 +101,11 @@ Your task is to generate high-quality MediaWiki-formatted content.
 - Be factual and cite official sources where possible
 - For Australian gambling content, reference official government sources
 """
+
     return prompt
 
 
-def build_page_prompt(page: dict, config: dict) -> str:
+def build_page_prompt(page: dict, config: dict, content_format: str) -> str:
     """Build the user prompt for a specific page."""
     prompt = f"""Generate a complete MediaWiki page for: "{page['title']}"
 
@@ -101,7 +132,18 @@ def build_page_prompt(page: dict, config: dict) -> str:
     if page.get('format'):
         prompt += f"\n## Special Format Instructions\n{page['format']}\n"
 
-    prompt += f"""
+    if content_format == 'confluence':
+        prompt = prompt.replace('MediaWiki page', 'Confluence page')
+        prompt += f"""
+## Output Requirements
+1. Start with a brief lead paragraph (no heading)
+2. Use <h2> section headings
+3. Include at least one HTML table
+4. End with <h2>See Also</h2> and <h2>External Links</h2>
+5. Output ONLY the Confluence storage HTML, no explanations or code blocks
+"""
+    else:
+        prompt += f"""
 ## Output Requirements
 1. Start with a brief lead paragraph (no heading)
 2. Use == Section Headings ==
@@ -115,11 +157,14 @@ def build_page_prompt(page: dict, config: dict) -> str:
 class WikiContentGenerator:
     """Generate wiki content using OpenAI API."""
 
-    def __init__(self, config_path: str = "pages.yaml"):
+    def __init__(self, config_path: str = "pages.yaml", content_format: Optional[str] = None):
         """Initialize the generator."""
         self.config = load_config(config_path)
         self.client = self._init_openai()
-        self.system_prompt = build_system_prompt(self.config)
+        self.content_format = (content_format or self.config.get('content_format') or 'mediawiki').lower()
+        if self.content_format in ('miraheze', 'mediawiki'):
+            self.content_format = 'mediawiki'
+        self.system_prompt = build_system_prompt(self.config, self.content_format)
 
     def _init_openai(self) -> OpenAI:
         """Initialize OpenAI client."""
@@ -143,7 +188,7 @@ class WikiContentGenerator:
 
     def generate_page(self, page: dict) -> str:
         """Generate content for a single page."""
-        user_prompt = build_page_prompt(page, self.config)
+        user_prompt = build_page_prompt(page, self.config, self.content_format)
 
         print(f"  Generating content with OpenAI...")
 
@@ -168,6 +213,9 @@ class WikiContentGenerator:
 -->
 """
         return metadata + content.strip()
+
+    def _get_output_extension(self) -> str:
+        return '.html' if self.content_format == 'confluence' else '.wiki'
 
     def get_page_by_title(self, title: str) -> Optional[dict]:
         """Find a page config by title."""
@@ -199,7 +247,7 @@ class WikiContentGenerator:
                 content = self.generate_page(page)
 
                 # Save to file
-                filename = title.replace(' ', '_').replace('/', '_') + '.wiki'
+                filename = title.replace(' ', '_').replace('/', '_') + self._get_output_extension()
                 filepath = output_dir / filename
                 filepath.write_text(content, encoding='utf-8')
 
@@ -230,7 +278,7 @@ class WikiContentGenerator:
             try:
                 content = self.generate_page(page)
 
-                filename = page['title'].replace(' ', '_').replace('/', '_') + '.wiki'
+                filename = page['title'].replace(' ', '_').replace('/', '_') + self._get_output_extension()
                 filepath = output_dir / filename
                 filepath.write_text(content, encoding='utf-8')
 

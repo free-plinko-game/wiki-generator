@@ -10,7 +10,15 @@
 <div class="card">
     <div class="card-header">
         <h1 class="card-title">Review Generated Content</h1>
-        <p class="card-description">Preview your content before uploading to {{ project.wiki_domain }}.</p>
+        <p class="card-description">
+            Preview your content before uploading to
+            {% if project.platform == 'confluence' %}
+                {{ project.base_url }}
+            {% else %}
+                {{ project.wiki_domain }}
+            {% endif %}
+            .
+        </p>
     </div>
 
     <div id="review-section">
@@ -163,7 +171,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <circle cx="6" cy="6" r="4" stroke="currentColor" stroke-width="2"/>
                     </svg>
                 </div>
-                <span class="upload-item-title">${filename.replace('.wiki', '').replace(/_/g, ' ')}</span>
+                <span class="upload-item-title">${filename.replace('.wiki', '').replace('.html', '').replace(/_/g, ' ')}</span>
             </div>
         `).join('');
 

@@ -16,18 +16,29 @@
 
     <h1 class="complete-title">Wiki Published!</h1>
     <p class="complete-description">
-        Your wiki content has been successfully uploaded to {{ project.wiki_domain }}.
+        Your wiki content has been successfully uploaded to
+        {% if project.platform == 'confluence' %}
+            {{ project.base_url }}.
+        {% else %}
+            {{ project.wiki_domain }}.
+        {% endif %}
     </p>
 
     <div class="complete-links">
         <h4 class="complete-links-title">View Your Wiki</h4>
         <ul class="complete-links-list">
             <li>
-                <a href="https://{{ project.wiki_domain }}" target="_blank">
-                    {{ project.wiki_domain }} - Main Page
-                </a>
+                {% if project.platform == 'confluence' %}
+                    <a href="{{ project.base_url }}" target="_blank">
+                        {{ project.base_url }}
+                    </a>
+                {% else %}
+                    <a href="https://{{ project.wiki_domain }}" target="_blank">
+                        {{ project.wiki_domain }} - Main Page
+                    </a>
+                {% endif %}
             </li>
-            {% if uploaded_pages %}
+            {% if uploaded_pages and project.platform != 'confluence' %}
             {% for page in uploaded_pages[:5] %}
             <li>
                 <a href="https://{{ project.wiki_domain }}/wiki/{{ page.replace(' ', '_') }}" target="_blank">
