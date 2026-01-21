@@ -1,0 +1,230 @@
+{% extends "base.html" %}
+
+{% set step = 4 %}
+{% set total_steps = 5 %}
+{% set step_labels = ['Setup', 'Structure', 'Generate', 'Review', 'Complete'] %}
+
+{% block title %}Review Content - {{ project.name }}{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h1 class="card-title">Review Generated Content</h1>
+        <p class="card-description">Preview your content before uploading to {{ project.wiki_domain }}.</p>
+    </div>
+
+    <div id="review-section">
+        <div style="margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center;">
+            <label style="display: inline-flex; align-items: center; gap: 8px; cursor: pointer;">
+                <input type="checkbox" id="select-all" checked>
+                <span>Select All ({{ generated_pages | length }} pages)</span>
+            </label>
+            <span class="page-list-item-meta">Click a page to preview</span>
+        </div>
+
+        <div class="page-list" id="pages-list">
+            {% for page in generated_pages %}
+            <div class="page-list-item" data-filename="{{ page.filename }}">
+                <div class="page-list-item-info">
+                    <input type="checkbox" name="pages" value="{{ page.filename }}"
+                           class="page-list-item-checkbox page-checkbox" checked
+                           onclick="event.stopPropagation();">
+                    <div>
+                        <span class="page-list-item-title">{{ page.title }}</span>
+                        <div class="page-list-item-meta">{{ page.size }}</div>
+                    </div>
+                </div>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M7 5L12 10L7 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="btn-group btn-group-between" style="margin-top: 24px;">
+            <a href="{{ url_for('project_generate', project_id=project.id) }}" class="btn btn-secondary">
+                Back to Generate
+            </a>
+            <button type="button" class="btn btn-primary" id="upload-btn">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M2 10V11C2 12.1046 2.89543 13 4 13H12C13.1046 13 14 12.1046 14 11V10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M8 9V3M8 3L5 6M8 3L11 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Upload Selected ({{ generated_pages | length }})
+            </button>
+        </div>
+    </div>
+
+    <div id="upload-section" style="display: none;">
+        <div class="progress-container">
+            <div class="progress-status" id="upload-status">Uploading to wiki...</div>
+
+            <div class="progress-bar-wrapper">
+                <div class="progress-bar" id="upload-progress-bar"></div>
+            </div>
+        </div>
+
+        <div class="upload-progress" id="upload-list">
+            <!-- Upload items will be added here -->
+        </div>
+    </div>
+</div>
+
+<!-- Preview Modal -->
+<div class="modal-overlay" id="preview-modal">
+    <div class="modal">
+        <div class="modal-header">
+            <h3 class="modal-title" id="preview-title">Page Preview</h3>
+            <button class="modal-close" id="close-modal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="content-preview" id="preview-content">Loading...</div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-secondary" id="close-modal-btn">Close</button>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('preview-modal');
+    const previewTitle = document.getElementById('preview-title');
+    const previewContent = document.getElementById('preview-content');
+    const selectAll = document.getElementById('select-all');
+    const uploadBtn = document.getElementById('upload-btn');
+    const reviewSection = document.getElementById('review-section');
+    const uploadSection = document.getElementById('upload-section');
+
+    // Page click to preview
+    document.querySelectorAll('.page-list-item').forEach(item => {
+        item.addEventListener('click', async function(e) {
+            if (e.target.type === 'checkbox') return;
+
+            const filename = this.dataset.filename;
+            previewTitle.textContent = this.querySelector('.page-list-item-title').textContent;
+            previewContent.textContent = 'Loading...';
+            modal.classList.add('active');
+
+            try {
+                const response = await fetch(`{{ url_for('get_page_content', project_id=project.id, filename='PLACEHOLDER') }}`.replace('PLACEHOLDER', filename));
+                const data = await response.json();
+                previewContent.textContent = data.content;
+            } catch (error) {
+                previewContent.textContent = 'Error loading content: ' + error.message;
+            }
+        });
+    });
+
+    // Close modal
+    document.getElementById('close-modal').addEventListener('click', () => modal.classList.remove('active'));
+    document.getElementById('close-modal-btn').addEventListener('click', () => modal.classList.remove('active'));
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) modal.classList.remove('active');
+    });
+
+    // Select all
+    selectAll.addEventListener('change', function() {
+        document.querySelectorAll('.page-checkbox').forEach(cb => {
+            cb.checked = this.checked;
+        });
+        updateUploadButton();
+    });
+
+    document.querySelectorAll('.page-checkbox').forEach(cb => {
+        cb.addEventListener('change', updateUploadButton);
+    });
+
+    function updateUploadButton() {
+        const count = document.querySelectorAll('.page-checkbox:checked').length;
+        uploadBtn.textContent = `Upload Selected (${count})`;
+    }
+
+    // Upload
+    uploadBtn.addEventListener('click', async function() {
+        const selectedPages = Array.from(document.querySelectorAll('.page-checkbox:checked'))
+            .map(cb => cb.value);
+
+        if (selectedPages.length === 0) {
+            showToast('Please select at least one page', 'error');
+            return;
+        }
+
+        reviewSection.style.display = 'none';
+        uploadSection.style.display = 'block';
+
+        const uploadList = document.getElementById('upload-list');
+        uploadList.innerHTML = selectedPages.map(filename => `
+            <div class="upload-item" data-filename="${filename}">
+                <div class="upload-item-status pending">
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                        <circle cx="6" cy="6" r="4" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </div>
+                <span class="upload-item-title">${filename.replace('.wiki', '').replace(/_/g, ' ')}</span>
+            </div>
+        `).join('');
+
+        try {
+            const response = await fetch('{{ url_for("upload_pages", project_id=project.id) }}', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ pages: selectedPages })
+            });
+
+            // Start polling for progress
+            pollUploadProgress();
+        } catch (error) {
+            showToast('Upload failed: ' + error.message, 'error');
+        }
+    });
+
+    async function pollUploadProgress() {
+        try {
+            const response = await fetch('{{ url_for("get_upload_progress", project_id=project.id) }}');
+            const data = await response.json();
+
+            // Update progress bar
+            const progressBar = document.getElementById('upload-progress-bar');
+            progressBar.style.width = data.percent + '%';
+
+            // Update status
+            const statusDiv = document.getElementById('upload-status');
+            statusDiv.textContent = data.current_page ? `Uploading: ${data.current_page}` : 'Processing...';
+
+            // Update individual items
+            data.completed.forEach(page => {
+                const item = document.querySelector(`.upload-item[data-filename="${page}"] .upload-item-status`);
+                if (item) {
+                    item.className = 'upload-item-status success';
+                    item.innerHTML = '<svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+                }
+            });
+
+            data.failed.forEach(page => {
+                const item = document.querySelector(`.upload-item[data-filename="${page}"] .upload-item-status`);
+                if (item) {
+                    item.className = 'upload-item-status error';
+                    item.innerHTML = '<svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 3L9 9M9 3L3 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
+                }
+            });
+
+            if (data.status === 'complete') {
+                if (data.failed.length === 0) {
+                    window.location.href = '{{ url_for("project_complete", project_id=project.id) }}';
+                } else {
+                    statusDiv.textContent = `Upload complete with ${data.failed.length} errors`;
+                    showToast(`${data.completed.length} pages uploaded, ${data.failed.length} failed`, 'warning');
+                }
+            } else {
+                setTimeout(pollUploadProgress, 1000);
+            }
+        } catch (error) {
+            setTimeout(pollUploadProgress, 2000);
+        }
+    }
+});
+</script>
+{% endblock %}

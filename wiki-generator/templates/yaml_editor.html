@@ -1,0 +1,168 @@
+{% extends "base.html" %}
+
+{% set step = 2 %}
+{% set total_steps = 5 %}
+{% set step_labels = ['Setup', 'Structure', 'Generate', 'Review', 'Complete'] %}
+
+{% block title %}Structure Editor - {{ project.name }}{% endblock %}
+
+{% block head %}
+<style>
+    .yaml-editor-container { min-height: 600px; }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h1 class="card-title">Build Wiki Structure</h1>
+        <p class="card-description">Define your wiki pages, categories, and key points. The AI will generate content based on this structure.</p>
+    </div>
+
+    <div class="form-group">
+        <label class="form-label" for="wiki_name">Wiki Name</label>
+        <input type="text" id="wiki_name" class="form-input"
+               placeholder="e.g., Australian Gambling Encyclopaedia"
+               value="{{ pages_config.wiki_name if pages_config else '' }}">
+    </div>
+
+    <div class="form-group">
+        <label class="form-label" for="default_category">Default Category</label>
+        <input type="text" id="default_category" class="form-input"
+               placeholder="e.g., General"
+               value="{{ pages_config.default_category if pages_config else 'General' }}">
+    </div>
+</div>
+
+<div class="yaml-editor-container">
+    <div class="yaml-builder">
+        <div class="yaml-builder-header">
+            <h3 class="yaml-builder-title">Pages</h3>
+            <button type="button" class="btn btn-primary btn-sm" id="add-page">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M7 2V12M2 7H12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                Add Page
+            </button>
+        </div>
+        <div class="yaml-builder-content" id="pages-container">
+            <!-- Pages will be added here dynamically -->
+        </div>
+    </div>
+
+    <div class="yaml-preview">
+        <div class="yaml-preview-header">
+            <h3 class="yaml-builder-title">YAML Preview</h3>
+            <button type="button" class="btn btn-secondary btn-sm" id="download-yaml">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M7 2V9M7 9L4 6M7 9L10 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 11H12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                Download
+            </button>
+        </div>
+        <div class="yaml-preview-content">
+            <pre id="yaml-output">Loading...</pre>
+        </div>
+    </div>
+</div>
+
+<div class="btn-group btn-group-between" style="margin-top: 24px;">
+    <a href="{{ url_for('index') }}" class="btn btn-secondary">Back to Home</a>
+    <div style="display: flex; gap: 12px;">
+        <button type="button" class="btn btn-secondary" id="save-structure">Save Draft</button>
+        <button type="button" class="btn btn-primary" id="continue-btn">
+            Continue to Generate
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+    </div>
+</div>
+
+<!-- Page Template (hidden) -->
+<template id="page-template">
+    <div class="page-item" data-page-index="">
+        <div class="page-item-header">
+            <div class="page-item-title">
+                <svg class="page-item-expand" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="page-title-text">New Page</span>
+            </div>
+            <div class="page-item-actions">
+                <button type="button" class="btn btn-ghost btn-icon btn-sm move-up" title="Move Up">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                        <path d="M7 11V3M7 3L3 7M7 3L11 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <button type="button" class="btn btn-ghost btn-icon btn-sm move-down" title="Move Down">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                        <path d="M7 3V11M7 11L3 7M7 11L11 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <button type="button" class="btn btn-ghost btn-icon btn-sm delete-page" title="Delete">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                        <path d="M2 4H12M5 4V3C5 2.44772 5.44772 2 6 2H8C8.55228 2 9 2.44772 9 3V4M11 4V11C11 11.5523 10.5523 12 10 12H4C3.44772 12 3 11.5523 3 11V4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="page-item-content">
+            <div class="form-group">
+                <label class="form-label">Page Title</label>
+                <input type="text" class="form-input page-title-input" placeholder="e.g., BetStop National Self-Exclusion">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Category</label>
+                <input type="text" class="form-input page-category-input" placeholder="e.g., Self-Exclusion">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Description</label>
+                <textarea class="form-textarea page-description-input" rows="2" placeholder="Brief description of what this page should cover"></textarea>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Key Points</label>
+                <div class="key-points-list">
+                    <!-- Key points added dynamically -->
+                </div>
+                <button type="button" class="btn btn-secondary btn-sm add-key-point" style="margin-top: 8px;">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                        <path d="M7 2V12M2 7H12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    Add Key Point
+                </button>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Related Pages <span class="form-label-optional">(comma-separated)</span></label>
+                <input type="text" class="form-input page-related-input" placeholder="e.g., BetStop How to Register, State Self-Exclusion Schemes">
+            </div>
+        </div>
+    </div>
+</template>
+
+<!-- Key Point Template -->
+<template id="key-point-template">
+    <div class="key-point-item">
+        <input type="text" class="form-input key-point-input" placeholder="Enter a key point">
+        <button type="button" class="btn btn-ghost btn-icon btn-sm remove-key-point">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path d="M3 7H11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        </button>
+    </div>
+</template>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/yaml_editor.js') }}"></script>
+<script>
+    // Initialize with existing data if available
+    const existingConfig = {{ pages_config | tojson | safe if pages_config else 'null' }};
+    const projectId = '{{ project.id }}';
+    const saveUrl = '{{ url_for("save_structure", project_id=project.id) }}';
+    const generateUrl = '{{ url_for("project_generate", project_id=project.id) }}';
+
+    initYamlEditor(existingConfig, projectId, saveUrl, generateUrl);
+</script>
+{% endblock %}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Wiki Generator{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="{{ url_for('index') }}" class="nav-logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Wiki Generator
+            </a>
+            {% if project %}
+            <div class="nav-project">
+                <span class="nav-project-name">{{ project.name }}</span>
+            </div>
+            {% endif %}
+        </div>
+    </nav>
+
+    {% if step is defined and total_steps is defined %}
+    <div class="step-indicator">
+        <div class="step-content">
+            {% for i in range(1, total_steps + 1) %}
+            <div class="step {% if i < step %}completed{% elif i == step %}active{% endif %}">
+                <div class="step-number">
+                    {% if i < step %}
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M13.3334 4L6.00008 11.3333L2.66675 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    {% else %}
+                    {{ i }}
+                    {% endif %}
+                </div>
+                <div class="step-label">{{ step_labels[i-1] if step_labels else '' }}</div>
+            </div>
+            {% if i < total_steps %}
+            <div class="step-connector {% if i < step %}completed{% endif %}"></div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+
+    <main class="main-content">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <div class="flash-messages">
+            {% for category, message in messages %}
+            <div class="flash-message flash-{{ category }}">
+                {{ message }}
+                <button class="flash-close" onclick="this.parentElement.remove()">×</button>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% endwith %}
+
+        {% block content %}{% endblock %}
+    </main>
+
+    <div id="toast-container"></div>
+
+    <script src="{{ url_for('static', filename='js/common.js') }}"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

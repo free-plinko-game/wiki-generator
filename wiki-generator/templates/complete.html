@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% set step = 5 %}
+{% set total_steps = 5 %}
+{% set step_labels = ['Setup', 'Structure', 'Generate', 'Review', 'Complete'] %}
+
+{% block title %}Complete! - {{ project.name }}{% endblock %}
+
+{% block content %}
+<div class="card" style="text-align: center;">
+    <div class="complete-icon">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <path d="M33.3334 10L15.0001 28.3333L6.66675 20" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </div>
+
+    <h1 class="complete-title">Wiki Published!</h1>
+    <p class="complete-description">
+        Your wiki content has been successfully uploaded to {{ project.wiki_domain }}.
+    </p>
+
+    <div class="complete-links">
+        <h4 class="complete-links-title">View Your Wiki</h4>
+        <ul class="complete-links-list">
+            <li>
+                <a href="https://{{ project.wiki_domain }}" target="_blank">
+                    {{ project.wiki_domain }} - Main Page
+                </a>
+            </li>
+            {% if uploaded_pages %}
+            {% for page in uploaded_pages[:5] %}
+            <li>
+                <a href="https://{{ project.wiki_domain }}/wiki/{{ page.replace(' ', '_') }}" target="_blank">
+                    {{ page }}
+                </a>
+            </li>
+            {% endfor %}
+            {% if uploaded_pages | length > 5 %}
+            <li style="color: var(--color-text-muted);">
+                ... and {{ uploaded_pages | length - 5 }} more pages
+            </li>
+            {% endif %}
+            {% endif %}
+        </ul>
+    </div>
+
+    <div class="btn-group" style="justify-content: center;">
+        <a href="{{ url_for('project_structure', project_id=project.id) }}" class="btn btn-secondary">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M8 3V13M3 8H13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            Add More Pages
+        </a>
+        <a href="{{ url_for('index') }}" class="btn btn-primary">
+            Back to Home
+        </a>
+    </div>
+</div>
+
+<div class="card" style="margin-top: 24px;">
+    <div class="card-header">
+        <h2 class="card-title">Upload Summary</h2>
+    </div>
+
+    <div class="progress-stats" style="margin-top: 0;">
+        <div class="progress-stat">
+            <div class="progress-stat-value" style="color: var(--color-success);">{{ stats.success }}</div>
+            <div class="progress-stat-label">Uploaded</div>
+        </div>
+        {% if stats.failed > 0 %}
+        <div class="progress-stat">
+            <div class="progress-stat-value" style="color: var(--color-error);">{{ stats.failed }}</div>
+            <div class="progress-stat-label">Failed</div>
+        </div>
+        {% endif %}
+        <div class="progress-stat">
+            <div class="progress-stat-value">{{ stats.total }}</div>
+            <div class="progress-stat-label">Total</div>
+        </div>
+    </div>
+</div>
+{% endblock %}

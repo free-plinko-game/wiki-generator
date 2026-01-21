@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+
+{% set step = 3 %}
+{% set total_steps = 5 %}
+{% set step_labels = ['Setup', 'Structure', 'Generate', 'Review', 'Complete'] %}
+
+{% block title %}Generate Content - {{ project.name }}{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h1 class="card-title">Generate Content</h1>
+        <p class="card-description">Use Claude AI to generate MediaWiki content for your pages.</p>
+    </div>
+
+    <div id="setup-section">
+        <form id="generate-form">
+            <div class="form-group">
+                <label class="form-label" for="api_key">Anthropic API Key</label>
+                <input type="password" id="api_key" name="api_key" class="form-input"
+                       placeholder="sk-ant-..." required>
+                <p class="form-hint">Your API key is not stored and only used for this generation session.</p>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Pages to Generate</label>
+                <div style="margin-bottom: 12px;">
+                    <label style="display: inline-flex; align-items: center; gap: 8px; cursor: pointer;">
+                        <input type="checkbox" id="select-all" checked>
+                        <span>Select All ({{ pages | length }} pages)</span>
+                    </label>
+                </div>
+                <div class="page-list" id="page-selection">
+                    {% for page in pages %}
+                    <label class="page-list-item" style="cursor: pointer;">
+                        <div class="page-list-item-info">
+                            <input type="checkbox" name="pages" value="{{ page.title }}"
+                                   class="page-list-item-checkbox page-checkbox" checked>
+                            <span class="page-list-item-title">{{ page.title }}</span>
+                        </div>
+                        <span class="page-list-item-meta">{{ page.category }}</span>
+                    </label>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="btn-group btn-group-between">
+                <a href="{{ url_for('project_structure', project_id=project.id) }}" class="btn btn-secondary">
+                    Back to Structure
+                </a>
+                <button type="submit" class="btn btn-primary" id="generate-btn">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M8 2V14M8 2L4 6M8 2L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Generate Content
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <div id="progress-section" style="display: none;">
+        <div class="progress-container">
+            <div class="progress-status" id="progress-status">Initializing...</div>
+            <div class="progress-page" id="progress-page">Preparing to generate content</div>
+
+            <div class="progress-bar-wrapper">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+
+            <div class="progress-stats">
+                <div class="progress-stat">
+                    <div class="progress-stat-value" id="pages-completed">0</div>
+                    <div class="progress-stat-label">Completed</div>
+                </div>
+                <div class="progress-stat">
+                    <div class="progress-stat-value" id="pages-total">0</div>
+                    <div class="progress-stat-label">Total</div>
+                </div>
+                <div class="progress-stat">
+                    <div class="progress-stat-value" id="time-elapsed">0:00</div>
+                    <div class="progress-stat-label">Elapsed</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="generation-log" style="margin-top: 24px; max-height: 200px; overflow-y: auto; font-size: 13px; color: var(--color-text-secondary);">
+        </div>
+    </div>
+
+    <div id="complete-section" style="display: none;">
+        <div class="progress-container">
+            <div class="complete-icon">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                    <path d="M33.3334 10L15.0001 28.3333L6.66675 20" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <h2 class="complete-title">Content Generated!</h2>
+            <p class="complete-description" id="complete-message">All pages have been generated successfully.</p>
+        </div>
+
+        <div class="btn-group" style="justify-content: center;">
+            <a href="{{ url_for('project_review', project_id=project.id) }}" class="btn btn-primary btn-lg">
+                Review & Upload
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/progress.js') }}"></script>
+<script>
+    const projectId = '{{ project.id }}';
+    const startGenerateUrl = '{{ url_for("start_generation", project_id=project.id) }}';
+    const progressUrl = '{{ url_for("get_progress", project_id=project.id) }}';
+
+    initGeneratePage(projectId, startGenerateUrl, progressUrl);
+</script>
+{% endblock %}

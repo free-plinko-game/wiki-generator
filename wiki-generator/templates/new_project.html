@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+
+{% set step = 1 %}
+{% set total_steps = 5 %}
+{% set step_labels = ['Setup', 'Structure', 'Generate', 'Review', 'Complete'] %}
+
+{% block title %}New Project - Wiki Generator{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h1 class="card-title">Create New Project</h1>
+        <p class="card-description">Connect to your Miraheze wiki and start generating content.</p>
+    </div>
+
+    <form id="project-form" method="POST" action="{{ url_for('new_project') }}">
+        <div class="form-group">
+            <label class="form-label" for="name">Project Name</label>
+            <input type="text" id="name" name="name" class="form-input"
+                   placeholder="e.g., Australian Gambling Wiki" required
+                   value="{{ request.form.get('name', '') }}">
+        </div>
+
+        <div class="form-group">
+            <label class="form-label" for="platform">Platform</label>
+            <select id="platform" name="platform" class="form-select" disabled>
+                <option value="miraheze" selected>Miraheze (MediaWiki)</option>
+            </select>
+            <p class="form-hint">More platforms coming soon (Confluence, Notion)</p>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label" for="wiki_domain">Wiki Domain</label>
+            <input type="text" id="wiki_domain" name="wiki_domain" class="form-input"
+                   placeholder="e.g., yourwiki.miraheze.org" required
+                   value="{{ request.form.get('wiki_domain', '') }}">
+            <p class="form-hint">The full domain of your Miraheze wiki</p>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label" for="bot_username">Bot Username</label>
+            <input type="text" id="bot_username" name="bot_username" class="form-input"
+                   placeholder="e.g., Username@BotName" required
+                   value="{{ request.form.get('bot_username', '') }}">
+            <p class="form-hint">Create a bot password in Special:BotPasswords on your wiki</p>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label" for="bot_password">Bot Password</label>
+            <input type="password" id="bot_password" name="bot_password" class="form-input"
+                   placeholder="Your bot password" required>
+        </div>
+
+        <button type="button" id="test-connection" class="btn btn-secondary">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M14 8C14 11.3137 11.3137 14 8 14C4.68629 14 2 11.3137 2 8C2 4.68629 4.68629 2 8 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            Test Connection
+        </button>
+
+        <div id="connection-result" class="connection-test" style="display: none;">
+            <div class="connection-test-status" id="connection-status">
+                <span class="status-icon"></span>
+                <span class="status-text"></span>
+            </div>
+            <div class="connection-test-details" id="connection-details"></div>
+        </div>
+
+        <div class="btn-group btn-group-right">
+            <a href="{{ url_for('index') }}" class="btn btn-secondary">Cancel</a>
+            <button type="submit" class="btn btn-primary" id="submit-btn" disabled>
+                Save & Continue
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+    </form>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const testBtn = document.getElementById('test-connection');
+    const submitBtn = document.getElementById('submit-btn');
+    const resultDiv = document.getElementById('connection-result');
+    const statusDiv = document.getElementById('connection-status');
+    const detailsDiv = document.getElementById('connection-details');
+
+    testBtn.addEventListener('click', async function() {
+        const domain = document.getElementById('wiki_domain').value;
+        const username = document.getElementById('bot_username').value;
+        const password = document.getElementById('bot_password').value;
+
+        if (!domain || !username || !password) {
+            showToast('Please fill in all connection fields', 'error');
+            return;
+        }
+
+        testBtn.disabled = true;
+        testBtn.classList.add('btn-loading');
+        resultDiv.style.display = 'block';
+        statusDiv.className = 'connection-test-status loading';
+        statusDiv.innerHTML = '<span class="status-icon">⏳</span> Testing connection...';
+        detailsDiv.textContent = '';
+
+        try {
+            const response = await fetch('{{ url_for("test_connection") }}', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    wiki_domain: domain,
+                    bot_username: username,
+                    bot_password: password
+                })
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                statusDiv.className = 'connection-test-status success';
+                statusDiv.innerHTML = '<span class="status-icon">✓</span> Connection successful!';
+                detailsDiv.innerHTML = `
+                    <strong>Wiki:</strong> ${data.site_name || 'Unknown'}<br>
+                    <strong>API:</strong> Accessible<br>
+                    <strong>Login:</strong> Success<br>
+                    <strong>Edit Permission:</strong> ${data.edit_permission ? 'Yes' : 'Limited'}
+                `;
+                submitBtn.disabled = false;
+            } else {
+                statusDiv.className = 'connection-test-status error';
+                statusDiv.innerHTML = '<span class="status-icon">✗</span> Connection failed';
+                detailsDiv.textContent = data.error || 'Unknown error occurred';
+                submitBtn.disabled = true;
+            }
+        } catch (error) {
+            statusDiv.className = 'connection-test-status error';
+            statusDiv.innerHTML = '<span class="status-icon">✗</span> Connection failed';
+            detailsDiv.textContent = 'Network error: ' + error.message;
+            submitBtn.disabled = true;
+        }
+
+        testBtn.disabled = false;
+        testBtn.classList.remove('btn-loading');
+    });
+});
+</script>
+{% endblock %}

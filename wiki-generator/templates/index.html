@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block title %}Wiki Generator - Create Professional Wikis{% endblock %}
+
+{% block content %}
+<div class="hero">
+    <h1 class="hero-title">Wiki Generator</h1>
+    <p class="hero-description">
+        Create professional wiki content powered by AI. Build your structure, generate content,
+        and publish to Miraheze in minutes.
+    </p>
+    <a href="{{ url_for('new_project') }}" class="btn btn-primary btn-lg">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M10 4V16M4 10H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        New Project
+    </a>
+</div>
+
+<div class="feature-grid">
+    <div class="feature-card">
+        <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+        <h3 class="feature-title">Visual Structure Builder</h3>
+        <p class="feature-description">
+            Design your wiki structure with an intuitive visual editor. Add pages, categories, and key points with ease.
+        </p>
+    </div>
+
+    <div class="feature-card">
+        <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z" stroke="currentColor" stroke-width="2"/>
+                <path d="M8 12L11 15L16 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+        <h3 class="feature-title">AI-Powered Content</h3>
+        <p class="feature-description">
+            Generate high-quality MediaWiki content using Claude AI. Proper formatting, tables, and categories included.
+        </p>
+    </div>
+
+    <div class="feature-card">
+        <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M4 16V17C4 18.6569 5.34315 20 7 20H17C18.6569 20 20 18.6569 20 17V16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M12 4V14M12 14L8 10M12 14L16 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+        <h3 class="feature-title">One-Click Upload</h3>
+        <p class="feature-description">
+            Automatically upload all generated content to your Miraheze wiki. Review before publishing.
+        </p>
+    </div>
+</div>
+
+{% if recent_projects %}
+<div class="card" style="margin-top: 48px;">
+    <div class="card-header">
+        <h2 class="card-title">Recent Projects</h2>
+    </div>
+    <div class="page-list">
+        {% for project in recent_projects %}
+        <a href="{{ url_for('project_structure', project_id=project.id) }}" class="page-list-item" style="text-decoration: none; color: inherit;">
+            <div class="page-list-item-info">
+                <span class="page-list-item-title">{{ project.name }}</span>
+                <span class="page-list-item-meta">{{ project.wiki_domain }}</span>
+            </div>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M7 5L12 10L7 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+{% endblock %}
