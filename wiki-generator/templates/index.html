@@ -60,8 +60,13 @@
 
 {% if recent_projects %}
 <div class="card" style="margin-top: 48px;">
-    <div class="card-header">
+    <div class="card-header" style="display: flex; align-items: center; justify-content: space-between; gap: 12px;">
         <h2 class="card-title">Recent Projects</h2>
+        {% if all_projects and all_projects|length > recent_projects|length %}
+        <a href="{{ url_for('all_projects') }}" class="btn btn-secondary btn-sm">
+            View all projects ({{ all_projects|length }})
+        </a>
+        {% endif %}
     </div>
     <div class="page-list">
         {% for project in recent_projects %}

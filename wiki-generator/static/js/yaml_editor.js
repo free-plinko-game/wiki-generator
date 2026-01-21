@@ -388,3 +388,50 @@ async function continueToGenerate(saveUrl, generateUrl) {
         showToast('Error: ' + error.message, 'error');
     }
 }
+
+function syncTitleToYaml(previousTitle, nextTitle) {
+    const title = (nextTitle || '').trim();
+    if (!title) {
+        return;
+    }
+
+    const container = document.getElementById('pages-container');
+    const items = Array.from(container.querySelectorAll('.page-item'));
+    const prevLower = (previousTitle || '').trim().toLowerCase();
+    const nextLower = title.toLowerCase();
+
+    let targetItem = null;
+    if (prevLower) {
+        targetItem = items.find(item => {
+            const input = item.querySelector('.page-title-input');
+            return input && input.value.trim().toLowerCase() === prevLower;
+        });
+    }
+
+    if (!targetItem) {
+        targetItem = items.find(item => {
+            const input = item.querySelector('.page-title-input');
+            return input && input.value.trim().toLowerCase() === nextLower;
+        });
+    }
+
+    if (!targetItem) {
+        addPage();
+        const updatedItems = Array.from(container.querySelectorAll('.page-item'));
+        targetItem = updatedItems[updatedItems.length - 1];
+    }
+
+    const titleInput = targetItem.querySelector('.page-title-input');
+    const titleText = targetItem.querySelector('.page-title-text');
+    if (titleInput) {
+        titleInput.value = title;
+    }
+    if (titleText) {
+        titleText.textContent = title || 'New Page';
+    }
+
+    targetItem.classList.add('expanded');
+    updatePageData(targetItem);
+}
+
+window.syncTitleToYaml = syncTitleToYaml;

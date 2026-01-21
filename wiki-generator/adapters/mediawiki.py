@@ -271,6 +271,26 @@ class MediaWikiAdapter(BaseAdapter):
 
         return pages[:limit]
 
+    def parse_page(self, content: str, title: Optional[str] = None) -> str:
+        """Render wikitext to HTML using the MediaWiki parse API."""
+        params = {
+            'action': 'parse',
+            'format': 'json',
+            'contentmodel': 'wikitext',
+            'text': content,
+            'prop': 'text'
+        }
+        if title:
+            params['title'] = title
+
+        try:
+            response = self.session.post(self.api_url, data=params, timeout=15)
+            data = response.json()
+        except Exception:
+            return ''
+
+        return data.get('parse', {}).get('text', {}).get('*', '') or ''
+
     @staticmethod
     def get_content_extension() -> str:
         return '.wiki'

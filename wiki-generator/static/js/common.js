@@ -108,15 +108,16 @@ function escapeHtml(str) {
     return div.innerHTML;
 }
 
-// Add loading state to buttons
-document.addEventListener('click', function(e) {
-    if (e.target.matches('button[type="submit"]') || e.target.closest('button[type="submit"]')) {
-        const btn = e.target.matches('button') ? e.target : e.target.closest('button');
-        const form = btn.closest('form');
+// Add loading state to submit buttons after a valid submit is triggered.
+document.addEventListener('submit', function(e) {
+    const form = e.target;
+    if (!form || !form.checkValidity()) {
+        return;
+    }
 
-        if (form && form.checkValidity()) {
-            btn.classList.add('btn-loading');
-            btn.disabled = true;
-        }
+    const submitter = e.submitter;
+    if (submitter && submitter.matches('button[type="submit"]')) {
+        submitter.classList.add('btn-loading');
+        submitter.disabled = true;
     }
 });

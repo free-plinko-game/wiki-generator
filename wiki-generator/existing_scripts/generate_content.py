@@ -115,15 +115,15 @@ def build_page_prompt(page: dict, config: dict) -> str:
 class WikiContentGenerator:
     """Generate wiki content using OpenAI API."""
 
-    def __init__(self, config_path: str = "pages.yaml"):
+    def __init__(self, config_path: str = "pages.yaml", api_key: Optional[str] = None):
         """Initialize the generator."""
         self.config = load_config(config_path)
-        self.client = self._init_openai()
+        self.client = self._init_openai(api_key)
         self.system_prompt = build_system_prompt(self.config)
 
-    def _init_openai(self) -> OpenAI:
+    def _init_openai(self, api_key: Optional[str]) -> OpenAI:
         """Initialize OpenAI client."""
-        api_key = os.environ.get('OPENAI_API_KEY')
+        api_key = api_key or os.environ.get('OPENAI_API_KEY')
         if not api_key:
             # Try loading from config.json
             try:

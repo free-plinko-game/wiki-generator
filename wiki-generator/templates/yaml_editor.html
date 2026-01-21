@@ -9,6 +9,15 @@
 {% block head %}
 <style>
     .yaml-editor-container { min-height: 600px; }
+    .live-pages-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .live-page-item { width: 100%; background: var(--color-bg); border: 1px solid var(--color-border); text-align: left; }
+    .live-page-item.active { border-color: var(--color-primary); box-shadow: 0 0 0 3px var(--color-primary-light); }
+    .live-page-item svg { flex-shrink: 0; }
+    .live-html-preview { background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 16px; max-height: 360px; overflow-y: auto; }
+    .live-page-editor textarea { min-height: 220px; }
+    @media (max-width: 900px) {
+        .live-pages-grid { grid-template-columns: 1fr; }
+    }
 </style>
 {% endblock %}
 
@@ -64,6 +73,47 @@
         <div class="yaml-preview-content">
             <pre id="yaml-output">Loading...</pre>
         </div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header" style="display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+        <div>
+            <h2 class="card-title">Live Wiki Pages</h2>
+            <p class="card-description">Fetch the current pages from your wiki to cross-check structure.</p>
+        </div>
+        <button type="button" class="btn btn-secondary btn-sm" id="refresh-live-pages">
+            Refresh
+        </button>
+    </div>
+    <div class="live-pages-grid">
+        <div>
+            <div id="live-pages-status" class="form-hint">Not loaded yet.</div>
+            <div id="live-pages-list" class="page-list"></div>
+        </div>
+        <div class="live-page-editor">
+            <div class="form-group">
+                <label class="form-label" for="live-page-title">Page Title</label>
+                <input type="text" id="live-page-title" class="form-input" placeholder="Select a page to edit">
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="live-page-summary">Edit Summary</label>
+                <input type="text" id="live-page-summary" class="form-input" value="Updated via Wiki Generator">
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="live-page-content">Wiki Markup</label>
+                <textarea id="live-page-content" class="form-textarea" placeholder="Select a page to load content"></textarea>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-secondary" id="refresh-live-preview">Update Preview</button>
+                <button type="button" class="btn btn-primary" id="save-live-page">Save to Wiki</button>
+            </div>
+            <div id="live-page-message" class="form-hint"></div>
+        </div>
+    </div>
+    <div style="margin-top: 24px;">
+        <h3 class="yaml-builder-title" style="margin-bottom: 12px;">HTML Preview</h3>
+        <div id="live-page-preview" class="live-html-preview"></div>
     </div>
 </div>
 
@@ -162,7 +212,209 @@
     const projectId = '{{ project.id }}';
     const saveUrl = '{{ url_for("save_structure", project_id=project.id) }}';
     const generateUrl = '{{ url_for("project_generate", project_id=project.id) }}';
+    const livePagesUrl = '{{ url_for("project_live_pages", project_id=project.id) }}';
+    const livePageUrl = '{{ url_for("project_live_page_content", project_id=project.id) }}';
+    const livePreviewUrl = '{{ url_for("project_live_page_preview", project_id=project.id) }}';
+    const liveSaveUrl = '{{ url_for("project_live_page_save", project_id=project.id) }}';
 
     initYamlEditor(existingConfig, projectId, saveUrl, generateUrl);
+
+    const livePagesBtn = document.getElementById('refresh-live-pages');
+    const livePagesStatus = document.getElementById('live-pages-status');
+    const livePagesList = document.getElementById('live-pages-list');
+    const livePageTitle = document.getElementById('live-page-title');
+    const livePageSummary = document.getElementById('live-page-summary');
+    const livePageContent = document.getElementById('live-page-content');
+    const livePagePreview = document.getElementById('live-page-preview');
+    const livePageMessage = document.getElementById('live-page-message');
+    const livePreviewBtn = document.getElementById('refresh-live-preview');
+    const liveSaveBtn = document.getElementById('save-live-page');
+
+    let currentLiveTitle = '';
+    let lastSyncedTitle = '';
+
+    function setLivePagesStatus(message, isError = false) {
+        livePagesStatus.textContent = message;
+        livePagesStatus.style.color = isError ? 'var(--color-error)' : '';
+    }
+
+    function renderLivePages(pages) {
+        livePagesList.innerHTML = '';
+        if (!pages.length) {
+            setLivePagesStatus('No pages found on the wiki.', false);
+            return;
+        }
+
+        pages.forEach((title) => {
+            const item = document.createElement('button');
+            item.type = 'button';
+            item.className = 'page-list-item live-page-item';
+
+            const info = document.createElement('div');
+            info.className = 'page-list-item-info';
+
+            const name = document.createElement('span');
+            name.className = 'page-list-item-title';
+            name.textContent = title;
+
+            info.appendChild(name);
+            item.appendChild(info);
+            livePagesList.appendChild(item);
+
+            item.addEventListener('click', () => loadLivePage(title, item));
+        });
+    }
+
+    function setLivePageMessage(message, isError = false) {
+        livePageMessage.textContent = message;
+        livePageMessage.style.color = isError ? 'var(--color-error)' : '';
+    }
+
+    function setActiveLiveItem(activeItem) {
+        document.querySelectorAll('.live-page-item').forEach(item => {
+            item.classList.toggle('active', item === activeItem);
+        });
+    }
+
+    async function loadLivePage(title, item) {
+        setActiveLiveItem(item);
+        setLivePageMessage('Loading page content...', false);
+        livePagePreview.innerHTML = '';
+
+        try {
+            const response = await fetch(`${livePageUrl}?title=${encodeURIComponent(title)}`);
+            const data = await response.json();
+
+            if (!data.success) {
+                setLivePageMessage(data.error || 'Failed to load page.', true);
+                return;
+            }
+
+            currentLiveTitle = data.title;
+            lastSyncedTitle = data.title;
+            livePageTitle.value = data.title;
+            livePageContent.value = data.content || '';
+            livePagePreview.innerHTML = data.html || '';
+
+            if (window.syncTitleToYaml) {
+                window.syncTitleToYaml('', data.title);
+            }
+
+            setLivePageMessage('Loaded.', false);
+        } catch (error) {
+            setLivePageMessage(`Error: ${error.message}`, true);
+        }
+    }
+
+    async function fetchLivePages() {
+        livePagesBtn.disabled = true;
+        livePagesBtn.classList.add('btn-loading');
+        setLivePagesStatus('Loading pages from the wiki...', false);
+
+        try {
+            const response = await fetch(`${livePagesUrl}?limit=500`, { method: 'GET' });
+            const data = await response.json();
+
+            if (!data.success) {
+                setLivePagesStatus(data.error || 'Failed to load live pages.', true);
+                livePagesList.innerHTML = '';
+                return;
+            }
+
+            setLivePagesStatus(`Loaded ${data.count} page(s).`, false);
+            renderLivePages(data.pages || []);
+        } catch (error) {
+            setLivePagesStatus(`Error: ${error.message}`, true);
+            livePagesList.innerHTML = '';
+        } finally {
+            livePagesBtn.disabled = false;
+            livePagesBtn.classList.remove('btn-loading');
+        }
+    }
+
+    livePagesBtn.addEventListener('click', fetchLivePages);
+    fetchLivePages();
+
+    const syncLiveTitle = debounce(() => {
+        const newTitle = livePageTitle.value.trim();
+        if (window.syncTitleToYaml) {
+            window.syncTitleToYaml(lastSyncedTitle, newTitle);
+        }
+        lastSyncedTitle = newTitle;
+    }, 300);
+
+    livePageTitle.addEventListener('input', syncLiveTitle);
+
+    livePreviewBtn.addEventListener('click', async () => {
+        const title = livePageTitle.value.trim();
+        const content = livePageContent.value;
+
+        if (!content.trim()) {
+            setLivePageMessage('Add content to preview.', true);
+            return;
+        }
+
+        livePreviewBtn.disabled = true;
+        livePreviewBtn.classList.add('btn-loading');
+        setLivePageMessage('Updating preview...', false);
+
+        try {
+            const response = await fetch(livePreviewUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ title, content })
+            });
+            const data = await response.json();
+            if (!data.success) {
+                setLivePageMessage(data.error || 'Failed to render preview.', true);
+                return;
+            }
+
+            livePagePreview.innerHTML = data.html || '';
+            setLivePageMessage('Preview updated.', false);
+        } catch (error) {
+            setLivePageMessage(`Error: ${error.message}`, true);
+        } finally {
+            livePreviewBtn.disabled = false;
+            livePreviewBtn.classList.remove('btn-loading');
+        }
+    });
+
+    liveSaveBtn.addEventListener('click', async () => {
+        const title = livePageTitle.value.trim();
+        const content = livePageContent.value;
+        const summary = livePageSummary.value.trim() || 'Updated via Wiki Generator';
+
+        if (!title) {
+            setLivePageMessage('Title is required to save.', true);
+            return;
+        }
+
+        liveSaveBtn.disabled = true;
+        liveSaveBtn.classList.add('btn-loading');
+        setLivePageMessage('Saving to wiki...', false);
+
+        try {
+            const response = await fetch(liveSaveUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ title, content, summary })
+            });
+            const data = await response.json();
+            if (!data.success) {
+                setLivePageMessage(data.error || 'Failed to save page.', true);
+                return;
+            }
+
+            currentLiveTitle = data.title;
+            livePagePreview.innerHTML = data.html || '';
+            setLivePageMessage('Saved.', false);
+        } catch (error) {
+            setLivePageMessage(`Error: ${error.message}`, true);
+        } finally {
+            liveSaveBtn.disabled = false;
+            liveSaveBtn.classList.remove('btn-loading');
+        }
+    });
 </script>
 {% endblock %}

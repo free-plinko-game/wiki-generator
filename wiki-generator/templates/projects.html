@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}All Projects - Wiki Generator{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h1 class="card-title">All Projects</h1>
+        <p class="card-description">Manage and continue work on any project.</p>
+    </div>
+
+    {% if projects %}
+    <div class="page-list">
+        {% for project in projects %}
+        <a href="{{ url_for('project_structure', project_id=project.id) }}" class="page-list-item" style="text-decoration: none; color: inherit;">
+            <div class="page-list-item-info">
+                <span class="page-list-item-title">{{ project.name }}</span>
+                <span class="page-list-item-meta">{{ project.wiki_domain }}</span>
+            </div>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M7 5L12 10L7 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p class="card-description">No projects yet. Create a new project to get started.</p>
+    <div class="btn-group">
+        <a href="{{ url_for('new_project') }}" class="btn btn-primary">New Project</a>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

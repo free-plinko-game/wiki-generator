@@ -2,6 +2,8 @@
 __pycache__/
 *.pyc
 
+wiki-generator/projects/
+
 
 __pycache__/
 *.pyc

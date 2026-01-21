@@ -81,6 +81,16 @@ def get_recent_projects(limit=5):
     if not projects_dir.exists():
         return []
 
+    projects = get_all_projects()
+    return projects[:limit]
+
+
+def get_all_projects():
+    """Get list of all projects."""
+    projects_dir = get_projects_dir()
+    if not projects_dir.exists():
+        return []
+
     projects = []
     for project_dir in projects_dir.iterdir():
         if project_dir.is_dir():
@@ -88,9 +98,8 @@ def get_recent_projects(limit=5):
             if project:
                 projects.append(project)
 
-    # Sort by created_at, newest first
     projects.sort(key=lambda p: p.get('created_at', ''), reverse=True)
-    return projects[:limit]
+    return projects
 
 
 # =============================================================================
@@ -100,8 +109,20 @@ def get_recent_projects(limit=5):
 @app.route('/')
 def index():
     """Landing page."""
-    recent_projects = get_recent_projects()
-    return render_template('index.html', recent_projects=recent_projects)
+    all_projects = get_all_projects()
+    recent_projects = all_projects[:5]
+    return render_template(
+        'index.html',
+        recent_projects=recent_projects,
+        all_projects=all_projects
+    )
+
+
+@app.route('/projects', methods=['GET'])
+def all_projects():
+    """All projects page."""
+    projects = get_all_projects()
+    return render_template('projects.html', projects=projects)
 
 
 @app.route('/project/new', methods=['GET', 'POST'])
@@ -178,6 +199,142 @@ def project_structure(project_id):
     return render_template('yaml_editor.html',
                            project=project,
                            pages_config=pages_config)
+
+
+@app.route('/project/<project_id>/live-pages', methods=['GET'])
+def project_live_pages(project_id):
+    """List live pages from the project's wiki."""
+    project = load_project(project_id)
+    if not project:
+        return jsonify({'success': False, 'error': 'Project not found'}), 404
+
+    try:
+        adapter = MediaWikiAdapter({
+            'wiki_domain': project['wiki_domain'],
+            'bot_username': project['bot_username'],
+            'bot_password': project['bot_password'],
+            'api_path': project.get('api_path', '/w/api.php')
+        })
+
+        if not adapter.login():
+            return jsonify({'success': False, 'error': 'Failed to login to wiki'}), 401
+
+        raw_limit = request.args.get('limit', '200')
+        try:
+            limit = max(1, min(500, int(raw_limit)))
+        except ValueError:
+            limit = 200
+
+        pages = adapter.list_pages(limit=limit)
+        return jsonify({'success': True, 'pages': pages, 'count': len(pages)})
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+
+@app.route('/project/<project_id>/live-page', methods=['GET'])
+def project_live_page_content(project_id):
+    """Get wiki page content and HTML preview."""
+    project = load_project(project_id)
+    if not project:
+        return jsonify({'success': False, 'error': 'Project not found'}), 404
+
+    title = request.args.get('title', '').strip()
+    if not title:
+        return jsonify({'success': False, 'error': 'Missing title'}), 400
+
+    try:
+        adapter = MediaWikiAdapter({
+            'wiki_domain': project['wiki_domain'],
+            'bot_username': project['bot_username'],
+            'bot_password': project['bot_password'],
+            'api_path': project.get('api_path', '/w/api.php')
+        })
+
+        if not adapter.login():
+            return jsonify({'success': False, 'error': 'Failed to login to wiki'}), 401
+
+        content = adapter.get_page(title)
+        if content is None:
+            return jsonify({'success': False, 'error': 'Page not found'}), 404
+
+        html = adapter.parse_page(content, title=title)
+
+        return jsonify({
+            'success': True,
+            'title': title,
+            'content': content,
+            'html': html
+        })
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+
+@app.route('/project/<project_id>/live-page', methods=['POST'])
+def project_live_page_save(project_id):
+    """Save wiki page content."""
+    project = load_project(project_id)
+    if not project:
+        return jsonify({'success': False, 'error': 'Project not found'}), 404
+
+    data = request.get_json() or {}
+    title = (data.get('title') or '').strip()
+    content = data.get('content') or ''
+    summary = (data.get('summary') or 'Updated via Wiki Generator').strip()
+
+    if not title:
+        return jsonify({'success': False, 'error': 'Missing title'}), 400
+
+    try:
+        adapter = MediaWikiAdapter({
+            'wiki_domain': project['wiki_domain'],
+            'bot_username': project['bot_username'],
+            'bot_password': project['bot_password'],
+            'api_path': project.get('api_path', '/w/api.php')
+        })
+
+        if not adapter.login():
+            return jsonify({'success': False, 'error': 'Failed to login to wiki'}), 401
+
+        success = adapter.upload_page(title, content, summary=summary)
+        if not success:
+            return jsonify({'success': False, 'error': 'Failed to save page'}), 500
+
+        html = adapter.parse_page(content, title=title)
+
+        return jsonify({'success': True, 'title': title, 'html': html})
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+
+@app.route('/project/<project_id>/live-page/preview', methods=['POST'])
+def project_live_page_preview(project_id):
+    """Render wikitext as HTML without saving."""
+    project = load_project(project_id)
+    if not project:
+        return jsonify({'success': False, 'error': 'Project not found'}), 404
+
+    data = request.get_json() or {}
+    title = (data.get('title') or '').strip()
+    content = data.get('content') or ''
+
+    if not content.strip():
+        return jsonify({'success': False, 'error': 'Missing content'}), 400
+
+    try:
+        adapter = MediaWikiAdapter({
+            'wiki_domain': project['wiki_domain'],
+            'bot_username': project['bot_username'],
+            'bot_password': project['bot_password'],
+            'api_path': project.get('api_path', '/w/api.php')
+        })
+
+        if not adapter.login():
+            return jsonify({'success': False, 'error': 'Failed to login to wiki'}), 401
+
+        html = adapter.parse_page(content, title=title)
+        return jsonify({'success': True, 'html': html})
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 500
 
 
 @app.route('/project/<project_id>/structure/save', methods=['POST'])
