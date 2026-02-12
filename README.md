@@ -29,6 +29,8 @@ A web-based tool for generating and managing wiki content using AI. Supports **M
 - **One-Click Upload** — batch upload generated content with progress tracking
 - **Google Search Console** — optional GSC integration for performance data
 
+For a detailed walkthrough of every feature, see the **[Usage Guide](USAGE.md)**.
+
 ## Quick Start
 
 ### 1. Install Dependencies
