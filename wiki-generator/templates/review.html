@@ -27,7 +27,17 @@
                 <input type="checkbox" id="select-all" checked>
                 <span>Select All ({{ generated_pages | length }} pages)</span>
             </label>
-            <span class="page-list-item-meta">Click a page to preview</span>
+            <div style="display: flex; align-items: center; gap: 12px;">
+                {% if has_filter %}
+                    {% if show_all %}
+                        <a href="{{ url_for('project_review', project_id=project.id) }}" class="form-hint" style="text-decoration: underline;">Show last run only</a>
+                    {% else %}
+                        <span class="form-hint">Showing last run</span>
+                        <a href="{{ url_for('project_review', project_id=project.id, all='1') }}" class="form-hint" style="text-decoration: underline;">Show all {{ total_page_count }} pages</a>
+                    {% endif %}
+                {% endif %}
+                <span class="page-list-item-meta">Click a page to preview</span>
+            </div>
         </div>
 
         <div class="page-list" id="pages-list">
@@ -62,6 +72,63 @@
             </button>
         </div>
     </div>
+
+    {% if link_summary %}
+    <div class="card" style="margin-top: 24px; padding: 20px;">
+        <h3 style="margin-bottom: 4px; font-size: 16px; font-weight: 600;">External Link Summary</h3>
+        <p style="color: var(--color-text-secondary); font-size: 13px; margin-bottom: 16px;">
+            Link bank placements across generated pages
+        </p>
+        <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
+            <thead>
+                <tr style="border-bottom: 2px solid var(--color-border); text-align: left;">
+                    <th style="padding: 8px 12px;">URL</th>
+                    <th style="padding: 8px 12px;">Anchors</th>
+                    <th style="padding: 8px 12px; text-align: center;">Target</th>
+                    <th style="padding: 8px 12px; text-align: center;">Placed</th>
+                    <th style="padding: 8px 12px;">Pages</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for link in link_summary %}
+                <tr style="border-bottom: 1px solid var(--color-border-light);">
+                    <td style="padding: 8px 12px; word-break: break-all;">
+                        <a href="{{ link.url }}" target="_blank" style="color: var(--color-primary); text-decoration: none;">
+                            {{ link.url | replace('https://www.', '') | truncate(40) }}
+                        </a>
+                    </td>
+                    <td style="padding: 8px 12px; color: var(--color-text-secondary);">
+                        {{ link.anchors | join(', ') }}
+                    </td>
+                    <td style="padding: 8px 12px; text-align: center;">
+                        {{ link.target_count if link.target_count > 0 else '&infin;' }}
+                    </td>
+                    <td style="padding: 8px 12px; text-align: center; font-weight: 600;
+                        {% if link.actual_count == 0 %}color: var(--color-error);
+                        {% elif link.target_count > 0 and link.actual_count >= link.target_count %}color: var(--color-success);
+                        {% else %}color: var(--color-warning);{% endif %}">
+                        {{ link.actual_count }}
+                    </td>
+                    <td style="padding: 8px 12px;">
+                        {% if link.pages %}
+                            <details style="cursor: pointer;">
+                                <summary style="color: var(--color-text-secondary); font-size: 12px;">
+                                    {{ link.pages | length }} page{{ 's' if link.pages | length != 1 }}
+                                </summary>
+                                <div style="margin-top: 4px; font-size: 12px; color: var(--color-text-secondary);">
+                                    {{ link.pages | join(', ') }}
+                                </div>
+                            </details>
+                        {% else %}
+                            <span style="color: var(--color-error); font-size: 12px;">Not placed</span>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endif %}
 
     <div id="upload-section" style="display: none;">
         <div class="progress-container">

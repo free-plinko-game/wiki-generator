@@ -23,6 +23,22 @@
             </div>
 
             <div class="form-group">
+                <label class="form-label">Generation Mode</label>
+                <label style="display: block; margin-bottom: 8px; cursor: pointer;">
+                    <input type="radio" name="mode" value="full" checked>
+                    <strong>Full Generation</strong> — Generate from scratch with all links
+                </label>
+                <label style="display: block; margin-bottom: 8px; cursor: pointer;">
+                    <input type="radio" name="mode" value="add_masking">
+                    <strong>Add Masking Links</strong> — Keep existing content, weave in masking links only
+                </label>
+                <label style="display: block; cursor: pointer;">
+                    <input type="radio" name="mode" value="add_operator">
+                    <strong>Add Operator Links</strong> — Keep existing content, weave in operator links only
+                </label>
+            </div>
+
+            <div class="form-group">
                 <label class="form-label">Pages to Generate</label>
                 <div style="margin-bottom: 12px;">
                     <label style="display: inline-flex; align-items: center; gap: 8px; cursor: pointer;">
@@ -41,6 +57,20 @@
                         <span class="page-list-item-meta">{{ page.category }}</span>
                     </label>
                     {% endfor %}
+                </div>
+            </div>
+
+            <div class="form-group" id="live-pages-section" style="display: none;">
+                <label class="form-label">Live Wiki Pages</label>
+                <p class="form-hint">Selected from the structure page. Content will be fetched from the wiki for edit passes.</p>
+                <div style="margin-bottom: 8px;">
+                    <label style="display: inline-flex; align-items: center; gap: 8px; cursor: pointer;">
+                        <input type="checkbox" id="select-all-live" checked>
+                        <span>Select All</span>
+                    </label>
+                </div>
+                <div class="page-list" id="live-page-selection">
+                    <!-- Populated from localStorage -->
                 </div>
             </div>
 
@@ -118,5 +148,58 @@
     const progressUrl = '{{ url_for("get_progress", project_id=project.id) }}';
 
     initGeneratePage(projectId, startGenerateUrl, progressUrl);
+
+    // Populate live pages from localStorage
+    (function() {
+        const raw = localStorage.getItem('selectedLivePages');
+        if (!raw) return;
+        localStorage.removeItem('selectedLivePages');
+
+        let livePages;
+        try { livePages = JSON.parse(raw); } catch (e) { return; }
+        if (!Array.isArray(livePages) || livePages.length === 0) return;
+
+        const section = document.getElementById('live-pages-section');
+        const list = document.getElementById('live-page-selection');
+        section.style.display = '';
+
+        livePages.forEach(title => {
+            const label = document.createElement('label');
+            label.className = 'page-list-item';
+            label.style.cursor = 'pointer';
+
+            const info = document.createElement('div');
+            info.className = 'page-list-item-info';
+
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.name = 'live_pages';
+            checkbox.value = title;
+            checkbox.className = 'page-list-item-checkbox live-page-checkbox';
+            checkbox.checked = true;
+
+            const span = document.createElement('span');
+            span.className = 'page-list-item-title';
+            span.textContent = title;
+
+            info.appendChild(checkbox);
+            info.appendChild(span);
+            label.appendChild(info);
+
+            const meta = document.createElement('span');
+            meta.className = 'page-list-item-meta';
+            meta.textContent = 'Live';
+            label.appendChild(meta);
+
+            list.appendChild(label);
+        });
+
+        const selectAllLive = document.getElementById('select-all-live');
+        selectAllLive.addEventListener('change', function() {
+            document.querySelectorAll('.live-page-checkbox').forEach(cb => {
+                cb.checked = this.checked;
+            });
+        });
+    })();
 </script>
 {% endblock %}

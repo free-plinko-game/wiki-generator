@@ -48,7 +48,9 @@ function initGeneratePage(projectId, startGenerateUrl, progressUrl) {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     api_key: apiKey,
-                    pages: selectedPages
+                    pages: selectedPages,
+                    live_pages: Array.from(document.querySelectorAll('.live-page-checkbox:checked')).map(cb => cb.value),
+                    mode: document.querySelector('input[name="mode"]:checked').value
                 })
             });
 

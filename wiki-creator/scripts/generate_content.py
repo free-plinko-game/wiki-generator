@@ -29,7 +29,7 @@ def load_config(config_path: str) -> dict:
         return yaml.safe_load(f)
 
 
-def build_system_prompt(config: dict, content_format: str) -> str:
+def build_system_prompt(config: dict, content_format: str, space_key: Optional[str] = None) -> str:
     """Build the system prompt for content generation."""
     style = config.get('style', {})
 
@@ -76,6 +76,9 @@ Your task is to generate high-quality MediaWiki-formatted content.
 
 ## Important
 - Use ONLY Confluence storage format (XHTML-compatible), never Markdown
+- For internal wiki links, use Confluence storage links (no raw URLs).
+  Example:
+  <ac:link><ri:page ri:space-key="{space_key or 'SPACE'}" ri:content-title="Page Title"/></ac:link>
 - Include a table for structured data where appropriate
 - Be factual and cite official sources where possible
 - For Australian gambling content, reference official government sources
@@ -157,14 +160,15 @@ def build_page_prompt(page: dict, config: dict, content_format: str) -> str:
 class WikiContentGenerator:
     """Generate wiki content using OpenAI API."""
 
-    def __init__(self, config_path: str = "pages.yaml", content_format: Optional[str] = None):
+    def __init__(self, config_path: str = "pages.yaml", content_format: Optional[str] = None, space_key: Optional[str] = None):
         """Initialize the generator."""
         self.config = load_config(config_path)
         self.client = self._init_openai()
         self.content_format = (content_format or self.config.get('content_format') or 'mediawiki').lower()
         if self.content_format in ('miraheze', 'mediawiki'):
             self.content_format = 'mediawiki'
-        self.system_prompt = build_system_prompt(self.config, self.content_format)
+        self.space_key = space_key
+        self.system_prompt = build_system_prompt(self.config, self.content_format, space_key=space_key)
 
     def _init_openai(self) -> OpenAI:
         """Initialize OpenAI client."""

@@ -545,6 +545,12 @@ body {
     justify-content: space-between;
 }
 
+.yaml-builder-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
 .yaml-builder-title {
     font-size: 16px;
     font-weight: 600;
@@ -636,6 +642,35 @@ body {
 
 .page-item.expanded .page-item-expand {
     transform: rotate(90deg);
+}
+
+/* Link Bank Items */
+.link-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--color-border-light);
+}
+
+.link-item:last-child {
+    border-bottom: none;
+}
+
+.link-url-input {
+    flex: 1;
+    min-width: 0;
+}
+
+.link-anchors-input {
+    flex: 1;
+    min-width: 0;
+}
+
+.link-count-input {
+    width: 80px;
+    flex: 0 0 80px;
+    text-align: center;
 }
 
 /* Key Points */
@@ -893,6 +928,67 @@ body {
 
 .complete-links-list a:hover {
     text-decoration: underline;
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.stat-card {
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 16px;
+}
+
+.stat-value {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+}
+
+/* Data Table */
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.data-table th,
+.data-table td {
+    text-align: left;
+    padding: 12px 10px;
+    border-bottom: 1px solid var(--color-border-light);
+}
+
+.data-table th {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-text-muted);
+}
+
+.data-table tbody tr:hover {
+    background: var(--color-bg-secondary);
+}
+
+.table-empty {
+    text-align: center;
+    color: var(--color-text-muted);
+    padding: 20px 10px;
 }
 
 /* Connection Test */

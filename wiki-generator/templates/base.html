@@ -19,7 +19,9 @@
                 Wiki Generator
             </a>
             <a href="{{ url_for('all_projects') }}" class="nav-project-name">Projects</a>
+            <a href="{{ url_for('settings') }}" class="nav-project-name">Settings</a>
             {% if project %}
+            <a href="{{ url_for('project_gsc', project_id=project.id) }}" class="nav-project-name">GSC</a>
             <div class="nav-project">
                 <span class="nav-project-name">{{ project.name }}</span>
             </div>

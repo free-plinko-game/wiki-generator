@@ -23,9 +23,18 @@
 
 {% block content %}
 <div class="card">
-    <div class="card-header">
-        <h1 class="card-title">Build Wiki Structure</h1>
-        <p class="card-description">Define your wiki pages, categories, and key points. The AI will generate content based on this structure.</p>
+    <div class="card-header" style="display: flex; align-items: flex-start; justify-content: space-between; gap: 12px;">
+        <div>
+            <h1 class="card-title">Build Wiki Structure</h1>
+            <p class="card-description">Define your wiki pages, categories, and key points. The AI will generate content based on this structure.</p>
+        </div>
+        <a href="{{ url_for('project_settings', project_id=project.id) }}" class="btn btn-secondary btn-sm" title="Project Settings">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M6.86 2.57a1.14 1.14 0 0 1 2.28 0l.12.72a.57.57 0 0 0 .36.4l.15.06a.57.57 0 0 0 .53-.05l.6-.42a1.14 1.14 0 0 1 1.61 1.61l-.42.6a.57.57 0 0 0-.05.53l.06.15a.57.57 0 0 0 .4.36l.72.12a1.14 1.14 0 0 1 0 2.28l-.72.12a.57.57 0 0 0-.4.36l-.06.15a.57.57 0 0 0 .05.53l.42.6a1.14 1.14 0 0 1-1.61 1.61l-.6-.42a.57.57 0 0 0-.53-.05l-.15.06a.57.57 0 0 0-.36.4l-.12.72a1.14 1.14 0 0 1-2.28 0l-.12-.72a.57.57 0 0 0-.36-.4l-.15-.06a.57.57 0 0 0-.53.05l-.6.42a1.14 1.14 0 0 1-1.61-1.61l.42-.6a.57.57 0 0 0 .05-.53l-.06-.15a.57.57 0 0 0-.4-.36l-.72-.12a1.14 1.14 0 0 1 0-2.28l.72-.12a.57.57 0 0 0 .4-.36l.06-.15a.57.57 0 0 0-.05-.53l-.42-.6A1.14 1.14 0 0 1 5.21 3.3l.6.42a.57.57 0 0 0 .53.05l.15-.06a.57.57 0 0 0 .36-.4l.12-.72z" stroke="currentColor" stroke-width="1.2" fill="none"/>
+                <circle cx="8" cy="8" r="2" stroke="currentColor" stroke-width="1.2" fill="none"/>
+            </svg>
+            Settings
+        </a>
     </div>
 
     <div class="form-group">
@@ -47,12 +56,17 @@
     <div class="yaml-builder">
         <div class="yaml-builder-header">
             <h3 class="yaml-builder-title">Pages</h3>
-            <button type="button" class="btn btn-primary btn-sm" id="add-page">
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                    <path d="M7 2V12M2 7H12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-                Add Page
-            </button>
+            <div class="yaml-builder-actions">
+                <button type="button" class="btn btn-danger btn-sm" id="delete-all-pages">
+                    Delete All
+                </button>
+                <button type="button" class="btn btn-primary btn-sm" id="add-page">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                        <path d="M7 2V12M2 7H12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    Add Page
+                </button>
+            </div>
         </div>
         <div class="yaml-builder-content" id="pages-container">
             <!-- Pages will be added here dynamically -->
@@ -87,12 +101,101 @@
 <div class="card">
     <div class="card-header" style="display: flex; align-items: center; justify-content: space-between; gap: 12px;">
         <div>
+            <h2 class="card-title">Link Bank</h2>
+            <p class="card-description">Define external links with anchor text variations. These will be naturally woven into all generated pages.</p>
+        </div>
+        <div style="display: flex; gap: 8px;">
+            <label class="btn btn-secondary btn-sm" for="csv-link-upload" style="cursor: pointer;">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M7 9V2M7 2L4 5M7 2L10 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 11H12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                Upload CSV
+            </label>
+            <input type="file" id="csv-link-upload" accept=".csv" style="display: none;">
+            <button type="button" class="btn btn-primary btn-sm" id="add-link">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M7 2V12M2 7H12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                Add Link
+            </button>
+        </div>
+    </div>
+    <p class="form-hint" style="margin: 0 0 12px;">CSV format: <code>url, anchor1, anchor2, ..., count</code> (one link per row — last numeric column is target count)</p>
+    <div id="links-container">
+        <!-- Link entries added dynamically -->
+    </div>
+</div>
+
+<template id="link-template">
+    <div class="link-item">
+        <input type="url" class="form-input link-url-input" placeholder="https://example.com">
+        <input type="text" class="form-input link-anchors-input" placeholder="Anchor 1, Anchor 2, ...">
+        <input type="number" class="form-input link-count-input" placeholder="Count" min="0" title="Target number of pages to link from (0 = unlimited)">
+        <button type="button" class="btn btn-ghost btn-icon btn-sm delete-link" title="Delete">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path d="M2 4H12M5 4V3C5 2.44772 5.44772 2 6 2H8C8.55228 2 9 2.44772 9 3V4M11 4V11C11 11.5523 10.5523 12 10 12H4C3.44772 12 3 11.5523 3 11V4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+    </div>
+</template>
+
+<div class="card">
+    <div class="card-header" style="display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+        <div>
+            <h2 class="card-title">Masking Link Bank</h2>
+            <p class="card-description">External links to non-operator websites. These make generated content look more natural.</p>
+        </div>
+        <div style="display: flex; gap: 8px;">
+            <label class="btn btn-secondary btn-sm" for="csv-masking-link-upload" style="cursor: pointer;">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M7 9V2M7 2L4 5M7 2L10 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 11H12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                Upload CSV
+            </label>
+            <input type="file" id="csv-masking-link-upload" accept=".csv" style="display: none;">
+            <button type="button" class="btn btn-primary btn-sm" id="add-masking-link">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M7 2V12M2 7H12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                Add Link
+            </button>
+        </div>
+    </div>
+    <p class="form-hint" style="margin: 0 0 12px;">CSV format: <code>url, anchor1, anchor2, ...</code> (one link per row)</p>
+    <div id="masking-links-container">
+        <!-- Masking link entries added dynamically -->
+    </div>
+</div>
+
+<template id="masking-link-template">
+    <div class="link-item">
+        <input type="url" class="form-input masking-link-url-input" placeholder="https://example.com">
+        <input type="text" class="form-input masking-link-anchors-input" placeholder="Anchor 1, Anchor 2, ...">
+        <button type="button" class="btn btn-ghost btn-icon btn-sm delete-masking-link" title="Delete">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path d="M2 4H12M5 4V3C5 2.44772 5.44772 2 6 2H8C8.55228 2 9 2.44772 9 3V4M11 4V11C11 11.5523 10.5523 12 10 12H4C3.44772 12 3 11.5523 3 11V4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+    </div>
+</template>
+
+<div class="card">
+    <div class="card-header" style="display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+        <div>
             <h2 class="card-title">Live Wiki Pages</h2>
             <p class="card-description">Fetch the current pages from your wiki to cross-check structure.</p>
         </div>
-        <button type="button" class="btn btn-secondary btn-sm" id="refresh-live-pages">
-            Refresh
-        </button>
+        <div style="display: flex; gap: 8px; align-items: center;">
+            <label style="display: inline-flex; align-items: center; gap: 6px; cursor: pointer; font-size: 13px;">
+                <input type="checkbox" id="select-all-live-pages">
+                Select All
+            </label>
+            <button type="button" class="btn btn-secondary btn-sm" id="refresh-live-pages">
+                Refresh
+            </button>
+        </div>
     </div>
     <div class="live-pages-grid">
         <div>
@@ -217,16 +320,22 @@
 <script>
     // Initialize with existing data if available
     const existingConfig = {{ pages_config | tojson | safe if pages_config else 'null' }};
+    const existingLinks = {{ links_config.links | tojson | safe if links_config else '[]' }};
     const projectId = '{{ project.id }}';
     const saveUrl = '{{ url_for("save_structure", project_id=project.id) }}';
     const generateUrl = '{{ url_for("project_generate", project_id=project.id) }}';
     const importUrl = '{{ url_for("import_structure", project_id=project.id) }}';
+    const linksUrl = '{{ url_for("save_links", project_id=project.id) }}';
+    const existingMaskingLinks = {{ masking_links_config.masking_links | tojson | safe if masking_links_config else '[]' }};
+    const maskingLinksUrl = '{{ url_for("save_masking_links", project_id=project.id) }}';
     const livePagesUrl = '{{ url_for("project_live_pages", project_id=project.id) }}';
     const livePageUrl = '{{ url_for("project_live_page_content", project_id=project.id) }}';
     const livePreviewUrl = '{{ url_for("project_live_page_preview", project_id=project.id) }}';
     const liveSaveUrl = '{{ url_for("project_live_page_save", project_id=project.id) }}';
 
     initYamlEditor(existingConfig, projectId, saveUrl, generateUrl, importUrl);
+    initLinkBank(existingLinks, linksUrl);
+    initMaskingLinkBank(existingMaskingLinks, maskingLinksUrl);
 
     const livePagesBtn = document.getElementById('refresh-live-pages');
     const livePagesStatus = document.getElementById('live-pages-status');
@@ -255,23 +364,53 @@
         }
 
         pages.forEach((title) => {
-            const item = document.createElement('button');
-            item.type = 'button';
+            const item = document.createElement('div');
             item.className = 'page-list-item live-page-item';
+            item.style.display = 'flex';
+            item.style.alignItems = 'center';
+            item.style.gap = '8px';
+
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.className = 'live-page-checkbox';
+            checkbox.value = title;
+            checkbox.addEventListener('click', (e) => e.stopPropagation());
 
             const info = document.createElement('div');
             info.className = 'page-list-item-info';
+            info.style.cursor = 'pointer';
+            info.style.flex = '1';
 
             const name = document.createElement('span');
             name.className = 'page-list-item-title';
             name.textContent = title;
 
             info.appendChild(name);
+            item.appendChild(checkbox);
             item.appendChild(info);
             livePagesList.appendChild(item);
 
-            item.addEventListener('click', () => loadLivePage(title, item));
+            info.addEventListener('click', () => loadLivePage(title, item));
         });
+    }
+
+    document.getElementById('select-all-live-pages').addEventListener('change', function() {
+        document.querySelectorAll('.live-page-checkbox').forEach(cb => {
+            cb.checked = this.checked;
+        });
+    });
+
+    function getSelectedLivePages() {
+        return Array.from(document.querySelectorAll('.live-page-checkbox:checked')).map(cb => cb.value);
+    }
+
+    function saveSelectedLivePagesToStorage() {
+        const selected = getSelectedLivePages();
+        if (selected.length > 0) {
+            localStorage.setItem('selectedLivePages', JSON.stringify(selected));
+        } else {
+            localStorage.removeItem('selectedLivePages');
+        }
     }
 
     function setLivePageMessage(message, isError = false) {

@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+
+{% block title %}GSC - {{ project.name }}{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h1 class="card-title">Google Search Console</h1>
+        <p class="card-description">Connect a Search Console property to view traffic queries and performance.</p>
+    </div>
+
+    {% if not connected %}
+    <div class="form-group">
+        <div class="form-hint">Not connected yet.</div>
+    </div>
+    <div class="btn-group">
+        <a class="btn btn-primary" href="{{ url_for('gsc_connect', project_id=project.id) }}">Connect GSC</a>
+    </div>
+    {% else %}
+    <div class="form-group">
+        <div class="form-hint">Connected to Google. Choose a property to continue.</div>
+    </div>
+    <form method="POST" action="{{ url_for('gsc_disconnect', project_id=project.id) }}">
+        <div class="btn-group">
+            <button class="btn btn-secondary" type="submit">Disconnect</button>
+        </div>
+    </form>
+    {% endif %}
+</div>
+
+{% if connected and not property_url %}
+<div class="card">
+    <div class="card-header">
+        <h2 class="card-title">Select Property</h2>
+        <p class="card-description">Pick a verified property for this project.</p>
+    </div>
+
+    {% if gsc_error %}
+    <div class="form-error">Failed to load properties: {{ gsc_error }}</div>
+    {% endif %}
+
+    <form method="POST" action="{{ url_for('gsc_set_property', project_id=project.id) }}">
+        <div class="form-group">
+            <label class="form-label" for="property_url">Property</label>
+            <select class="form-select" id="property_url" name="property_url" required>
+                <option value="">Select a property</option>
+                {% for prop in properties %}
+                <option value="{{ prop }}">{{ prop }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="btn-group btn-group-right">
+            <button type="submit" class="btn btn-primary">Save Property</button>
+        </div>
+    </form>
+</div>
+{% endif %}
+
+{% if connected and property_url %}
+<div class="card">
+    <div class="card-header">
+        <h2 class="card-title">Query Performance</h2>
+        <p class="card-description">Property: <strong>{{ property_url }}</strong></p>
+    </div>
+
+    <form id="gsc-query-form">
+        <div class="form-group">
+            <label class="form-label" for="start_date">Start Date</label>
+            <input class="form-input" type="date" id="start_date" name="start_date" value="{{ start_date }}" required>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="end_date">End Date</label>
+            <input class="form-input" type="date" id="end_date" name="end_date" value="{{ end_date }}" required>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="row_limit">Row Limit</label>
+            <input class="form-input" type="number" id="row_limit" name="row_limit" value="100" min="1" max="250">
+        </div>
+        <div class="btn-group">
+            <button class="btn btn-primary" type="submit" id="gsc-fetch-btn">Fetch Data</button>
+            <a class="btn btn-secondary" id="gsc-export-btn" href="#">Export CSV</a>
+        </div>
+    </form>
+
+    <div id="gsc-status" class="form-hint" style="margin-top: 12px;">Enter a date range to fetch data.</div>
+
+    <div id="gsc-summary" class="stats-grid" style="display: none;">
+        <div class="stat-card">
+            <div class="stat-value" id="gsc-total-clicks">0</div>
+            <div class="stat-label">Clicks</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value" id="gsc-total-impressions">0</div>
+            <div class="stat-label">Impressions</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value" id="gsc-total-ctr">0%</div>
+            <div class="stat-label">CTR</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value" id="gsc-total-position">0</div>
+            <div class="stat-label">Avg. Position</div>
+        </div>
+    </div>
+
+    <div class="table-wrapper" style="margin-top: 20px;">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Query</th>
+                    <th>Clicks</th>
+                    <th>Impressions</th>
+                    <th>CTR</th>
+                    <th>Position</th>
+                </tr>
+            </thead>
+            <tbody id="gsc-table-body">
+                <tr>
+                    <td colspan="5" class="table-empty">No data loaded.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endif %}
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/gsc.js') }}"></script>
+<script>
+    const gscDataUrl = '{{ url_for("gsc_data", project_id=project.id) }}';
+    const gscExportUrl = '{{ url_for("gsc_export", project_id=project.id) }}';
+</script>
+{% endblock %}

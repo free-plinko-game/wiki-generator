@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}Settings - Wiki Generator{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h1 class="card-title">Settings</h1>
+        <p class="card-description">Configure shared integrations and defaults.</p>
+    </div>
+
+    <form method="POST">
+        <div class="form-group">
+            <label class="form-label" for="google_oauth_client_id">Google OAuth Client ID</label>
+            <input class="form-input" type="text" id="google_oauth_client_id" name="google_oauth_client_id"
+                   value="{{ settings.get('google_oauth_client_id', '') }}"
+                   placeholder="1234567890-abcdef.apps.googleusercontent.com">
+            <div class="form-hint">Used for Google Search Console connections.</div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label" for="google_oauth_client_secret">Google OAuth Client Secret</label>
+            <input class="form-input" type="password" id="google_oauth_client_secret" name="google_oauth_client_secret"
+                   value="{{ settings.get('google_oauth_client_secret', '') }}"
+                   placeholder="••••••••••••">
+        </div>
+
+        <div class="form-group">
+            <label class="form-label" for="google_oauth_redirect_uri">Google OAuth Redirect URI</label>
+            <input class="form-input" type="text" id="google_oauth_redirect_uri" name="google_oauth_redirect_uri"
+                   value="{{ settings.get('google_oauth_redirect_uri', '') }}"
+                   placeholder="http://127.0.0.1:5000/oauth/google/callback">
+        </div>
+
+        <div class="form-group">
+            <label class="form-label" for="google_oauth_scopes">Google OAuth Scopes</label>
+            <input class="form-input" type="text" id="google_oauth_scopes" name="google_oauth_scopes"
+                   value="{{ settings.get('google_oauth_scopes', []) | join(', ') }}"
+                   placeholder="https://www.googleapis.com/auth/webmasters.readonly">
+            <div class="form-hint">Comma-separated list of scopes.</div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label" for="notes">Notes</label>
+            <textarea class="form-textarea" id="notes" name="notes"
+                      placeholder="Add internal notes or requirements for future integrations.">{{ settings.get('notes', '') }}</textarea>
+        </div>
+
+        <div class="btn-group btn-group-right">
+            <button type="submit" class="btn btn-primary">Save settings</button>
+        </div>
+    </form>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h2 class="card-title">Storage</h2>
+        <p class="card-description">Settings are stored locally in <code>settings.json</code> inside the app directory.</p>
+    </div>
+    <p class="card-description">For production, consider moving secrets to environment variables or a secrets manager.</p>
+</div>
+{% endblock %}

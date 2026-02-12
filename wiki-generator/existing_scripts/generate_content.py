@@ -14,6 +14,7 @@ Usage:
 import argparse
 import json
 import os
+import random
 import sys
 from pathlib import Path
 from datetime import datetime
@@ -29,7 +30,7 @@ def load_config(config_path: str) -> dict:
         return yaml.safe_load(f)
 
 
-def build_system_prompt(config: dict, content_format: str) -> str:
+def build_system_prompt(config: dict, content_format: str, space_key: Optional[str] = None) -> str:
     """Build the system prompt for content generation."""
     style = config.get('style', {})
 
@@ -76,6 +77,9 @@ Your task is to generate high-quality MediaWiki-formatted content.
 
 ## Important
 - Use ONLY Confluence storage format (XHTML-compatible), never Markdown
+- For internal wiki links, use Confluence storage links (no raw URLs).
+  Example:
+  <ac:link><ri:page ri:space-key="{space_key or 'SPACE'}" ri:content-title="Page Title"/></ac:link>
 - Include a table for structured data where appropriate
 - Be factual and cite official sources where possible
 - For Australian gambling content, reference official government sources
@@ -157,14 +161,36 @@ def build_page_prompt(page: dict, config: dict, content_format: str) -> str:
 class WikiContentGenerator:
     """Generate wiki content using OpenAI API."""
 
-    def __init__(self, config_path: str = "pages.yaml", api_key: Optional[str] = None, content_format: Optional[str] = None):
+    def __init__(
+        self,
+        config_path: str = "pages.yaml",
+        api_key: Optional[str] = None,
+        content_format: Optional[str] = None,
+        space_key: Optional[str] = None
+    ):
         """Initialize the generator."""
         self.config = load_config(config_path)
         self.client = self._init_openai(api_key)
         self.content_format = (content_format or self.config.get('content_format') or 'mediawiki').lower()
         if self.content_format in ('miraheze', 'mediawiki'):
             self.content_format = 'mediawiki'
-        self.system_prompt = build_system_prompt(self.config, self.content_format)
+        self.space_key = space_key
+        self.global_links = []
+        self.system_prompt = build_system_prompt(self.config, self.content_format, space_key=space_key)
+
+    def set_global_links(self, links: list):
+        """Store global link bank for injection into prompts."""
+        self.global_links = links or []
+        # Track how many pages each link has been included in
+        self.link_usage = {link.get('url', ''): 0 for link in self.global_links}
+        print(f"[LinkBank] Loaded {len(self.global_links)} links")
+        for link in self.global_links:
+            print(f"  - {link.get('url', '?')} (anchors: {link.get('anchors', [])}, count: {link.get('count', 0)})")
+
+    def set_masking_links(self, links: list):
+        """Store masking links for injection into prompts."""
+        self.masking_links = [l for l in (links or []) if l.get('url')]
+        print(f"[MaskingLinks] Loaded {len(self.masking_links)} masking links")
 
     def _init_openai(self, api_key: Optional[str]) -> OpenAI:
         """Initialize OpenAI client."""
@@ -186,9 +212,186 @@ class WikiContentGenerator:
 
         return OpenAI(api_key=api_key)
 
+    def _get_eligible_links(self) -> list:
+        """Return links that haven't reached their target count."""
+        eligible = []
+        for link in self.global_links:
+            url = link.get('url', '')
+            if not url:
+                continue
+            target = link.get('count', 0)
+            used = self.link_usage.get(url, 0)
+            # count of 0 means unlimited
+            if target == 0 or used < target:
+                eligible.append(link)
+        return eligible
+
+    def _get_random_masking_links(self, n=3) -> list:
+        """Return a random subset of masking links."""
+        masking = getattr(self, 'masking_links', [])
+        if not masking:
+            return []
+        return random.sample(masking, min(n, len(masking)))
+
+    def _build_links_section(self) -> str:
+        """Build global link bank section for the prompt."""
+        eligible = self._get_eligible_links()
+        if not eligible:
+            return ''
+        if self.content_format == 'confluence':
+            syntax_note = (
+                'These are EXTERNAL links — use <a href="URL">anchor</a> format. '
+                'Do NOT use <ac:link> for these.'
+            )
+        else:
+            syntax_note = (
+                'SYNTAX: Each link MUST include the full URL from the list below. '
+                'Format: [https://full-url-here.com/path/ anchor text]. '
+                'Example: [https://www.sunvegascasino.com/deposits/visa/ visa casino]. '
+                'NEVER use [[anchor text]] or [[anchor text|display]] syntax for these — '
+                'that creates broken internal wiki links. Always use [URL anchor] with the full URL.'
+            )
+        lines = [
+            '\n## Global Link Bank (External Links)',
+            'You MUST embed these links INLINE within the body paragraphs of the article, '
+            'not in the External Links section at the bottom. Weave the anchor text '
+            'naturally into sentences within relevant sections. '
+            'Use only the provided anchor text options. Only include links that are '
+            'contextually relevant to this page topic.',
+            'IMPORTANT: Do NOT place these links in the == External Links == section. '
+            'They must appear as inline hyperlinks within the article body text.',
+            syntax_note
+        ]
+        for link in eligible:
+            url = link.get('url', '')
+            anchors = link.get('anchors', [])
+            if url and anchors:
+                anchor_str = ', '.join(f'"{a}"' for a in anchors)
+                lines.append(f'- URL: {url} (anchor options: {anchor_str})')
+
+        # Masking links — only when operator links exist
+        masking_sample = self._get_random_masking_links(3)
+        if masking_sample:
+            lines.append('')
+            lines.append('## Natural Reference Links')
+            lines.append(
+                'Include 1-2 of these non-commercial reference links where contextually appropriate. '
+                'These are SECONDARY to the links above — only add them if they fit naturally. '
+                'Do NOT prioritise these over the links in the Global Link Bank above.'
+            )
+            lines.append(syntax_note)
+            for link in masking_sample:
+                url = link.get('url', '')
+                anchors = link.get('anchors', [])
+                if url and anchors:
+                    anchor_str = ', '.join(f'"{a}"' for a in anchors)
+                    lines.append(f'- URL: {url} (anchor options: {anchor_str})')
+
+        return '\n'.join(lines) + '\n'
+
+    def add_links_to_existing(self, existing_content: str, page: dict, mode: str) -> str:
+        """Add operator or masking links to existing article content."""
+        if mode == 'add_masking':
+            links = self._get_random_masking_links(3)
+            link_type = 'non-commercial reference'
+            count_hint = '1-2'
+        else:  # add_operator
+            links = self._get_eligible_links()
+            link_type = 'external'
+            count_hint = 'all contextually relevant'
+
+        if not links:
+            print(f"  [LinkEdit] No {link_type} links available for '{page['title']}'")
+            return existing_content
+
+        if self.content_format == 'confluence':
+            syntax_note = 'Use <a href="URL">anchor</a> format.'
+        else:
+            syntax_note = (
+                'Format: [https://full-url-here.com/path/ anchor text]. '
+                'NEVER use [[anchor text]] wiki link syntax for these.'
+            )
+
+        link_lines = []
+        for link in links:
+            url = link.get('url', '')
+            anchors = link.get('anchors', [])
+            if url and anchors:
+                anchor_str = ', '.join(f'"{a}"' for a in anchors)
+                link_lines.append(f'- URL: {url} (anchor options: {anchor_str})')
+
+        if mode == 'add_masking':
+            protect_rule = (
+                '- Do NOT change existing content, structure, headings, or tables\n'
+                '- Do NOT remove, move, or alter any existing commercial/operator links in the article — '
+                'leave them exactly as they are'
+            )
+        else:
+            protect_rule = (
+                '- Do NOT change existing content, structure, headings, or tables\n'
+                '- Do NOT remove, move, or alter any existing non-commercial reference links in the article — '
+                'leave them exactly as they are'
+            )
+
+        prompt = (
+            f'Here is an existing wiki article. Add {count_hint} of these {link_type} links '
+            f'inline within the body text where contextually appropriate.\n\n'
+            f'RULES:\n'
+            f'{protect_rule}\n'
+            f'- Only ADD the new links by weaving anchor text into existing sentences or adding brief natural phrases\n'
+            f'- Do NOT place links in the External Links or See Also sections\n'
+            f'- {syntax_note}\n'
+            f'- Output ONLY the modified article, no explanations\n\n'
+            f'Links to add:\n'
+            + '\n'.join(link_lines)
+            + f'\n\nExisting article:\n{existing_content}'
+        )
+
+        print(f"  [LinkEdit] Adding {len(links)} {link_type} links to '{page['title']}'")
+
+        response = self.client.chat.completions.create(
+            model="gpt-4o",
+            messages=[
+                {"role": "system", "content": self.system_prompt},
+                {"role": "user", "content": prompt}
+            ],
+            temperature=0.2,
+            max_tokens=4000
+        )
+
+        content = response.choices[0].message.content
+
+        # Track operator link usage when adding operator links
+        if mode == 'add_operator':
+            for link in links:
+                url = link.get('url', '')
+                if url and url in content:
+                    self.link_usage[url] = self.link_usage.get(url, 0) + 1
+                    print(f"    + {url}")
+
+        return content
+
     def generate_page(self, page: dict) -> str:
         """Generate content for a single page."""
         user_prompt = build_page_prompt(page, self.config, self.content_format)
+
+        # Inject global links before output requirements
+        links_section = self._build_links_section()
+        if links_section:
+            # Insert before "## Output Requirements"
+            marker = '## Output Requirements'
+            if marker in user_prompt:
+                user_prompt = user_prompt.replace(marker, links_section + marker)
+            else:
+                user_prompt += links_section
+
+        # Log link injection details
+        eligible = self._get_eligible_links()
+        print(f"  [LinkBank] {len(eligible)} eligible links for '{page['title']}'")
+        if links_section:
+            print(f"  [LinkBank] Injected link bank section into prompt")
+        else:
+            print(f"  [LinkBank] WARNING: No link bank section generated (no eligible links)")
 
         print(f"  Generating content with OpenAI...")
 
@@ -203,6 +406,22 @@ class WikiContentGenerator:
         )
 
         content = response.choices[0].message.content
+
+        # Track which eligible links appeared in the generated content
+        found_urls = []
+        missing_urls = []
+        for link in self._get_eligible_links():
+            url = link.get('url', '')
+            if url and url in content:
+                self.link_usage[url] = self.link_usage.get(url, 0) + 1
+                found_urls.append(url)
+            elif url:
+                missing_urls.append(url)
+        print(f"  [LinkBank] Result for '{page['title']}': {len(found_urls)} links included, {len(missing_urls)} not used")
+        for url in found_urls:
+            print(f"    + {url}")
+        for url in missing_urls:
+            print(f"    - {url} (not in output)")
 
         # Add generation metadata as HTML comment
         metadata = f"""<!--
