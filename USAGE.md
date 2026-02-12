@@ -103,7 +103,7 @@ Choose how you want the AI to process your pages:
 
 ### Enter API Key
 
-Enter your **Anthropic API key** (`sk-ant-...`). This is used for the current session only and is not stored.
+Enter your **OpenAI API key** (`sk-...`). This is used for the current session only and is not stored.
 
 ### Select Pages
 

@@ -6,7 +6,7 @@ A web-based tool for generating and managing wiki content using AI. Supports **M
 
 ```
 ┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
-│  Visual Editor   │ --> │   Claude AI     │ --> │  Wiki Platform  │
+│  Visual Editor   │ --> │  OpenAI GPT-4o  │ --> │  Wiki Platform  │
 │  (Structure +    │     │   (Content      │     │  (Miraheze or   │
 │   Link Banks)    │     │    Generation)  │     │   Confluence)   │
 └─────────────────┘     └─────────────────┘     └─────────────────┘
@@ -68,7 +68,7 @@ wiki-generator/
 │   ├── mediawiki.py          # Miraheze/MediaWiki API adapter
 │   └── confluence.py         # Confluence Cloud API adapter
 ├── existing_scripts/
-│   ├── generate_content.py   # AI content generation (OpenAI GPT-4o)
+│   ├── generate_content.py   # AI content generation (GPT-4o)
 │   └── wiki_bot.py           # Legacy wiki bot utilities
 ├── static/
 │   ├── css/style.css         # Application styles
@@ -125,7 +125,7 @@ The `wiki-creator/` folder contains the original command-line version of this to
 ## Requirements
 
 - Python 3.10+
-- An Anthropic API key (for content generation)
+- An OpenAI API key (for content generation)
 - A Miraheze wiki with bot credentials, or a Confluence Cloud space with API token
 
 ## License

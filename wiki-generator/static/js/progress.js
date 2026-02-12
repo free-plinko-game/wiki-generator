@@ -23,7 +23,7 @@ function initGeneratePage(projectId, startGenerateUrl, progressUrl) {
             .map(cb => cb.value);
 
         if (!apiKey) {
-            showToast('Please enter your Anthropic API key', 'error');
+            showToast('Please enter your OpenAI API key', 'error');
             return;
         }
 
