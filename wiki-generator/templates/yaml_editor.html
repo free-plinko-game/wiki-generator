@@ -23,55 +23,70 @@
 
 {% block content %}
 <div class="card">
-    <div class="card-header">
-        <h1 class="card-title">Build Wiki Structure</h1>
-        <p class="card-description">Define your wiki pages, categories, and key points. The AI will generate content based on this structure.</p>
+    <div class="card-header" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer;" onclick="toggleSection(this)">
+        <div>
+            <h1 class="card-title">Build Wiki Structure</h1>
+            <p class="card-description">Define your wiki pages, categories, and key points. The AI will generate content based on this structure.</p>
+        </div>
+        <button class="collapse-toggle" tabindex="-1">
+            <svg class="collapse-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
     </div>
+    <div class="collapsible-body">
+        <div class="form-group">
+            <label class="form-label" for="wiki_name">Wiki Name</label>
+            <input type="text" id="wiki_name" class="form-input"
+                   placeholder="e.g., Australian Gambling Encyclopaedia"
+                   value="{{ pages_config.wiki_name if pages_config else '' }}">
+        </div>
 
-    <div class="form-group">
-        <label class="form-label" for="wiki_name">Wiki Name</label>
-        <input type="text" id="wiki_name" class="form-input"
-               placeholder="e.g., Australian Gambling Encyclopaedia"
-               value="{{ pages_config.wiki_name if pages_config else '' }}">
-    </div>
-
-    <div class="form-group">
-        <label class="form-label" for="default_category">Default Category</label>
-        <input type="text" id="default_category" class="form-input"
-               placeholder="e.g., General"
-               value="{{ pages_config.default_category if pages_config else 'General' }}">
+        <div class="form-group">
+            <label class="form-label" for="default_category">Default Category</label>
+            <input type="text" id="default_category" class="form-input"
+                   placeholder="e.g., General"
+                   value="{{ pages_config.default_category if pages_config else 'General' }}">
+        </div>
     </div>
 </div>
 
 <!-- Link Bank -->
 <div class="card" id="link-bank-card">
-    <div class="card-header" style="display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+    <div class="card-header" style="display:flex;align-items:center;justify-content:space-between;gap:12px;cursor:pointer;" onclick="toggleSection(this)">
         <div>
             <h2 class="card-title">Link Bank</h2>
             <p class="card-description">Define target URLs with allowed anchor text. AI will naturally incorporate these links into generated content where contextually relevant.</p>
         </div>
-        <button type="button" class="btn btn-primary btn-sm" id="add-link">
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                <path d="M7 2V12M2 7H12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-            Add Link
-        </button>
-    </div>
-    <div id="links-container">
-        <!-- Link entries added dynamically -->
-    </div>
-    <div id="links-empty" class="form-hint" style="padding: 12px 0;">No links defined yet. Add links or import a CSV.</div>
-    <div style="padding: 16px 0; border-top: 1px solid var(--color-border); margin-top: 12px;">
-        <h4 class="yaml-builder-title" style="margin-bottom: 8px;">Import CSV</h4>
-        <p class="form-hint" style="margin-bottom: 8px;">Format: <code>URL, anchor1, anchor2, ..., count</code> (one link per line, last column is the global count)</p>
-        <textarea id="csv-import-input" class="form-textarea" placeholder="https://example.com/pokies/, best online pokies, online pokies, 3&#10;https://example.com/casinos/, online casinos, Australian casinos, 2" rows="5"></textarea>
-        <div class="btn-group btn-group-right" style="margin-top: 8px;">
-            <button type="button" class="btn btn-secondary btn-sm" id="clear-csv-import">Clear</button>
-            <button type="button" class="btn btn-primary btn-sm" id="apply-csv-import">Import CSV</button>
+        <div style="display:flex;align-items:center;gap:8px;" onclick="event.stopPropagation()">
+            <button type="button" class="btn btn-primary btn-sm" id="add-link">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M7 2V12M2 7H12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                Add Link
+            </button>
+            <button class="collapse-toggle" onclick="toggleSection(this.closest('.card').querySelector('.card-header'))" tabindex="-1">
+                <svg class="collapse-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
         </div>
     </div>
-    <div class="btn-group btn-group-right" style="margin-top: 12px;">
-        <button type="button" class="btn btn-secondary btn-sm" id="save-links">Save Links</button>
+    <div class="collapsible-body">
+        <div id="links-container"></div>
+        <div id="links-empty" class="form-hint" style="padding: 12px 0;">No links defined yet. Add links or import a CSV.</div>
+        <div style="padding: 16px 0; border-top: 1px solid var(--color-border); margin-top: 12px;">
+            <h4 class="yaml-builder-title" style="margin-bottom: 8px;">Import CSV</h4>
+            <p class="form-hint" style="margin-bottom: 8px;">Format: <code>URL, anchor1, anchor2, ..., count</code> (one link per line, last column is the global count)</p>
+            <textarea id="csv-import-input" class="form-textarea" placeholder="https://example.com/pokies/, best online pokies, online pokies, 3&#10;https://example.com/casinos/, online casinos, Australian casinos, 2" rows="5"></textarea>
+            <div class="btn-group btn-group-right" style="margin-top: 8px;">
+                <button type="button" class="btn btn-secondary btn-sm" id="clear-csv-import">Clear</button>
+                <button type="button" class="btn btn-primary btn-sm" id="apply-csv-import">Import CSV</button>
+            </div>
+        </div>
+        <div class="btn-group btn-group-right" style="margin-top: 12px;">
+            <button type="button" class="btn btn-secondary btn-sm" id="save-links">Save Links</button>
+        </div>
     </div>
 </div>
 
@@ -104,6 +119,18 @@
     </div>
 </template>
 
+<div class="collapsible-section-header" onclick="toggleSection(this)" style="margin-bottom:0;">
+    <div>
+        <span style="font-weight:600;font-size:16px;">Pages &amp; YAML</span>
+        <span class="form-hint" style="display:block;margin-top:2px;">Build page structure and preview the generated YAML</span>
+    </div>
+    <button class="collapse-toggle" tabindex="-1">
+        <svg class="collapse-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+</div>
+<div class="collapsible-body" style="padding:20px;margin-bottom:24px;">
 <div class="yaml-editor-container">
     <div class="yaml-builder">
         <div class="yaml-builder-header">
@@ -144,17 +171,25 @@
         </div>
     </div>
 </div>
+</div>
+</div>
 
 <div class="card">
-    <div class="card-header" style="display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+    <div class="card-header" style="display:flex;align-items:center;justify-content:space-between;gap:12px;cursor:pointer;" onclick="toggleSection(this)">
         <div>
             <h2 class="card-title">Live Wiki Pages</h2>
             <p class="card-description">Fetch the current pages from your wiki to cross-check structure.</p>
         </div>
-        <button type="button" class="btn btn-secondary btn-sm" id="refresh-live-pages">
-            Refresh
-        </button>
+        <div style="display:flex;align-items:center;gap:8px;" onclick="event.stopPropagation()">
+            <button type="button" class="btn btn-secondary btn-sm" id="refresh-live-pages">Refresh</button>
+            <button class="collapse-toggle" onclick="toggleSection(this.closest('.card').querySelector('.card-header'))" tabindex="-1">
+                <svg class="collapse-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
     </div>
+    <div class="collapsible-body is-collapsed">
     <div class="live-pages-grid">
         <div>
             <div id="live-pages-status" class="form-hint">Not loaded yet.</div>
@@ -183,6 +218,7 @@
     <div style="margin-top: 24px;">
         <h3 class="yaml-builder-title" style="margin-bottom: 12px;">HTML Preview</h3>
         <div id="live-page-preview" class="live-html-preview"></div>
+    </div>
     </div>
 </div>
 
@@ -275,6 +311,18 @@
 
 {% block scripts %}
 <script src="{{ url_for('static', filename='js/yaml_editor.js') }}"></script>
+<script>
+function toggleSection(header) {
+    const card = header.closest('.card') || header.parentElement;
+    const body = card.querySelector('.collapsible-body') ||
+                 header.nextElementSibling;
+    if (!body || !body.classList.contains('collapsible-body')) return;
+    const collapsed = body.classList.toggle('is-collapsed');
+    card.classList.toggle('is-collapsed-card', collapsed);
+    const chevron = header.querySelector('.collapse-chevron');
+    if (chevron) chevron.style.transform = collapsed ? 'rotate(-90deg)' : '';
+}
+</script>
 <script>
     // Initialize with existing data if available
     const existingConfig = {{ pages_config | tojson | safe if pages_config else 'null' }};
