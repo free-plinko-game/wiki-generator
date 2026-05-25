@@ -20,6 +20,7 @@
             </a>
             <a href="{{ url_for('all_projects') }}" class="nav-project-name">Projects</a>
             <a href="{{ url_for('accounts_page') }}" class="nav-project-name">Accounts</a>
+            <a href="{{ url_for('logout') }}" class="nav-project-name" style="margin-left:auto; opacity:0.6;">Logout</a>
             {% if project %}
             <div class="nav-project">
                 <span class="nav-project-name">{{ project.name }}</span>

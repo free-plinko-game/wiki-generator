@@ -13,7 +13,8 @@ from datetime import datetime
 from pathlib import Path
 
 import yaml
-from flask import Flask, render_template, request, jsonify, redirect, url_for, flash
+from flask import Flask, render_template, request, jsonify, redirect, url_for, flash, session
+from werkzeug.security import check_password_hash, generate_password_hash
 
 from config import config
 from adapters.mediawiki import MediaWikiAdapter
@@ -248,6 +249,47 @@ def get_all_projects():
 
     projects.sort(key=lambda p: p.get('created_at', ''), reverse=True)
     return projects
+
+
+# =============================================================================
+# Auth
+# =============================================================================
+
+def _get_credentials():
+    username = os.environ.get('APP_USERNAME', 'admin')
+    password = os.environ.get('APP_PASSWORD', '')
+    return username, password
+
+
+@app.before_request
+def require_login():
+    public = {'login', 'logout', 'static'}
+    if request.endpoint not in public and not session.get('logged_in'):
+        return redirect(url_for('login', next=request.path))
+
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if session.get('logged_in'):
+        return redirect(url_for('index'))
+    error = None
+    if request.method == 'POST':
+        username, password = _get_credentials()
+        if not password:
+            error = 'APP_PASSWORD environment variable is not set on the server.'
+        elif request.form.get('username') == username and request.form.get('password') == password:
+            session.permanent = True
+            session['logged_in'] = True
+            return redirect(request.args.get('next') or url_for('index'))
+        else:
+            error = 'Invalid username or password.'
+    return render_template('login.html', error=error)
+
+
+@app.route('/logout')
+def logout():
+    session.clear()
+    return redirect(url_for('login'))
 
 
 # =============================================================================
