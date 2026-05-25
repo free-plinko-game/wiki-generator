@@ -7,7 +7,7 @@
     <h1 class="hero-title">Wiki Generator</h1>
     <p class="hero-description">
         Create professional wiki content powered by AI. Build your structure, generate content,
-        and publish to Miraheze in minutes.
+        and publish to MediaWiki sites like Miraheze or Telepedia in minutes.
     </p>
     <a href="{{ url_for('new_project') }}" class="btn btn-primary btn-lg">
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -66,7 +66,7 @@
         </div>
         <h3 class="feature-title">One-Click Upload</h3>
         <p class="feature-description">
-            Automatically upload all generated content to your Miraheze wiki. Review before publishing.
+            Automatically upload all generated content to your MediaWiki wiki. Review before publishing.
         </p>
     </div>
 </div>
@@ -87,7 +87,9 @@
             <div class="page-list-item-info">
                 <span class="page-list-item-title">{{ project.name }}</span>
                 <span class="page-list-item-meta">
-                    {% if project.platform == 'confluence' %}
+                    {% if project.account_nickname %}
+                        {{ project.account_nickname }} · {{ project.wiki_domain or project.base_url }}
+                    {% elif project.platform == 'confluence' %}
                         {{ project.base_url }} · {{ project.space_key }}
                     {% else %}
                         {{ project.wiki_domain }}

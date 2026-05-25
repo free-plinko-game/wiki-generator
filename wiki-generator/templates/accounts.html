@@ -1,0 +1,343 @@
+{% extends "base.html" %}
+
+{% block title %}Accounts - Wiki Generator{% endblock %}
+
+{% block head %}
+<style>
+    .account-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--color-border); }
+    .account-row:last-child { border-bottom: none; }
+    .account-info { flex: 1; min-width: 0; }
+    .account-nickname { font-weight: 600; color: var(--color-text); }
+    .account-meta { font-size: 13px; color: var(--color-text-secondary); margin-top: 2px; }
+    .account-actions { display: flex; gap: 8px; flex-shrink: 0; }
+    .modal-backdrop { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 100; align-items: center; justify-content: center; }
+    .modal-backdrop.active { display: flex; }
+    .modal { background: var(--color-surface); border-radius: var(--radius-lg); padding: 32px; width: 100%; max-width: 520px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
+    .modal-title { font-size: 18px; font-weight: 600; margin-bottom: 20px; }
+    .platform-badge { display: inline-block; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; padding: 2px 8px; border-radius: var(--radius-sm); background: var(--color-primary-light); color: var(--color-primary); }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header" style="display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+        <div>
+            <h1 class="card-title">Wiki Accounts</h1>
+            <p class="card-description">Manage your wiki connections. Accounts are shared across all projects.</p>
+        </div>
+        <button type="button" class="btn btn-primary" id="add-account-btn">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M8 3V13M3 8H13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            Add Account
+        </button>
+    </div>
+
+    <div id="accounts-list">
+        {% if accounts %}
+        {% for account in accounts %}
+        <div class="account-row" data-account-id="{{ account.id }}">
+            <div class="account-info">
+                <div class="account-nickname">{{ account.nickname }} <span class="platform-badge">{{ account.platform }}</span></div>
+                <div class="account-meta">{{ account.bot_username }} &middot; {{ account.wiki_url }}</div>
+            </div>
+            <div class="account-actions">
+                <button type="button" class="btn btn-secondary btn-sm btn-test" data-id="{{ account.id }}">Test</button>
+                <button type="button" class="btn btn-secondary btn-sm btn-edit" data-id="{{ account.id }}">Edit</button>
+                <button type="button" class="btn btn-ghost btn-sm btn-delete" data-id="{{ account.id }}">Delete</button>
+            </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        <div class="form-hint" style="padding: 24px 0; text-align: center;" id="no-accounts">
+            No accounts yet. Add one to get started.
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+<!-- Account Modal -->
+<div class="modal-backdrop" id="account-modal">
+    <div class="modal">
+        <h2 class="modal-title" id="modal-title">Add Account</h2>
+        <input type="hidden" id="modal-account-id" value="">
+
+        <div class="form-group">
+            <label class="form-label" for="modal-nickname">Nickname</label>
+            <input type="text" id="modal-nickname" class="form-input" placeholder="e.g., Oz Gambling Wiki">
+        </div>
+
+        <div class="form-group">
+            <label class="form-label" for="modal-platform">Platform</label>
+            <select id="modal-platform" class="form-select">
+                <option value="miraheze">Miraheze (MediaWiki)</option>
+                <option value="telepedia">Telepedia (MediaWiki)</option>
+                <option value="wikigg">wiki.gg (MediaWiki)</option>
+                <option value="shoutwiki">ShoutWiki (MediaWiki)</option>
+                <option value="confluence">Confluence (Cloud)</option>
+                <option value="fandom">Fandom</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label" for="modal-wiki-url" id="modal-wiki-url-label">Wiki Domain</label>
+            <input type="text" id="modal-wiki-url" class="form-input" placeholder="e.g., yourwiki.miraheze.org">
+            <p class="form-hint" id="modal-wiki-url-hint">The full domain of your wiki (without https://)</p>
+        </div>
+
+        <div class="form-group" id="modal-space-key-group" style="display: none;">
+            <label class="form-label" for="modal-space-key">Space Key</label>
+            <input type="text" id="modal-space-key" class="form-input" placeholder="e.g., DOCS">
+        </div>
+
+        <div class="form-group">
+            <label class="form-label" for="modal-username" id="modal-username-label">Bot Username</label>
+            <input type="text" id="modal-username" class="form-input" placeholder="e.g., Username@BotName">
+        </div>
+
+        <div class="form-group">
+            <label class="form-label" for="modal-password" id="modal-password-label">Bot Password</label>
+            <input type="password" id="modal-password" class="form-input" placeholder="Enter password">
+            <p class="form-hint" id="modal-password-hint">Leave blank when editing to keep the existing password</p>
+        </div>
+
+        <div id="modal-test-result" style="display: none; margin-bottom: 16px;"></div>
+
+        <div class="btn-group btn-group-right">
+            <button type="button" class="btn btn-secondary" id="modal-cancel">Cancel</button>
+            <button type="button" class="btn btn-primary" id="modal-save">Save Account</button>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('account-modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalAccountId = document.getElementById('modal-account-id');
+    const modalNickname = document.getElementById('modal-nickname');
+    const modalPlatform = document.getElementById('modal-platform');
+    const modalWikiUrl = document.getElementById('modal-wiki-url');
+    const modalWikiUrlLabel = document.getElementById('modal-wiki-url-label');
+    const modalWikiUrlHint = document.getElementById('modal-wiki-url-hint');
+    const modalSpaceKeyGroup = document.getElementById('modal-space-key-group');
+    const modalSpaceKey = document.getElementById('modal-space-key');
+    const modalUsername = document.getElementById('modal-username');
+    const modalUsernameLabel = document.getElementById('modal-username-label');
+    const modalPassword = document.getElementById('modal-password');
+    const modalPasswordLabel = document.getElementById('modal-password-label');
+    const modalPasswordHint = document.getElementById('modal-password-hint');
+    const modalTestResult = document.getElementById('modal-test-result');
+
+    function updateModalLabels() {
+        const platform = modalPlatform.value;
+        if (platform === 'confluence') {
+            modalWikiUrlLabel.textContent = 'Confluence Base URL';
+            modalWikiUrl.placeholder = 'https://your-domain.atlassian.net/wiki';
+            modalWikiUrlHint.textContent = 'Your Confluence Cloud base URL';
+            modalSpaceKeyGroup.style.display = '';
+            modalUsernameLabel.textContent = 'User Email';
+            modalUsername.placeholder = 'you@company.com';
+            modalPasswordLabel.textContent = 'API Token';
+            modalPassword.placeholder = 'Confluence API token';
+        } else if (platform === 'wikigg') {
+            modalWikiUrlLabel.textContent = 'Wiki Subdomain';
+            modalWikiUrl.placeholder = 'e.g., mywiki';
+            modalWikiUrlHint.textContent = 'Your wiki\'s subdomain on wiki.gg (just "mywiki", not the full URL). Generate credentials at Special:BotPasswords on your wiki.';
+            modalSpaceKeyGroup.style.display = 'none';
+            modalUsernameLabel.textContent = 'Bot Username';
+            modalUsername.placeholder = 'e.g., Username@BotName';
+            modalPasswordLabel.textContent = 'Bot Password';
+            modalPassword.placeholder = 'Generated bot password';
+        } else if (platform === 'shoutwiki') {
+            modalWikiUrlLabel.textContent = 'Wiki Subdomain';
+            modalWikiUrl.placeholder = 'e.g., mywiki';
+            modalWikiUrlHint.textContent = 'Your wiki\'s subdomain on ShoutWiki (just "mywiki", not the full URL). Generate credentials at Special:BotPasswords on your wiki. Note: the bot flag must be granted by a bureaucrat on your wiki.';
+            modalSpaceKeyGroup.style.display = 'none';
+            modalUsernameLabel.textContent = 'Bot Username';
+            modalUsername.placeholder = 'e.g., Username@BotName';
+            modalPasswordLabel.textContent = 'Bot Password';
+            modalPassword.placeholder = 'Generated bot password';
+        } else {
+            modalWikiUrlLabel.textContent = 'Wiki Domain';
+            modalWikiUrl.placeholder = platform === 'fandom' ? 'e.g., starwars.fandom.com' : 'e.g., yourwiki.miraheze.org';
+            modalWikiUrlHint.textContent = 'The full domain of your wiki (without https://)';
+            modalSpaceKeyGroup.style.display = 'none';
+            modalUsernameLabel.textContent = 'Bot Username';
+            modalUsername.placeholder = 'e.g., Username@BotName';
+            modalPasswordLabel.textContent = 'Bot Password';
+            modalPassword.placeholder = 'Enter password';
+        }
+    }
+
+    modalPlatform.addEventListener('change', updateModalLabels);
+
+    function openModal(isEdit, data) {
+        modalTitle.textContent = isEdit ? 'Edit Account' : 'Add Account';
+        modalAccountId.value = data ? data.id : '';
+        modalNickname.value = data ? data.nickname : '';
+        modalPlatform.value = data ? data.platform : 'miraheze';
+        modalWikiUrl.value = data ? data.wiki_url : '';
+        modalSpaceKey.value = data ? (data.space_key || '') : '';
+        modalUsername.value = data ? data.bot_username : '';
+        modalPassword.value = '';
+        modalPasswordHint.style.display = isEdit ? '' : 'none';
+        modalTestResult.style.display = 'none';
+        updateModalLabels();
+        modal.classList.add('active');
+    }
+
+    function closeModal() {
+        modal.classList.remove('active');
+    }
+
+    document.getElementById('add-account-btn').addEventListener('click', () => openModal(false));
+    document.getElementById('modal-cancel').addEventListener('click', closeModal);
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+
+    // Save
+    document.getElementById('modal-save').addEventListener('click', async () => {
+        const accountId = modalAccountId.value;
+        const isEdit = !!accountId;
+        const payload = {
+            nickname: modalNickname.value.trim(),
+            platform: modalPlatform.value,
+            wiki_url: modalWikiUrl.value.trim(),
+            bot_username: modalUsername.value.trim(),
+            bot_password: modalPassword.value
+        };
+
+        if (modalPlatform.value === 'confluence') {
+            payload.space_key = modalSpaceKey.value.trim();
+        }
+
+        if (!payload.nickname || !payload.wiki_url || !payload.bot_username) {
+            showToast('Please fill in all required fields', 'error');
+            return;
+        }
+
+        if (!isEdit && !payload.bot_password) {
+            showToast('Password is required for new accounts', 'error');
+            return;
+        }
+
+        const saveBtn = document.getElementById('modal-save');
+        saveBtn.disabled = true;
+        saveBtn.classList.add('btn-loading');
+
+        try {
+            const url = isEdit ? `/api/accounts/${accountId}` : '/api/accounts';
+            const method = isEdit ? 'PUT' : 'POST';
+
+            const response = await fetch(url, {
+                method,
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+            const data = await response.json();
+
+            if (data.success) {
+                showToast(isEdit ? 'Account updated' : 'Account added', 'success');
+                closeModal();
+                location.reload();
+            } else {
+                showToast(data.error || 'Failed to save', 'error');
+            }
+        } catch (error) {
+            showToast('Error: ' + error.message, 'error');
+        } finally {
+            saveBtn.disabled = false;
+            saveBtn.classList.remove('btn-loading');
+        }
+    });
+
+    // Test
+    document.querySelectorAll('.btn-test').forEach(btn => {
+        btn.addEventListener('click', async () => {
+            const id = btn.dataset.id;
+            btn.disabled = true;
+            btn.classList.add('btn-loading');
+            btn.textContent = 'Testing...';
+
+            try {
+                const response = await fetch(`/api/accounts/${id}/test`, { method: 'POST' });
+                const data = await response.json();
+
+                if (data.success) {
+                    showToast(`Connected to ${data.site_name || 'wiki'}`, 'success');
+                } else {
+                    showToast(data.error || 'Connection failed', 'error');
+                }
+            } catch (error) {
+                showToast('Error: ' + error.message, 'error');
+            } finally {
+                btn.disabled = false;
+                btn.classList.remove('btn-loading');
+                btn.textContent = 'Test';
+            }
+        });
+    });
+
+    // Edit
+    document.querySelectorAll('.btn-edit').forEach(btn => {
+        btn.addEventListener('click', async () => {
+            const id = btn.dataset.id;
+            btn.disabled = true;
+
+            try {
+                const response = await fetch('/api/accounts');
+                const data = await response.json();
+                const account = (data.accounts || []).find(a => a.id === id);
+
+                if (account) {
+                    openModal(true, account);
+                } else {
+                    showToast('Account not found', 'error');
+                }
+            } catch (error) {
+                showToast('Error: ' + error.message, 'error');
+            } finally {
+                btn.disabled = false;
+            }
+        });
+    });
+
+    // Delete
+    document.querySelectorAll('.btn-delete').forEach(btn => {
+        btn.addEventListener('click', async () => {
+            const id = btn.dataset.id;
+            const row = btn.closest('.account-row');
+            const nickname = row.querySelector('.account-nickname').textContent.trim();
+
+            if (!confirm(`Delete account "${nickname}"? Projects using it will need a new account.`)) return;
+
+            btn.disabled = true;
+
+            try {
+                const response = await fetch(`/api/accounts/${id}`, { method: 'DELETE' });
+                const data = await response.json();
+
+                if (data.success) {
+                    row.remove();
+                    showToast('Account deleted', 'success');
+                    if (!document.querySelectorAll('.account-row').length) {
+                        location.reload();
+                    }
+                } else {
+                    showToast(data.error || 'Failed to delete', 'error');
+                }
+            } catch (error) {
+                showToast('Error: ' + error.message, 'error');
+            } finally {
+                btn.disabled = false;
+            }
+        });
+    });
+});
+</script>
+{% endblock %}

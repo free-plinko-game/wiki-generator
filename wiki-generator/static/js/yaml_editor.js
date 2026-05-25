@@ -11,7 +11,6 @@ function initYamlEditor(existingConfig, projectId, saveUrl, generateUrl, importU
 
     // Event listeners
     document.getElementById('add-page').addEventListener('click', addPage);
-    document.getElementById('delete-all-pages').addEventListener('click', deleteAllPages);
     document.getElementById('download-yaml').addEventListener('click', downloadYaml);
     document.getElementById('save-structure').addEventListener('click', () => saveStructure(saveUrl));
     document.getElementById('continue-btn').addEventListener('click', () => continueToGenerate(saveUrl, generateUrl));
@@ -104,24 +103,6 @@ function addPage() {
     pageItem.classList.add('expanded');
 
     updateYamlPreview();
-}
-
-function deleteAllPages() {
-    if (pages.length === 0) {
-        showToast('No pages to delete', 'info');
-        return;
-    }
-
-    const confirmed = window.confirm('Delete all pages? This cannot be undone.');
-    if (!confirmed) {
-        return;
-    }
-
-    pages = [];
-    pageIndex = 0;
-    document.getElementById('pages-container').innerHTML = '';
-    updateYamlPreview();
-    showToast('All pages deleted', 'success');
 }
 
 function setupPageEventListeners(pageItem) {
@@ -425,9 +406,6 @@ async function saveStructure(saveUrl) {
         const data = await response.json();
 
         if (data.success) {
-            await saveLinkBank();
-            await saveMaskingLinkBank();
-            if (typeof saveSelectedLivePagesToStorage === 'function') saveSelectedLivePagesToStorage();
             showToast('Structure saved', 'success');
         } else {
             showToast(data.error || 'Failed to save', 'error');
@@ -456,9 +434,6 @@ async function continueToGenerate(saveUrl, generateUrl) {
         const data = await response.json();
 
         if (data.success) {
-            await saveLinkBank();
-            await saveMaskingLinkBank();
-            if (typeof saveSelectedLivePagesToStorage === 'function') saveSelectedLivePagesToStorage();
             window.location.href = generateUrl;
         } else {
             showToast(data.error || 'Failed to save structure', 'error');
@@ -516,267 +491,158 @@ function syncTitleToYaml(previousTitle, nextTitle) {
 window.syncTitleToYaml = syncTitleToYaml;
 
 // =============================================================================
-// Link Bank
+// Link Bank Management
 // =============================================================================
 
-let links = [];
-let linkBankSaveUrl = '';
+let linkEntries = [];
 
-function initLinkBank(existingLinks, linksUrl) {
-    links = existingLinks || [];
-    linkBankSaveUrl = linksUrl;
+function initLinkBank(existingLinks, linksUrl, linksSaveUrl) {
+    linkEntries = existingLinks || [];
 
-    document.getElementById('add-link').addEventListener('click', addLink);
-    document.getElementById('csv-link-upload').addEventListener('change', handleCsvUpload);
-    renderLinks();
+    renderLinkEntries();
+
+    document.getElementById('add-link').addEventListener('click', () => addLinkEntry());
+    document.getElementById('save-links').addEventListener('click', () => saveLinks(linksSaveUrl));
+
+    // CSV import
+    document.getElementById('clear-csv-import').addEventListener('click', () => {
+        document.getElementById('csv-import-input').value = '';
+        showToast('CSV input cleared', 'info');
+    });
+    document.getElementById('apply-csv-import').addEventListener('click', () => importCsv());
+
+    updateLinksEmptyState();
 }
 
-function handleCsvUpload(e) {
-    const file = e.target.files[0];
-    if (!file) return;
+function addLinkEntry(url, anchors, count) {
+    const template = document.getElementById('link-entry-template');
+    const clone = template.content.cloneNode(true);
+    const entry = clone.querySelector('.link-entry');
 
-    const reader = new FileReader();
-    reader.onload = function(event) {
-        const text = event.target.result;
-        const rows = text.split(/\r?\n/);
-        let added = 0;
+    if (typeof url === 'string') {
+        entry.querySelector('.link-url-input').value = url;
+    }
+    if (Array.isArray(anchors)) {
+        entry.querySelector('.link-anchors-input').value = anchors.join(', ');
+    }
+    if (count !== undefined && count !== null) {
+        entry.querySelector('.link-count-input').value = parseInt(count) || 1;
+    }
 
-        for (const row of rows) {
-            if (!row.trim()) continue;
+    entry.querySelector('.delete-link').addEventListener('click', function() {
+        entry.remove();
+        syncLinkData();
+        updateLinksEmptyState();
+    });
 
-            // Parse CSV row (handles quoted fields)
-            const fields = [];
-            let current = '';
-            let inQuotes = false;
-            for (let i = 0; i < row.length; i++) {
-                const ch = row[i];
-                if (ch === '"') {
-                    inQuotes = !inQuotes;
-                } else if (ch === ',' && !inQuotes) {
-                    fields.push(current.trim());
-                    current = '';
-                } else {
-                    current += ch;
-                }
-            }
-            fields.push(current.trim());
+    entry.querySelector('.link-url-input').addEventListener('input', () => syncLinkData());
+    entry.querySelector('.link-anchors-input').addEventListener('input', () => syncLinkData());
+    entry.querySelector('.link-count-input').addEventListener('input', () => syncLinkData());
 
-            const url = fields[0];
-            if (!url || (!url.startsWith('http://') && !url.startsWith('https://'))) continue;
-
-            let anchors = fields.slice(1).filter(a => a);
-            let count = 0;
-            // If the last field is purely numeric, treat it as the target count
-            if (anchors.length > 0 && /^\d+$/.test(anchors[anchors.length - 1])) {
-                count = parseInt(anchors.pop());
-            }
-            links.push({ url, anchors, count });
-            added++;
-        }
-
-        renderLinks();
-        showToast(`Imported ${added} link(s) from CSV`, 'success');
-    };
-    reader.readAsText(file);
-
-    // Reset so the same file can be re-uploaded
-    e.target.value = '';
+    document.getElementById('links-container').appendChild(entry);
+    syncLinkData();
+    updateLinksEmptyState();
 }
 
-function addLink() {
-    links.push({ url: '', anchors: [], count: 0 });
-    renderLinks();
-}
-
-function renderLinks() {
+function renderLinkEntries() {
     const container = document.getElementById('links-container');
     container.innerHTML = '';
 
-    links.forEach((link, idx) => {
-        const template = document.getElementById('link-template');
-        const clone = template.content.cloneNode(true);
-        const linkItem = clone.querySelector('.link-item');
-
-        const urlInput = linkItem.querySelector('.link-url-input');
-        const anchorsInput = linkItem.querySelector('.link-anchors-input');
-        const countInput = linkItem.querySelector('.link-count-input');
-        const deleteBtn = linkItem.querySelector('.delete-link');
-
-        urlInput.value = link.url || '';
-        anchorsInput.value = (link.anchors || []).join(', ');
-        countInput.value = link.count || 0;
-
-        urlInput.addEventListener('input', () => updateLinkData(idx));
-        anchorsInput.addEventListener('input', () => updateLinkData(idx));
-        countInput.addEventListener('input', () => updateLinkData(idx));
-
-        deleteBtn.addEventListener('click', () => {
-            links.splice(idx, 1);
-            renderLinks();
-        });
-
-        container.appendChild(clone);
+    linkEntries.forEach(entry => {
+        addLinkEntry(entry.url || '', entry.anchors || [], entry.count || 1);
     });
 }
 
-function updateLinkData(idx) {
-    const container = document.getElementById('links-container');
-    const items = container.querySelectorAll('.link-item');
-    const item = items[idx];
-    if (!item) return;
+function syncLinkData() {
+    const entries = document.querySelectorAll('#links-container .link-entry');
+    linkEntries = [];
 
-    links[idx] = {
-        url: item.querySelector('.link-url-input').value.trim(),
-        anchors: item.querySelector('.link-anchors-input').value
-            .split(',')
-            .map(s => s.trim())
-            .filter(s => s),
-        count: parseInt(item.querySelector('.link-count-input').value) || 0
-    };
+    entries.forEach(entry => {
+        const url = entry.querySelector('.link-url-input').value.trim();
+        const anchorsRaw = entry.querySelector('.link-anchors-input').value;
+        const anchors = anchorsRaw.split(',').map(s => s.trim()).filter(s => s);
+        const count = parseInt(entry.querySelector('.link-count-input').value) || 1;
+
+        if (url) {
+            linkEntries.push({ url, anchors, count });
+        }
+    });
 }
 
-async function saveLinkBank() {
-    if (!linkBankSaveUrl) return;
+function importCsv() {
+    const input = document.getElementById('csv-import-input');
+    const raw = input.value.trim();
+    if (!raw) {
+        showToast('Paste CSV data before importing', 'error');
+        return;
+    }
+
+    const lines = raw.split('\n').filter(l => l.trim());
+    let imported = 0;
+
+    for (const line of lines) {
+        // Split by comma, trim each part
+        const parts = line.split(',').map(s => s.trim()).filter(s => s);
+        if (parts.length < 2) continue;
+
+        const url = parts[0];
+        // Last column is the count (if it's a number)
+        const lastPart = parts[parts.length - 1];
+        const lastIsCount = /^\d+$/.test(lastPart);
+
+        let anchors, count;
+        if (lastIsCount && parts.length >= 3) {
+            anchors = parts.slice(1, -1);
+            count = parseInt(lastPart);
+        } else {
+            anchors = parts.slice(1);
+            count = 1;
+        }
+
+        addLinkEntry(url, anchors, count);
+        imported++;
+    }
+
+    if (imported > 0) {
+        showToast(`Imported ${imported} link(s)`, 'success');
+        input.value = '';
+    } else {
+        showToast('No valid links found in CSV', 'error');
+    }
+}
+
+function updateLinksEmptyState() {
+    const container = document.getElementById('links-container');
+    const emptyMsg = document.getElementById('links-empty');
+    const hasEntries = container.querySelectorAll('.link-entry').length > 0;
+    emptyMsg.style.display = hasEntries ? 'none' : 'block';
+}
+
+async function saveLinks(linksSaveUrl) {
+    syncLinkData();
+
+    const btn = document.getElementById('save-links');
+    btn.disabled = true;
+    btn.classList.add('btn-loading');
 
     try {
-        const response = await fetch(linkBankSaveUrl, {
+        const response = await fetch(linksSaveUrl, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ links: links.filter(l => l.url) })
+            body: JSON.stringify({ link_targets: linkEntries })
         });
 
         const data = await response.json();
-        if (!data.success) {
+
+        if (data.success) {
+            showToast('Links saved', 'success');
+        } else {
             showToast(data.error || 'Failed to save links', 'error');
         }
     } catch (error) {
         showToast('Error saving links: ' + error.message, 'error');
-    }
-}
-
-// =============================================================================
-// Masking Link Bank
-// =============================================================================
-
-let maskingLinks = [];
-let maskingLinkBankSaveUrl = '';
-
-function initMaskingLinkBank(existingLinks, saveUrl) {
-    maskingLinks = existingLinks || [];
-    maskingLinkBankSaveUrl = saveUrl;
-
-    document.getElementById('add-masking-link').addEventListener('click', addMaskingLink);
-    document.getElementById('csv-masking-link-upload').addEventListener('change', handleMaskingCsvUpload);
-    renderMaskingLinks();
-}
-
-function handleMaskingCsvUpload(e) {
-    const file = e.target.files[0];
-    if (!file) return;
-
-    const reader = new FileReader();
-    reader.onload = function(event) {
-        const text = event.target.result;
-        const rows = text.split(/\r?\n/);
-        let added = 0;
-
-        for (const row of rows) {
-            if (!row.trim()) continue;
-
-            const fields = [];
-            let current = '';
-            let inQuotes = false;
-            for (let i = 0; i < row.length; i++) {
-                const ch = row[i];
-                if (ch === '"') {
-                    inQuotes = !inQuotes;
-                } else if (ch === ',' && !inQuotes) {
-                    fields.push(current.trim());
-                    current = '';
-                } else {
-                    current += ch;
-                }
-            }
-            fields.push(current.trim());
-
-            const url = fields[0];
-            if (!url || (!url.startsWith('http://') && !url.startsWith('https://'))) continue;
-
-            const anchors = fields.slice(1).filter(a => a);
-            maskingLinks.push({ url, anchors });
-            added++;
-        }
-
-        renderMaskingLinks();
-        showToast(`Imported ${added} masking link(s) from CSV`, 'success');
-    };
-    reader.readAsText(file);
-    e.target.value = '';
-}
-
-function addMaskingLink() {
-    maskingLinks.push({ url: '', anchors: [] });
-    renderMaskingLinks();
-}
-
-function renderMaskingLinks() {
-    const container = document.getElementById('masking-links-container');
-    container.innerHTML = '';
-
-    maskingLinks.forEach((link, idx) => {
-        const template = document.getElementById('masking-link-template');
-        const clone = template.content.cloneNode(true);
-        const linkItem = clone.querySelector('.link-item');
-
-        const urlInput = linkItem.querySelector('.masking-link-url-input');
-        const anchorsInput = linkItem.querySelector('.masking-link-anchors-input');
-        const deleteBtn = linkItem.querySelector('.delete-masking-link');
-
-        urlInput.value = link.url || '';
-        anchorsInput.value = (link.anchors || []).join(', ');
-
-        urlInput.addEventListener('input', () => updateMaskingLinkData(idx));
-        anchorsInput.addEventListener('input', () => updateMaskingLinkData(idx));
-
-        deleteBtn.addEventListener('click', () => {
-            maskingLinks.splice(idx, 1);
-            renderMaskingLinks();
-        });
-
-        container.appendChild(clone);
-    });
-}
-
-function updateMaskingLinkData(idx) {
-    const container = document.getElementById('masking-links-container');
-    const items = container.querySelectorAll('.link-item');
-    const item = items[idx];
-    if (!item) return;
-
-    maskingLinks[idx] = {
-        url: item.querySelector('.masking-link-url-input').value.trim(),
-        anchors: item.querySelector('.masking-link-anchors-input').value
-            .split(',')
-            .map(s => s.trim())
-            .filter(s => s)
-    };
-}
-
-async function saveMaskingLinkBank() {
-    if (!maskingLinkBankSaveUrl) return;
-
-    try {
-        const response = await fetch(maskingLinkBankSaveUrl, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ masking_links: maskingLinks.filter(l => l.url) })
-        });
-
-        const data = await response.json();
-        if (!data.success) {
-            showToast(data.error || 'Failed to save masking links', 'error');
-        }
-    } catch (error) {
-        showToast('Error saving masking links: ' + error.message, 'error');
+    } finally {
+        btn.disabled = false;
+        btn.classList.remove('btn-loading');
     }
 }

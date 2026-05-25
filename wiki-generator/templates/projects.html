@@ -12,21 +12,32 @@
     {% if projects %}
     <div class="page-list">
         {% for project in projects %}
-        <a href="{{ url_for('project_structure', project_id=project.id) }}" class="page-list-item" style="text-decoration: none; color: inherit;">
-            <div class="page-list-item-info">
-                <span class="page-list-item-title">{{ project.name }}</span>
-                <span class="page-list-item-meta">
-                    {% if project.platform == 'confluence' %}
-                        {{ project.base_url }} · {{ project.space_key }}
-                    {% else %}
-                        {{ project.wiki_domain }}
-                    {% endif %}
-                </span>
-            </div>
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path d="M7 5L12 10L7 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-        </a>
+        <div class="page-list-item" style="display: flex; align-items: center;">
+            <a href="{{ url_for('project_structure', project_id=project.id) }}" style="text-decoration: none; color: inherit; display: flex; align-items: center; flex: 1; gap: 12px;">
+                <div class="page-list-item-info">
+                    <span class="page-list-item-title">{{ project.name }}</span>
+                    <span class="page-list-item-meta">
+                        {% if project.account_nickname %}
+                            {{ project.account_nickname }} · {{ project.wiki_domain or project.base_url }}
+                        {% elif project.platform == 'confluence' %}
+                            {{ project.base_url }} · {{ project.space_key }}
+                        {% else %}
+                            {{ project.wiki_domain }}
+                        {% endif %}
+                    </span>
+                </div>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="flex-shrink: 0;">
+                    <path d="M7 5L12 10L7 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+            <button
+                class="btn btn-danger btn-sm delete-project-btn"
+                data-project-id="{{ project.id }}"
+                data-project-name="{{ project.name }}"
+                style="margin-left: 12px; flex-shrink: 0;"
+                title="Delete project"
+            >Delete</button>
+        </div>
         {% endfor %}
     </div>
     {% else %}
@@ -36,4 +47,29 @@
     </div>
     {% endif %}
 </div>
+
+<script>
+document.querySelectorAll('.delete-project-btn').forEach(btn => {
+    btn.addEventListener('click', async (e) => {
+        e.preventDefault();
+        const projectId = btn.dataset.projectId;
+        const projectName = btn.dataset.projectName;
+        if (!confirm(`Delete project "${projectName}"? This cannot be undone.`)) return;
+
+        try {
+            const res = await fetch(`/api/projects/${projectId}`, { method: 'DELETE' });
+            const data = await res.json();
+            if (data.success) {
+                btn.closest('.page-list-item').remove();
+                const list = document.querySelector('.page-list');
+                if (list && list.children.length === 0) location.reload();
+            } else {
+                alert('Failed to delete project: ' + (data.error || 'Unknown error'));
+            }
+        } catch {
+            alert('Failed to delete project.');
+        }
+    });
+});
+</script>
 {% endblock %}
