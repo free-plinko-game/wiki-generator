@@ -63,13 +63,22 @@
             <a href="{{ url_for('project_generate', project_id=project.id) }}" class="btn btn-secondary">
                 Back to Generate
             </a>
-            <button type="button" class="btn btn-primary" id="upload-btn">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <path d="M2 10V11C2 12.1046 2.89543 13 4 13H12C13.1046 13 14 12.1046 14 11V10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                    <path d="M8 9V3M8 3L5 6M8 3L11 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                Upload Selected ({{ generated_pages | length }})
-            </button>
+            <div style="display:flex; gap:10px;">
+                <button type="button" class="btn btn-secondary" id="schedule-btn">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <rect x="2" y="3" width="12" height="12" rx="2" stroke="currentColor" stroke-width="2"/>
+                        <path d="M5 1v3M11 1v3M2 7h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    Schedule Selected
+                </button>
+                <button type="button" class="btn btn-primary" id="upload-btn">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M2 10V11C2 12.1046 2.89543 13 4 13H12C13.1046 13 14 12.1046 14 11V10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M8 9V3M8 3L5 6M8 3L11 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Upload Selected ({{ generated_pages | length }})
+                </button>
+            </div>
         </div>
     </div>
 
@@ -145,6 +154,26 @@
     </div>
 </div>
 
+<!-- Schedule Modal -->
+<div class="modal-overlay" id="schedule-modal">
+    <div class="modal" style="max-width:560px;">
+        <div class="modal-header">
+            <h3 class="modal-title">Schedule Posts</h3>
+            <button class="modal-close" id="close-schedule-modal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <p style="color:var(--color-text-secondary);font-size:13px;margin-bottom:16px;">
+                Pick a date for each page. Time will be randomised between 9am–8pm to look organic.
+            </p>
+            <div id="schedule-items" style="display:flex;flex-direction:column;gap:10px;"></div>
+        </div>
+        <div class="modal-footer" style="justify-content:space-between;">
+            <button class="btn btn-secondary" id="close-schedule-modal-btn">Cancel</button>
+            <button class="btn btn-primary" id="confirm-schedule-btn">Schedule Posts</button>
+        </div>
+    </div>
+</div>
+
 <!-- Preview Modal -->
 <div class="modal-overlay" id="preview-modal">
     <div class="modal">
@@ -214,8 +243,76 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function updateUploadButton() {
         const count = document.querySelectorAll('.page-checkbox:checked').length;
-        uploadBtn.textContent = `Upload Selected (${count})`;
+        uploadBtn.querySelector('svg').outerHTML;
+        uploadBtn.lastChild.textContent = ` Upload Selected (${count})`;
     }
+
+    // Schedule modal
+    const scheduleModal = document.getElementById('schedule-modal');
+    const scheduleItems = document.getElementById('schedule-items');
+    const today = new Date().toISOString().split('T')[0];
+
+    document.getElementById('schedule-btn').addEventListener('click', function() {
+        const selected = Array.from(document.querySelectorAll('.page-checkbox:checked'));
+        if (selected.length === 0) {
+            showToast('Please select at least one page', 'error');
+            return;
+        }
+
+        scheduleItems.innerHTML = selected.map((cb, i) => {
+            const title = cb.closest('.page-list-item').querySelector('.page-list-item-title').textContent;
+            const nextDay = new Date();
+            nextDay.setDate(nextDay.getDate() + Math.floor(i / 2));
+            const dateVal = nextDay.toISOString().split('T')[0];
+            return `
+                <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid var(--color-border);">
+                    <span style="font-size:14px;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${title}</span>
+                    <input type="date" data-filename="${cb.value}" value="${dateVal}" min="${today}"
+                           style="padding:4px 8px;border:1px solid var(--color-border);border-radius:6px;font-size:13px;background:var(--color-bg);">
+                </div>`;
+        }).join('');
+
+        scheduleModal.classList.add('active');
+    });
+
+    document.getElementById('close-schedule-modal').addEventListener('click', () => scheduleModal.classList.remove('active'));
+    document.getElementById('close-schedule-modal-btn').addEventListener('click', () => scheduleModal.classList.remove('active'));
+    scheduleModal.addEventListener('click', e => { if (e.target === scheduleModal) scheduleModal.classList.remove('active'); });
+
+    document.getElementById('confirm-schedule-btn').addEventListener('click', async function() {
+        const pages = Array.from(scheduleItems.querySelectorAll('input[type=date]')).map(el => ({
+            filename: el.dataset.filename,
+            date: el.value
+        }));
+
+        if (pages.some(p => !p.date)) {
+            showToast('Please set a date for every page', 'error');
+            return;
+        }
+
+        this.disabled = true;
+        this.textContent = 'Scheduling...';
+
+        try {
+            const res = await fetch('{{ url_for("schedule_pages", project_id=project.id) }}', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({pages})
+            });
+            const data = await res.json();
+            if (data.success) {
+                scheduleModal.classList.remove('active');
+                showToast(`${data.scheduled.length} page${data.scheduled.length !== 1 ? 's' : ''} scheduled`, 'success');
+            } else {
+                showToast(data.error || 'Scheduling failed', 'error');
+            }
+        } catch(e) {
+            showToast('Scheduling failed: ' + e.message, 'error');
+        } finally {
+            this.disabled = false;
+            this.textContent = 'Schedule Posts';
+        }
+    });
 
     // Upload
     uploadBtn.addEventListener('click', async function() {

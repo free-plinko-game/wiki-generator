@@ -7,12 +7,16 @@ A web interface for generating and publishing wiki content using AI.
 
 import json
 import os
+import random
 import threading
 import uuid
-from datetime import datetime
+from datetime import datetime, date as date_type, time as time_type
 from pathlib import Path
 
 import yaml
+from apscheduler.schedulers.background import BackgroundScheduler
+from apscheduler.jobstores.sqlalchemy import SQLAlchemyJobStore
+from apscheduler.executors.pool import ThreadPoolExecutor as APThreadPoolExecutor
 from flask import Flask, render_template, request, jsonify, redirect, url_for, flash, session
 from werkzeug.security import check_password_hash, generate_password_hash
 
@@ -26,6 +30,15 @@ app.config.from_object(config['default'])
 
 # Store for generation/upload progress (in production, use Redis or similar)
 progress_store = {}
+
+# Scheduler
+_scheduler_db = str(Path(__file__).parent / 'scheduler.db')
+scheduler = BackgroundScheduler(
+    jobstores={'default': SQLAlchemyJobStore(url=f'sqlite:///{_scheduler_db}')},
+    executors={'default': APThreadPoolExecutor(2)},
+    job_defaults={'misfire_grace_time': 3600}
+)
+scheduler.start()
 
 
 def get_accounts_path():
@@ -1122,6 +1135,107 @@ def project_complete(project_id):
                            project=project,
                            stats=stats,
                            uploaded_pages=stats.get('pages', []))
+
+
+# =============================================================================
+# Scheduler
+# =============================================================================
+
+def organic_datetime(target_date: str) -> datetime:
+    """Return a random datetime on target_date between 9am and 8pm."""
+    d = datetime.strptime(target_date, '%Y-%m-%d').date()
+    hour = random.randint(9, 19)
+    minute = random.randint(0, 59)
+    second = random.randint(0, 59)
+    return datetime.combine(d, time_type(hour, minute, second))
+
+
+def upload_single_page(project_id: str, filename: str):
+    """Upload one page to its wiki. Called by the scheduler."""
+    project = load_project(project_id)
+    if not project:
+        return
+
+    filepath = get_project_path(project_id) / 'generated' / filename
+    if not filepath.exists():
+        return
+
+    try:
+        adapter = get_adapter(project)
+        if not adapter.login():
+            return
+        content = filepath.read_text(encoding='utf-8')
+        title = filepath.stem.replace('_', ' ')
+        adapter.upload_page(title, content)
+    except Exception:
+        pass
+
+
+@app.route('/project/<project_id>/schedule', methods=['POST'])
+def schedule_pages(project_id):
+    """Queue pages for scheduled upload (AJAX)."""
+    project = load_project(project_id)
+    if not project:
+        return jsonify({'success': False, 'error': 'Project not found'})
+
+    data = request.get_json()
+    items = data.get('pages', [])
+    if not items:
+        return jsonify({'success': False, 'error': 'No pages provided'})
+
+    scheduled = []
+    for item in items:
+        filename = item.get('filename')
+        target_date = item.get('date')
+        if not filename or not target_date:
+            continue
+
+        run_at = organic_datetime(target_date)
+        job_id = f"{project_id}__{filename}__{uuid.uuid4().hex[:8]}"
+        scheduler.add_job(
+            upload_single_page,
+            trigger='date',
+            run_date=run_at,
+            args=[project_id, filename],
+            id=job_id,
+            name=f"{project.get('name', project_id)} / {filename}"
+        )
+        scheduled.append({'filename': filename, 'run_at': run_at.isoformat()})
+
+    return jsonify({'success': True, 'scheduled': scheduled})
+
+
+@app.route('/api/schedule', methods=['GET'])
+def list_schedule():
+    """Return all pending scheduled jobs as JSON."""
+    jobs = []
+    for job in scheduler.get_jobs():
+        parts = job.id.split('__')
+        jobs.append({
+            'id': job.id,
+            'name': job.name,
+            'project_id': parts[0] if len(parts) >= 2 else '',
+            'filename': parts[1] if len(parts) >= 2 else '',
+            'run_at': job.next_run_time.isoformat() if job.next_run_time else None,
+        })
+    jobs.sort(key=lambda j: j['run_at'] or '')
+    return jsonify(jobs)
+
+
+@app.route('/api/schedule/<job_id>', methods=['DELETE'])
+def cancel_scheduled_job(job_id):
+    """Cancel a scheduled job."""
+    try:
+        scheduler.remove_job(job_id)
+        return jsonify({'success': True})
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)})
+
+
+@app.route('/scheduled')
+def scheduled_page():
+    """Scheduled posts queue page."""
+    return render_template('scheduled.html')
 
 
 # =============================================================================
