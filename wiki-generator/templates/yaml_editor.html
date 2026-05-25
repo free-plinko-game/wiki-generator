@@ -51,6 +51,60 @@
     </div>
 </div>
 
+<div class="collapsible-section-header" onclick="toggleSection(this)" style="margin-bottom:0;">
+    <div>
+        <span style="font-weight:600;font-size:16px;">Pages &amp; YAML</span>
+        <span class="form-hint" style="display:block;margin-top:2px;">Build page structure and preview the generated YAML</span>
+    </div>
+    <button class="collapse-toggle" tabindex="-1">
+        <svg class="collapse-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+</div>
+<div class="collapsible-body" style="padding:20px;margin-bottom:24px;">
+<div class="yaml-editor-container">
+    <div class="yaml-builder">
+        <div class="yaml-builder-header">
+            <h3 class="yaml-builder-title">Pages</h3>
+            <button type="button" class="btn btn-primary btn-sm" id="add-page">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M7 2V12M2 7H12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                Add Page
+            </button>
+        </div>
+        <div class="yaml-builder-content" id="pages-container">
+            <!-- Pages will be added here dynamically -->
+        </div>
+    </div>
+
+    <div class="yaml-preview">
+        <div class="yaml-preview-header">
+            <h3 class="yaml-builder-title">YAML Preview</h3>
+            <button type="button" class="btn btn-secondary btn-sm" id="download-yaml">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M7 2V9M7 9L4 6M7 9L10 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 11H12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                Download
+            </button>
+        </div>
+        <div class="yaml-preview-content">
+            <pre id="yaml-output">Loading...</pre>
+        </div>
+        <div style="padding: 20px; border-top: 1px solid var(--color-border);">
+            <h4 class="yaml-builder-title" style="margin-bottom: 8px;">Import YAML</h4>
+            <textarea id="yaml-import-input" class="form-textarea" placeholder="Paste your pages.yaml here" rows="8"></textarea>
+            <div class="btn-group btn-group-right" style="margin-top: 12px;">
+                <button type="button" class="btn btn-secondary btn-sm" id="clear-yaml-import">Clear</button>
+                <button type="button" class="btn btn-primary btn-sm" id="apply-yaml-import">Apply YAML</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
 <!-- Link Bank -->
 <div class="card" id="link-bank-card">
     <div class="card-header" style="display:flex;align-items:center;justify-content:space-between;gap:12px;cursor:pointer;" onclick="toggleSection(this)">
@@ -118,61 +172,6 @@
         </div>
     </div>
 </template>
-
-<div class="collapsible-section-header" onclick="toggleSection(this)" style="margin-bottom:0;">
-    <div>
-        <span style="font-weight:600;font-size:16px;">Pages &amp; YAML</span>
-        <span class="form-hint" style="display:block;margin-top:2px;">Build page structure and preview the generated YAML</span>
-    </div>
-    <button class="collapse-toggle" tabindex="-1">
-        <svg class="collapse-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-    </button>
-</div>
-<div class="collapsible-body" style="padding:20px;margin-bottom:24px;">
-<div class="yaml-editor-container">
-    <div class="yaml-builder">
-        <div class="yaml-builder-header">
-            <h3 class="yaml-builder-title">Pages</h3>
-            <button type="button" class="btn btn-primary btn-sm" id="add-page">
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                    <path d="M7 2V12M2 7H12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-                Add Page
-            </button>
-        </div>
-        <div class="yaml-builder-content" id="pages-container">
-            <!-- Pages will be added here dynamically -->
-        </div>
-    </div>
-
-    <div class="yaml-preview">
-        <div class="yaml-preview-header">
-            <h3 class="yaml-builder-title">YAML Preview</h3>
-            <button type="button" class="btn btn-secondary btn-sm" id="download-yaml">
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                    <path d="M7 2V9M7 9L4 6M7 9L10 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M2 11H12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-                Download
-            </button>
-        </div>
-        <div class="yaml-preview-content">
-            <pre id="yaml-output">Loading...</pre>
-        </div>
-        <div style="padding: 20px; border-top: 1px solid var(--color-border);">
-            <h4 class="yaml-builder-title" style="margin-bottom: 8px;">Import YAML</h4>
-            <textarea id="yaml-import-input" class="form-textarea" placeholder="Paste your pages.yaml here" rows="8"></textarea>
-            <div class="btn-group btn-group-right" style="margin-top: 12px;">
-                <button type="button" class="btn btn-secondary btn-sm" id="clear-yaml-import">Clear</button>
-                <button type="button" class="btn btn-primary btn-sm" id="apply-yaml-import">Apply YAML</button>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-</div>
 
 <div class="card">
     <div class="card-header" style="display:flex;align-items:center;justify-content:space-between;gap:12px;cursor:pointer;" onclick="toggleSection(this)">
@@ -313,12 +312,17 @@
 <script src="{{ url_for('static', filename='js/yaml_editor.js') }}"></script>
 <script>
 function toggleSection(header) {
-    const card = header.closest('.card') || header.parentElement;
-    const body = card.querySelector('.collapsible-body') ||
-                 header.nextElementSibling;
+    let body, container;
+    if (header.classList.contains('collapsible-section-header')) {
+        body = header.nextElementSibling;
+        container = header;
+    } else {
+        container = header.closest('.card') || header;
+        body = container.querySelector('.collapsible-body');
+    }
     if (!body || !body.classList.contains('collapsible-body')) return;
     const collapsed = body.classList.toggle('is-collapsed');
-    card.classList.toggle('is-collapsed-card', collapsed);
+    container.classList.toggle('is-collapsed-card', collapsed);
     const chevron = header.querySelector('.collapse-chevron');
     if (chevron) chevron.style.transform = collapsed ? 'rotate(-90deg)' : '';
 }
